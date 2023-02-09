@@ -1,11 +1,15 @@
 $monitor-width: 200px;
 $monitor-height: 120px;
+$engineer-body-color: rgb(113, 158, 198);
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+}
+body {
+  background: linear-gradient(#e66465, #9198e5);
 }
 .App {
   font-family: sans-serif;
@@ -14,6 +18,42 @@ $monitor-height: 120px;
 .scroll {
   height: 500vh;
 }
+.engineer {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  bottom: 50px;
+  .my-face-container {
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    bottom: 55px;
+    z-index: 9999;
+    .my-face {
+      height: calc($monitor-height * 1.4);
+    }
+  }
+  .engineer-body {
+    position: fixed;
+    background-color: $engineer-body-color;
+    border-left: 10px solid lighten($engineer-body-color, 10%);
+    border-top: 5px solid lighten($engineer-body-color, 10%);
+    width: 170px;
+    height: 70px;
+    bottom: 20px;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    z-index: 1;
+    border-radius: 50px 50px 0px 0px;
+  }
+}
+
 .project-display-main {
   display: none; // shown via script
   position: fixed;
@@ -30,7 +70,7 @@ $monitor-height: 120px;
 .monitor-left,
 .monitor-right {
   position: fixed;
-  bottom: 30px;
+  bottom: 70px;
   width: $monitor-width;
   height: $monitor-height;
   background-color: rgb(25, 25, 25);

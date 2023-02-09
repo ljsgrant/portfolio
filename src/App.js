@@ -1,5 +1,6 @@
 import { useLayoutEffect, useRef } from 'react';
 import './styles/styles.scss';
+import meImg from './assets/images/me-v2.png';
 
 export default function App() {
   const displayMainRef = useRef(null);
@@ -24,6 +25,12 @@ export default function App() {
     <div className='App'>
       <div className='scroll'></div>
       <div ref={displayMainRef} className='project-display-main'></div>
+      <div className='engineer'>
+        <div className='engineer-body'></div>
+        <div className='my-face-container'>
+          <img className='my-face' src={meImg} alt='' />
+        </div>
+      </div>
       <div className='monitor-left'>
         <div className='monitor-left_circle-bracket'></div>
       </div>
