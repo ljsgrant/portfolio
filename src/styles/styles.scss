@@ -1,6 +1,11 @@
 $monitor-width: 200px;
 $monitor-height: 120px;
-$engineer-body-color: rgb(113, 158, 198);
+$color_monitor: rgb(25, 25, 25);
+
+$desk-width: 600px;
+$desk-height: 30px;
+$color_desk: rgb(11, 99, 154);
+$color_engineer-body: darken($color_desk, 25%);
 
 * {
   margin: 0;
@@ -8,8 +13,12 @@ $engineer-body-color: rgb(113, 158, 198);
   box-sizing: border-box;
   overflow-x: hidden;
 }
-body {
-  background: linear-gradient(#e66465, #9198e5);
+.background {
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background: linear-gradient(#00254b, #ffe8be);
 }
 .App {
   font-family: sans-serif;
@@ -17,6 +26,14 @@ body {
 }
 .scroll {
   height: 500vh;
+}
+.my-name {
+  position: fixed;
+  top: 10px;
+}
+.my-role {
+  position: fixed;
+  top: 10;
 }
 .engineer {
   position: fixed;
@@ -31,7 +48,7 @@ body {
     left: 0;
     margin-right: auto;
     margin-left: auto;
-    bottom: 55px;
+    bottom: 85px;
     z-index: 9999;
     .my-face {
       height: calc($monitor-height * 1.4);
@@ -39,18 +56,18 @@ body {
   }
   .engineer-body {
     position: fixed;
-    background-color: $engineer-body-color;
-    border-left: 10px solid lighten($engineer-body-color, 10%);
-    border-top: 5px solid lighten($engineer-body-color, 10%);
-    width: 170px;
-    height: 70px;
+    background-color: $color_engineer-body;
+    border-left: 10px solid lighten($color_engineer-body, 7%);
+    border-top: 5px solid lighten($color_engineer-body, 10%);
+    width: 210px;
+    height: 100px;
     bottom: 20px;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
     z-index: 1;
-    border-radius: 50px 50px 0px 0px;
+    border-radius: 70px 70px 0px 0px;
   }
 }
 
@@ -66,38 +83,92 @@ body {
   max-width: 900px;
   aspect-ratio: 16/9;
   background-color: blue;
+  transition: all 4s ease-in-out;
+}
+.desk {
+  position: fixed;
+  background-color: $color_desk;
+  width: $desk-width;
+  height: $desk-height;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  z-index: 999;
+  .desktop {
+    position: fixed;
+    bottom: calc($desk-height);
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: calc($desk-width + 20px);
+    border-bottom: 5px solid darken($color_desk, 10%);
+    border-top: 5px solid lighten($color_desk, 10%);
+    border-left: 5px solid lighten($color_desk, 6%);
+    border-right: 5px solid darken($color_desk, 6%);
+    border-radius: 5px;
+    height: 15px;
+    background-color: $color_desk;
+  }
 }
 .monitor-left,
 .monitor-right {
   position: fixed;
-  bottom: 70px;
+  bottom: 80px;
   width: $monitor-width;
   height: $monitor-height;
-  background-color: rgb(25, 25, 25);
-  border: 15px solid rgb(0, 0, 0);
-  border-left: 15px solid rgb(57, 57, 57);
-  border-top: 15px solid rgb(94, 94, 94);
+  background-color: $color_monitor;
+  border-bottom: 15px solid darken($color_monitor, 10%);
+  border-right: 15px solid darken($color_monitor, 6%);
+  border-left: 15px solid lighten($color_monitor, 6%);
+  border-top: 15px solid lighten($color_monitor, 10%);
   border-radius: 5px;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
   overflow-y: visible;
 }
 .monitor-left {
   left: 50%;
   margin-left: -250px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  .monitor-left_circle-bracket {
-    position: fixed;
-    background-color: blue;
-    border-radius: 50%;
-    width: 50px;
-    height: 50px;
-  }
 }
 .monitor-right {
   right: 50%;
   margin-right: -250px;
+}
+.monitor_circle-bracket {
+  position: fixed;
+  background-color: darken($color_monitor, 5%);
+  border-left: 2px solid lighten($color_monitor, 10%);
+  border-top: 2px solid lighten($color_monitor, 10%);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+}
+.monitor_base {
+  position: fixed;
+  bottom: calc($desk-height - ($desk-height / 2));
+  background-color: blue;
+  border-radius: 50% 50% 0 0;
+  width: 100px;
+  height: 50px;
+  background-color: $color_monitor;
+  border-left: 5px solid lighten($color_monitor, 10%);
+  border-top: 5px solid lighten($color_monitor, 10%);
+}
+.monitor_stand-column {
+  position: fixed;
+  background-color: $color_monitor;
+  border-right: 15px solid darken($color_monitor, 6%);
+  border-left: 15px solid lighten($color_monitor, 6%);
+  border-top: 15px solid lighten($color_monitor, 10%);
+  width: 25px;
+  height: 90px;
+  bottom: 59px;
+  z-index: 99999;
+  border-radius: 10px 10px 0 0;
 }
 
 .first {
