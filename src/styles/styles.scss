@@ -1,0 +1,80 @@
+$monitor-width: 200px;
+$monitor-height: 120px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+}
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+.scroll {
+  height: 500vh;
+}
+.project-display-main {
+  position: fixed;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  top: 10px;
+  width: 90vw;
+  max-width: 900px;
+  aspect-ratio: 16/9;
+  background-color: blue;
+}
+.monitor-left,
+.monitor-right {
+  position: fixed;
+  bottom: 30px;
+  width: $monitor-width;
+  height: $monitor-height;
+  background-color: rgb(25, 25, 25);
+  border: 15px solid rgb(0, 0, 0);
+  border-left: 15px solid rgb(57, 57, 57);
+  border-top: 15px solid rgb(94, 94, 94);
+  border-radius: 5px;
+
+  overflow-y: visible;
+}
+.monitor-left {
+  left: 50%;
+  margin-left: -250px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .monitor-left_circle-bracket {
+    position: fixed;
+    background-color: blue;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+  }
+}
+.monitor-right {
+  right: 50%;
+  margin-right: -250px;
+}
+
+.first {
+  width: 80vw;
+  height: 100vh;
+  background-color: red;
+}
+.second {
+  position: relative;
+  width: 80vw;
+  height: 400vh;
+  background-color: green;
+}
+.inside {
+  background-color: yellow;
+  height: 100vh;
+  width: 80vw;
+  /* position: fixed;
+  top: 0;
+  left: 0; */
+}
