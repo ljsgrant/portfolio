@@ -1,15 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
-$monitor-width: 210px;
-$monitor-height: 130px;
-$color_monitor: rgb(25, 25, 25);
-
-$desk-width: 600px;
-$desk-height: 30px;
-$color_desk: rgb(11, 99, 154);
-$color_engineer-body: darken($color_desk, 25%);
-
-$name-top: 10px;
+@import './variables';
 
 * {
   margin: 0;
@@ -46,38 +36,6 @@ h2 {
   position: fixed;
   top: 0px;
   left: 0px;
-}
-
-.whiteboard {
-  background-color: white;
-  position: fixed;
-  top: 5vh;
-  right: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: 90vw;
-  height: 90vh;
-
-  border: 5px solid rgb(222, 222, 222);
-  border-radius: 3px;
-  .my-name-container,
-  .my-role-container {
-    position: fixed;
-
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .my-name-container {
-    top: $name-top;
-    // left: -400px;
-  }
-  .my-role-container {
-    top: calc($name-top + 100px);
-    // left: 400px;
-  }
 }
 
 .engineer {
@@ -216,12 +174,4 @@ h2 {
   bottom: 59px;
   z-index: 99999;
   border-radius: 10px 10px 0 0;
-}
-.scene {
-  border: 2px solid blue;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999999999999;
-  box-sizing: border-box;
-  margin-bottom: 10vh;
 }

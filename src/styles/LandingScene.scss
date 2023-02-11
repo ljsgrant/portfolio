@@ -1,0 +1,35 @@
+@import './variables';
+
+.LandingScene {
+  .whiteboard {
+    background-color: white;
+    position: fixed;
+    top: 5vh;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    width: 90vw;
+    height: 90vh;
+
+    border: 5px solid rgb(222, 222, 222);
+    border-radius: 3px;
+    .my-name-container,
+    .my-role-container {
+      position: fixed;
+
+      right: 0;
+      left: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .my-name-container {
+      top: $name-top;
+      // left: -400px;
+    }
+    .my-role-container {
+      top: calc($name-top + 100px);
+      // left: 400px;
+    }
+  }
+}
