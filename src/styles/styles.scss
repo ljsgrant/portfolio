@@ -1,5 +1,7 @@
-$monitor-width: 200px;
-$monitor-height: 120px;
+@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+
+$monitor-width: 210px;
+$monitor-height: 130px;
 $color_monitor: rgb(25, 25, 25);
 
 $desk-width: 600px;
@@ -7,11 +9,14 @@ $desk-height: 30px;
 $color_desk: rgb(11, 99, 154);
 $color_engineer-body: darken($color_desk, 25%);
 
+$name-top: 10px;
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
+  font-family: 'Itim', cursive;
 }
 .background {
   position: fixed;
@@ -19,22 +24,62 @@ $color_engineer-body: darken($color_desk, 25%);
   width: 100vw;
   height: 100vh;
   background: linear-gradient(#00254b, #ffe8be);
+  z-index: -1;
 }
 .App {
   font-family: sans-serif;
   text-align: center;
 }
-.scroll {
-  height: 500vh;
+h1,
+h2,
+p {
+  margin: 0;
+  padding: 0;
 }
-.my-name {
+h1 {
+  font-size: 100px;
+}
+h2 {
+  font-size: 60px;
+}
+.test-svg {
   position: fixed;
-  top: 10px;
+  top: 0px;
+  left: 0px;
 }
-.my-role {
+
+.whiteboard {
+  background-color: white;
   position: fixed;
-  top: 10;
+  top: 5vh;
+  right: 0;
+  left: 0;
+  margin-right: auto;
+  margin-left: auto;
+  width: 90vw;
+  height: 90vh;
+
+  border: 5px solid rgb(222, 222, 222);
+  border-radius: 3px;
+  .my-name-container,
+  .my-role-container {
+    position: fixed;
+
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .my-name-container {
+    top: $name-top;
+    // left: -400px;
+  }
+  .my-role-container {
+    top: calc($name-top + 100px);
+    // left: 400px;
+  }
 }
+
 .engineer {
   position: fixed;
   right: 0;
@@ -42,16 +87,17 @@ $color_engineer-body: darken($color_desk, 25%);
   margin-right: auto;
   margin-left: auto;
   bottom: 50px;
+  z-index: 1;
   .my-face-container {
     position: fixed;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
-    bottom: 85px;
+    bottom: 91px;
     z-index: 9999;
     .my-face {
-      height: calc($monitor-height * 1.4);
+      height: calc($monitor-height * 1.25);
     }
   }
   .engineer-body {
@@ -59,15 +105,15 @@ $color_engineer-body: darken($color_desk, 25%);
     background-color: $color_engineer-body;
     border-left: 10px solid lighten($color_engineer-body, 7%);
     border-top: 5px solid lighten($color_engineer-body, 10%);
-    width: 210px;
+    width: 200px;
     height: 100px;
-    bottom: 20px;
+    bottom: 30px;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
     z-index: 1;
-    border-radius: 70px 70px 0px 0px;
+    border-radius: 80px 80px 0px 0px;
   }
 }
 
@@ -129,14 +175,15 @@ $color_engineer-body: darken($color_desk, 25%);
   justify-content: center;
   align-items: center;
   overflow-y: visible;
+  z-index: 1;
 }
 .monitor-left {
   left: 50%;
-  margin-left: -250px;
+  margin-left: -260px;
 }
 .monitor-right {
   right: 50%;
-  margin-right: -250px;
+  margin-right: -260px;
 }
 .monitor_circle-bracket {
   position: fixed;
@@ -170,23 +217,10 @@ $color_engineer-body: darken($color_desk, 25%);
   z-index: 99999;
   border-radius: 10px 10px 0 0;
 }
-
-.first {
-  width: 80vw;
+.scene {
+  border: 2px solid blue;
+  width: 100vw;
   height: 100vh;
-  background-color: red;
-}
-.second {
-  position: relative;
-  width: 80vw;
-  height: 400vh;
-  background-color: green;
-}
-.inside {
-  background-color: yellow;
-  height: 100vh;
-  width: 80vw;
-  /* position: fixed;
-  top: 0;
-  left: 0; */
+  z-index: 9999999999999;
+  box-sizing: border-box;
 }
