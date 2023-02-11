@@ -2,6 +2,7 @@ import { useLayoutEffect, useRef } from 'react';
 // import { InView, useInView } from 'react-intersection-observer';
 import './styles/styles.scss';
 import meImg from './assets/images/me-v2.png';
+import project4Img from './assets/images/projects/project-4.png';
 
 import ProjectScene from './components/ProjectScene';
 import LandingScene from './components/LandingScene';
@@ -11,7 +12,11 @@ export default function App() {
     <div className='App'>
       <div className='scroll'>
         <LandingScene />
-        <ProjectScene text={'first'} dataName={'first'} />
+        <ProjectScene
+          text={'first'}
+          dataName={'first'}
+          projectImage={project4Img}
+        />
         <ProjectScene text={'second'} dataName={'second'} />
       </div>
       <div className='background'></div>

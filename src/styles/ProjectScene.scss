@@ -1,0 +1,62 @@
+.ProjectScene {
+  .project-display-main {
+    display: none; // shown via script
+    position: fixed;
+    right: 0;
+    left: 0;
+    margin-right: auto;
+    margin-left: auto;
+    top: 0px;
+    width: 100vw;
+    // border: 2px solid blue;
+    flex-direction: column;
+    align-items: center;
+    .project-image-container {
+      position: relative;
+      width: 90vw;
+      aspect-ratio: 16/9;
+      border: 2px solid green;
+      margin-top: 20px;
+      transition-property: left;
+      transition-duration: 0.25s;
+      transition-timing-function: linear;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      img {
+        width: 100%;
+      }
+    }
+    .speech-bubble {
+      margin-top: 20px;
+      position: relative;
+      width: 90vw;
+      aspect-ratio: 16/9;
+      background-color: white;
+      border-radius: 30px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      .speech-bubble_tail {
+        width: 0;
+        height: 0;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-top: 20px solid #f00;
+      }
+    }
+  }
+}
+
+.not-flown-in {
+  left: 100vw;
+  transition-property: left;
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
+}
+.flown-in {
+  left: 0vw;
+  transition-property: left;
+  transition-duration: 0.25s;
+  transition-timing-function: linear;
+}
