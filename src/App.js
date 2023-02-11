@@ -1,13 +1,19 @@
 import { useLayoutEffect, useRef } from 'react';
+import { InView, useInView } from 'react-intersection-observer';
 import './styles/styles.scss';
 import meImg from './assets/images/me-v2.png';
 
 export default function App() {
+  const [refFirst, inViewFirst, entryFirst] = useInView({
+    /* Optional options */
+    threshold: 0
+  });
+
   const displayMainRef = useRef(null);
   const whiteboardRef = useRef(null);
 
   useLayoutEffect(() => {
-    const displayMain = displayMainRef.current;
+    // const displayMain = displayMainRef.current;
     const onScroll = () => {
       // console.log(window.scrollY);
       if (window.scrollY < 150) {
@@ -30,19 +36,69 @@ export default function App() {
     return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
+  const handleViewChange = (inView, entry) => {
+    if (entry.isIntersecting) {
+      console.log(inView);
+      console.log(entry.target);
+    }
+  };
+
   return (
     <div className='App'>
       <div className='scroll'>
-        <div className="scene first">First</div>
-        <div className="scene second">Second</div>
-        <div className="scene third">Third</div>
-        <div className="scene fourth">Fourth</div>
-        <div className="scene fifth">Fifth</div>
-        <div className="scene sixth">Sixth</div>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='first'
+          className='scene first'
+        >
+          First
+        </InView>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='second'
+          className='scene second'
+        >
+          Second
+        </InView>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='third'
+          className='scene third'
+        >
+          Third
+        </InView>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='fourth'
+          className='scene fourth'
+        >
+          Fourth
+        </InView>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='fifth'
+          className='scene fifth'
+        >
+          Fifth
+        </InView>
+        <InView
+          as='div'
+          onChange={handleViewChange}
+          name='sixth'
+          className='scene sixth'
+        >
+          Sixth
+        </InView>
       </div>
       <div className='background'></div>
       <div ref={displayMainRef} className='project-display-main'></div>
       <div className='desk'>
+        <p>{inViewFirst.toString()}</p>
         <div className='mouse'></div>
         <div className='keyboard'></div>
         <div className='desktop'></div>
