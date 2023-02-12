@@ -62,6 +62,16 @@ export default function ProjectScene({
           </div>
           <div className='speech-bubble_tail'></div>
         </div>
+        <div
+          className={`speech-bubble-container ${
+            isSceneActive ? 'flown-in' : 'flown-out-right'
+          }`}
+        >
+          <div className={`speech-bubble `}>
+            <p>ReadMe · Deployed Site</p>
+          </div>
+          <div className='speech-bubble_tail'></div>
+        </div>
       </div>
     </InView>
   );
