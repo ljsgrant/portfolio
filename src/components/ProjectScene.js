@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/ProjectScene.scss';
+import SectionTitle from './common/SectionTitle';
 
 export default function ProjectScene({
   text,
@@ -52,7 +53,11 @@ export default function ProjectScene({
           className='in-view-trigger'
           onChange={handleViewChangeTop}
         />
-        <div className='content landing-content'></div>
+        <SectionTitle titleText={titleText}/>
+        <div className='content project-content'>
+          <div className="project-content-1"></div>
+          <div className="project-content-2"></div>
+        </div>
         <InView
           as='div'
           className='in-view-trigger'

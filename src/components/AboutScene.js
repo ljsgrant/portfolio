@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
+import '../styles/ProjectScene.scss';
 
-export default function SceneTemplate({
+export default function AboutScene({
   text,
   dataName,
   projectImage,

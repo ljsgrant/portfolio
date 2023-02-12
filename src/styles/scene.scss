@@ -1,7 +1,7 @@
 @import './variables';
 
 .scene {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   width: 100vw;
   max-width: 100%;
   height: 300vh;
@@ -12,7 +12,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    border: 5px solid green;
+    // border: 5px solid green;
     width: 100%;
     height: 100vh;
     box-sizing: border-box;
@@ -24,7 +24,7 @@
     }
     .in-view-trigger{
       width: 100%;
-      border: 5px solid pink;
+      // border: 5px solid pink;
       bottom: 0;
 
     }

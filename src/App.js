@@ -16,8 +16,14 @@ export default function App() {
           projectImage={project4Img}
           titleText='General Assembly Project 4'
         />
-        <ProjectScene text={'second'} dataName={'second'} />
+        <ProjectScene
+          // text={'first'}
+          // dataName={'first'}
+          projectImage={project4Img}
+          titleText='General Assembly Project 3'
+        />
       </div>
+      <div className='background-overlay'></div>
       <div className='background'></div>
 
       <div className='desk'>

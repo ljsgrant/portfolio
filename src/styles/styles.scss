@@ -1,20 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;800&display=swap');
 @import './variables';
+$wallpaper-color: rgb(2, 41, 73);
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  // overflow-x: hidden;
-font-family: 'Comic Neue', cursive;
+  font-family: 'Recursive', sans-serif;
 }
 .background {
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(#00254b, #ffe8be);
+  width: 110vw;
+  height: 200vh;
   z-index: -1;
+  background-color: rgb(25, 51, 72);
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: linear-gradient(
+    to right,
+    $wallpaper-color,
+    $wallpaper-color 40px,
+    lighten($wallpaper-color, 10%) 20px,
+    lighten($wallpaper-color, 10%)
+  );
+  background-size: 80px 100%;
+}
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: -20px;
+  width: 110vw;
+  height: 1px;
+  z-index: -1;
+  background-color: rgb(0, 0, 50);
+  box-shadow: 0px 10px 50vh 40vh rgb(0, 0, 0);
 }
 .App {
   font-family: sans-serif;
@@ -46,6 +66,7 @@ h2 {
   margin-left: auto;
   bottom: 50px;
   z-index: 1;
+
   .my-face-container {
     position: fixed;
     right: 0;
@@ -54,6 +75,7 @@ h2 {
     margin-left: auto;
     bottom: 91px;
     z-index: 9999;
+    filter: drop-shadow(15px 15px 20px #0000006a);
     .my-face {
       height: calc($monitor-height * 1.25);
     }
@@ -72,6 +94,7 @@ h2 {
     margin-left: auto;
     z-index: 1;
     border-radius: 80px 80px 0px 0px;
+    filter: drop-shadow(15px 15px 20px #0000006a);
   }
 }
 .desk {
