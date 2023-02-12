@@ -7,12 +7,9 @@ export default function LandingScene({ text, dataName }) {
   const whiteboardRef = useRef(null);
 
   const handleViewChange = (inView, entry) => {
-    console.log(entry)
     if (entry.isIntersecting) {
-      // console.log(`show Landing`);
       whiteboardRef.current.style.display = 'block';
     } else {
-      // console.log(`hide Landing`);
       whiteboardRef.current.style.display = 'none';
     }
   };

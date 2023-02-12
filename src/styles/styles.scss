@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comic+Neue:wght@300;400;700&display=swap');
 @import './variables';
 
 * {
@@ -6,7 +6,7 @@
   padding: 0;
   box-sizing: border-box;
   overflow-x: hidden;
-  font-family: 'Itim', cursive;
+font-family: 'Comic Neue', cursive;
 }
 .background {
   position: fixed;
@@ -27,10 +27,10 @@ p {
   padding: 0;
 }
 h1 {
-  font-size: 100px;
+  font-size: 50px;
 }
 h2 {
-  font-size: 60px;
+  font-size: 30px;
 }
 .test-svg {
   position: fixed;

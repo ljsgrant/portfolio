@@ -16,6 +16,7 @@ export default function App() {
           text={'first'}
           dataName={'first'}
           projectImage={project4Img}
+          titleText='General Assembly Project 4'
         />
         <ProjectScene text={'second'} dataName={'second'} />
       </div>

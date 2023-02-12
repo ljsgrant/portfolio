@@ -1,6 +1,5 @@
 .ProjectScene {
   .project-display-main {
-    display: none; // shown via script
     position: fixed;
     right: 0;
     left: 0;
@@ -9,54 +8,100 @@
     top: 0px;
     width: 100vw;
     // border: 2px solid blue;
+    display: flex;
     flex-direction: column;
     align-items: center;
+
     .project-image-container {
       position: relative;
       width: 90vw;
       aspect-ratio: 16/9;
-      border: 2px solid green;
+      // border: 2px solid green;
       margin-top: 20px;
       transition-property: left;
       transition-duration: 0.25s;
       transition-timing-function: linear;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
+      h2 {
+        font-size: 20px;
+        color: white;
+      }
       img {
         width: 100%;
       }
     }
-    .speech-bubble {
-      margin-top: 20px;
+    .speech-bubble-container {
       position: relative;
-      width: 90vw;
-      aspect-ratio: 16/9;
-      background-color: white;
-      border-radius: 30px;
+      // border: 2px solid blue;
+      margin-top: 20px;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: center;
+      .speech-bubble {
+        width: 90vw;
+        background-color: white;
+        border-radius: 30px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        h2 {
+          position: inherit;
+          font-size: 20px;
+        }
+      }
       .speech-bubble_tail {
+        position: relative;
         width: 0;
         height: 0;
-        border-left: 20px solid transparent;
-        border-right: 20px solid transparent;
-        border-top: 20px solid #f00;
+        left: 10vw;
+        border-left: 10px solid transparent;
+        border-right: 10px solid transparent;
+        border-top: 30vh solid rgb(255, 255, 255);
+        transform: skew(-10deg);
       }
     }
   }
-}
 
-.not-flown-in {
-  left: 100vw;
-  transition-property: left;
-  transition-duration: 0.25s;
-  transition-timing-function: linear;
+  .flown-out-left {
+    left: -100vw;
+    transition-property: left;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+  .flown-out-right {
+    left: 100vw;
+    transition-property: left;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+  .flown-in {
+    left: 0vw;
+    transition-property: left;
+    transition-duration: 0.25s;
+    transition-timing-function: linear;
+  }
+  // .flown-out {
+  //   left: 100vw;
+  //   transition-property: left;
+  //   transition-duration: 0.25s;
+  //   transition-timing-function: linear;
+  // }
+  .visible {
+  }
+  .hidden {
+    display: none;
+  }
 }
-.flown-in {
-  left: 0vw;
-  transition-property: left;
-  transition-duration: 0.25s;
-  transition-timing-function: linear;
+@media only screen and (max-width: 425px) {
+  .project-display-main {
+    flex-direction: column;
+  }
+}
+@media only screen and (max-width: 1005px) {
+  .project-display-main {
+    flex-direction: row;
+  }
 }
