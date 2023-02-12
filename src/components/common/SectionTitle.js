@@ -19,16 +19,16 @@ export default function SectionTitle({ titleText }) {
         <div className='streamer streamer-bottom-right'></div>
       </div>
       <div className='cog-container'>
-        <div class='cog'>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='tooth'></div>
-          <div class='cog-center'></div>
+        <div className='cog'>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='cog-center'></div>
         </div>
       </div>
     </div>

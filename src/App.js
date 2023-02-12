@@ -1,3 +1,5 @@
+import { useRef } from 'react';
+
 import './styles/styles.scss';
 import meImg from './assets/images/me-v2.png';
 import project4Img from './assets/images/projects/project-4.png';
@@ -7,11 +9,13 @@ import LandingScene from './components/LandingScene';
 import ExperienceScene from './components/ExperienceScene';
 
 export default function App() {
+  const myFaceRef = useRef(null);
+
   return (
     <div className='App'>
       <div className='scroll'>
-        <LandingScene />
-        <ExperienceScene titleText='Experience'/>
+        <LandingScene myFaceRef={myFaceRef} />
+        <ExperienceScene titleText='Experience' />
         <ProjectScene
           text={'first'}
           dataName={'first'}
@@ -36,7 +40,7 @@ export default function App() {
       <div className='engineer'>
         <div className='engineer-body'></div>
         <div className='my-face-container'>
-          <img className='my-face' src={meImg} alt='' />
+          <img ref={myFaceRef} className='my-face' src={meImg} alt='' />
         </div>
       </div>
       <div className='monitor-left'>
@@ -49,18 +53,6 @@ export default function App() {
         <div className='monitor_circle-bracket'></div>
         <div className='monitor_base'></div>
       </div>
-      {/* <svg
-        className='test-svg'
-        viewBox='0 0 10 20'
-        xmlns='http://www.w3.org/2000/svg'
-      >
-        <path
-          fill='none'
-          stroke='red'
-          stroke-width='.5px'
-          d='M2,5.5 C2.5,8 8,8 16,5 C8,1 1,2 1,5 C1,6 2,7 8,7'
-        />
-      </svg> */}
     </div>
   );
 }
