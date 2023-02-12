@@ -4,14 +4,5 @@
   .landing-content {
     display: flex;
     justify-content: center;
-    .landing-arrows {
-      position: fixed;
-      border: 5px solid pink;
-      width: 80vw;
-      margin-bottom: -40vw;
-      aspect-ratio: 1/1;
-      bottom: 0;
-      border-radius: 50%;
-    }
   }
 }

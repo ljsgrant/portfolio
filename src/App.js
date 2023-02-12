@@ -40,7 +40,8 @@ export default function App() {
       <div className='engineer'>
         <div className='engineer-body'></div>
         <div className='my-face-container'>
-          <img ref={myFaceRef} className='my-face' src={meImg} alt='' />
+          <img className='my-face' src={meImg} alt='' />
+          <div ref={myFaceRef} className='my-face-marker'></div>
         </div>
       </div>
       <div className='monitor-left'>

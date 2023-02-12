@@ -79,6 +79,16 @@ h2 {
     .my-face {
       height: calc($monitor-height * 1.25);
     }
+    .my-face-marker {
+      position: fixed;
+      // border: 5px solid green;
+      width: 0px;
+      right: 0;
+      left: -20px;
+      bottom: 150px;
+      margin-right: auto;
+      margin-left: auto;
+    }
   }
   .engineer-body {
     position: fixed;
