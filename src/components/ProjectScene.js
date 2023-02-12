@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/ProjectScene.scss';
@@ -41,6 +41,7 @@ export default function ProjectScene({
       setHasExitAnimPlayed(true);
       setHasEntryAnimPlayed(false);
     }
+    // eslint-disable-next-line
   }, [isTopInView, isBottomInView]);
 
   return (

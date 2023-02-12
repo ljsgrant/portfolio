@@ -1,5 +1,3 @@
-import { useLayoutEffect, useRef } from 'react';
-// import { InView, useInView } from 'react-intersection-observer';
 import './styles/styles.scss';
 import meImg from './assets/images/me-v2.png';
 import project4Img from './assets/images/projects/project-4.png';

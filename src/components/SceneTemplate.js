@@ -1,9 +1,15 @@
-import { useEffect, useState } from 'react';
+import { useState, useEffect } from 'react';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
-import '../styles/LandingScene.scss';
+import '../styles/ProjectScene.scss';
 
-export default function LandingScene({ text, dataName }) {
+export default function SceneTemplate({
+  text,
+  dataName,
+  projectImage,
+  titleText,
+  infoText
+}) {
   const [isTopInView, setIsTopInView] = useState(false);
   const [isBottomInView, setIsBottomInView] = useState(false);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
@@ -27,11 +33,11 @@ export default function LandingScene({ text, dataName }) {
 
   useEffect(() => {
     if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
-      console.log('landing entry animation');
+      console.log('project entry animation');
       setHasEntryAnimPlayed(true);
       setHasExitAnimPlayed(false);
     } else if ((!isTopInView || !isBottomInView) && !hasExitAnimPlayed) {
-      console.log('landing exit animation');
+      console.log('project exit animation');
       setHasExitAnimPlayed(true);
       setHasEntryAnimPlayed(false);
     }
@@ -39,7 +45,7 @@ export default function LandingScene({ text, dataName }) {
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div data-name={dataName} className='scene LandingScene'>
+    <div data-name={dataName} className='scene ProjectScene'>
       <article className='sticky-child'>
         <InView
           as='div'
