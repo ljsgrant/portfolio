@@ -1,36 +1,57 @@
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/LandingScene.scss';
 
 export default function LandingScene({ text, dataName }) {
-  const whiteboardRef = useRef(null);
+  const [isTopInView, setIsTopInView] = useState(false);
+  const [isBottomInView, setIsBottomInView] = useState(false);
+  const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
+  const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
-  const handleViewChange = (inView, entry) => {
+  const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
-      whiteboardRef.current.style.display = 'block';
+      setIsTopInView(true);
     } else {
-      whiteboardRef.current.style.display = 'none';
+      setIsTopInView(false);
     }
   };
 
-  return (
-    <InView
-      as='div'
-      onChange={handleViewChange}
-      data-name={dataName}
-      className='scene LandingScene'
-    >
-      {text}
+  const handleViewChangeBottom = (inView, entry) => {
+    if (entry.isIntersecting) {
+      setIsBottomInView(true);
+    } else {
+      setIsBottomInView(false);
+    }
+  };
 
-      {/* <div ref={whiteboardRef} className='whiteboard'>
-        <div className='my-name-container'>
-          <h1 className='my-name'>Louis Grant</h1>
-        </div>
-        <div className='my-role-container'>
-          <h2 className='my-role'>Junior Software Engineer</h2>
-        </div>
-      </div> */}
-    </InView>
+  useEffect(() => {
+    if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
+      console.log('landing entry animation');
+      setHasEntryAnimPlayed(true);
+      setHasExitAnimPlayed(false);
+    } else if ((!isTopInView || !isBottomInView) && !hasExitAnimPlayed) {
+      console.log('landing exit animation');
+      setHasExitAnimPlayed(true);
+      setHasEntryAnimPlayed(false);
+    }
+  }, [isTopInView, isBottomInView]);
+
+  return (
+    <div data-name={dataName} className='scene LandingScene'>
+      <article className='sticky-child'>
+        <InView
+          as='div'
+          className='in-view-trigger'
+          onChange={handleViewChangeTop}
+        />
+        <div className='content landing-content'></div>
+        <InView
+          as='div'
+          className='in-view-trigger'
+          onChange={handleViewChangeBottom}
+        />
+      </article>
+    </div>
   );
 }

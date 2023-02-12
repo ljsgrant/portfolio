@@ -3,9 +3,30 @@
 .scene {
   border: 1px solid blue;
   width: 100vw;
-  max-width:100%;
-  height: 200vh;
+  max-width: 100%;
+  height: 300vh;
   z-index: 9999999999999;
   box-sizing: border-box;
   margin-bottom: 150vh;
+  .sticky-child {
+    position: sticky;
+    top: 0;
+    left: 0;
+    border: 5px solid green;
+    width: 100%;
+    height: 100vh;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    .content{
+      height: 100%;
+      width: 100%;
+    }
+    .in-view-trigger{
+      width: 100%;
+      border: 5px solid pink;
+      bottom: 0;
+
+    }
+  }
 }

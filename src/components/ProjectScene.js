@@ -10,70 +10,54 @@ export default function ProjectScene({
   titleText,
   infoText
 }) {
-  const [isSceneActive, setIsSceneActive] = useState(false);
-  const displayMainRef = useRef(null);
-  const projectImgRef = useRef(null);
-  const speechBubbleRef = useRef(null);
+  const [isTopInView, setIsTopInView] = useState(false);
+  const [isBottomInView, setIsBottomInView] = useState(false);
+  const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
+  const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
-  // if (displayMainRef.current) {
-  //   displayMainRef.current.style.display = 'flex';
-  // }
-
-  const handleViewChange = (inView, entry) => {
+  const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
-      setIsSceneActive(true);
-      // displayMainRef.current.style.display = 'flex';
+      setIsTopInView(true);
     } else {
-      setIsSceneActive(false);
-      // displayMainRef.current.style.display = 'none';
+      setIsTopInView(false);
     }
   };
 
+  const handleViewChangeBottom = (inView, entry) => {
+    if (entry.isIntersecting) {
+      setIsBottomInView(true);
+    } else {
+      setIsBottomInView(false);
+    }
+  };
+
+  useEffect(() => {
+    if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
+      console.log('project entry animation');
+      setHasEntryAnimPlayed(true);
+      setHasExitAnimPlayed(false);
+    } else if ((!isTopInView || !isBottomInView) && !hasExitAnimPlayed) {
+      console.log('project exit animation');
+      setHasExitAnimPlayed(true);
+      setHasEntryAnimPlayed(false);
+    }
+  }, [isTopInView, isBottomInView]);
+
   return (
-    <InView
-      as='div'
-      onChange={handleViewChange}
-      data-name={dataName}
-      className='scene first ProjectScene'
-    >
-      <div className="sticky-child"></div>
-      {/* {text}
-      <div
-        ref={displayMainRef}
-        className={`project-display-main ${
-          isSceneActive ? 'display-flex' : 'display-none'
-        }`}
-      >
-        <div
-          ref={projectImgRef}
-          className={`${
-            isSceneActive ? 'flown-in' : 'flown-out-left'
-          } project-image-container`}
-        >
-          <h2>{titleText}</h2>
-          <img src={projectImage} alt='' />
-        </div>
-        <div
-          className={`speech-bubble-container ${
-            isSceneActive ? 'flown-in' : 'flown-out-right'
-          }`}
-        >
-          <div ref={speechBubbleRef} className={`speech-bubble `}>
-            <p>React · Django · PostgreSQL</p>
-          </div>
-          <div className='speech-bubble_tail'></div>
-        </div>
-        <div
-          className={`speech-bubble-container ${
-            isSceneActive ? 'flown-in' : 'flown-out-right'
-          }`}
-        >
-          <div className={`speech-bubble `}>
-            <p>ReadMe · Deployed Site</p>
-          </div>
-          <div className='speech-bubble_tail'></div>
-        </div>
-      </div> */}
-    </InView>
+    <div data-name={dataName} className='scene ProjectScene'>
+      <article className='sticky-child'>
+        <InView
+          as='div'
+          className='in-view-trigger'
+          onChange={handleViewChangeTop}
+        />
+        <div className='content landing-content'></div>
+        <InView
+          as='div'
+          className='in-view-trigger'
+          onChange={handleViewChangeBottom}
+        />
+      </article>
+    </div>
   );
 }
