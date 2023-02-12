@@ -4,12 +4,14 @@ import project4Img from './assets/images/projects/project-4.png';
 
 import ProjectScene from './components/ProjectScene';
 import LandingScene from './components/LandingScene';
+import ExperienceScene from './components/ExperienceScene';
 
 export default function App() {
   return (
     <div className='App'>
       <div className='scroll'>
         <LandingScene />
+        <ExperienceScene titleText='Experience'/>
         <ProjectScene
           text={'first'}
           dataName={'first'}
