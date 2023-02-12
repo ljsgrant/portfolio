@@ -36,7 +36,8 @@ export default function ProjectScene({
       data-name={dataName}
       className='scene first ProjectScene'
     >
-      {text}
+      <div className="sticky-child"></div>
+      {/* {text}
       <div
         ref={displayMainRef}
         className={`project-display-main ${
@@ -72,7 +73,7 @@ export default function ProjectScene({
           </div>
           <div className='speech-bubble_tail'></div>
         </div>
-      </div>
+      </div> */}
     </InView>
   );
 }

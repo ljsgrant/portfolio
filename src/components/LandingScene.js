@@ -23,14 +23,14 @@ export default function LandingScene({ text, dataName }) {
     >
       {text}
 
-      <div ref={whiteboardRef} className='whiteboard'>
+      {/* <div ref={whiteboardRef} className='whiteboard'>
         <div className='my-name-container'>
           <h1 className='my-name'>Louis Grant</h1>
         </div>
         <div className='my-role-container'>
           <h2 className='my-role'>Junior Software Engineer</h2>
         </div>
-      </div>
+      </div> */}
     </InView>
   );
 }
