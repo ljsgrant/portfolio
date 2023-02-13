@@ -7,8 +7,10 @@ import project4Img from './assets/images/projects/project-4.png';
 import ProjectScene from './components/ProjectScene';
 import LandingScene from './components/LandingScene';
 import ExperienceScene from './components/ExperienceScene';
+import SkillsScene from './components/SkillsScene';
 
 export default function App() {
+  const myFaceRef = useRef(null);
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
 
@@ -16,6 +18,7 @@ export default function App() {
     <div className='App'>
       <div className='scroll'>
         <LandingScene myFaceRef1={myFaceRef1} myFaceRef2={myFaceRef2} />
+        <SkillsScene titleText='Skills' myFaceRef={myFaceRef} myFaceRef1={myFaceRef1} myFaceRef2={myFaceRef2} />
         <ExperienceScene titleText='Experience' />
         <ProjectScene
           text={'first'}
@@ -29,6 +32,7 @@ export default function App() {
           projectImage={project4Img}
           titleText='General Assembly Project 3'
         />
+        {/* <div className="scrolling-visual-element"></div> */}
       </div>
       <div className='background-overlay'></div>
       <div className='background'></div>
@@ -41,7 +45,7 @@ export default function App() {
       <div className='engineer'>
         <div className='engineer-body'></div>
         <div className='my-face-container'>
-          <img className='my-face' src={meImg} alt='' />
+          <img ref={myFaceRef} className='my-face' src={meImg} alt='' />
           <div ref={myFaceRef1} className='my-face-marker-1'></div>
           <div ref={myFaceRef2} className='my-face-marker-2'></div>
         </div>
