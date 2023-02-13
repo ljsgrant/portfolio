@@ -47,6 +47,7 @@ export default function ProjectScene({
 
   return (
     <div data-name={dataName} className='scene ProjectScene'>
+      <div className="project-container"></div>
       <article className='sticky-child'>
         <InView
           as='div'

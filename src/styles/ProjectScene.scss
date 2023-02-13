@@ -1,2 +1,16 @@
 .ProjectScene{
+  .sticky-child{
+    // height: 100%;
+  }
+  .SectionTitle{
+    // position: sticky;
+  }
+  .project-container{
+    position: absolute;
+    width: 100%;
+    height: 10px; 
+    background-color: blue;
+    margin-top: 40vh;
+    z-index: 100000;
+  }
 }

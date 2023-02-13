@@ -14,6 +14,19 @@ import nodeIcon from '../assets/images/tech_icons/icons8-node-js.svg';
 import htmlIcon from '../assets/images/tech_icons/icons8-html-5.svg';
 import mongoDbIcon from '../assets/images/tech_icons/icons8-mongodb-24.png';
 import cloudinaryIcon from '../assets/images/tech_icons/cloudinary_cloud_glyph_regular.svg';
+import pythonIcon from '../assets/images/tech_icons/icons8-python.svg';
+import djangoIcon from '../assets/images/tech_icons/icons8-django.svg';
+import postgresIcon from '../assets/images/tech_icons/icons8-postgresql.svg';
+import gitIcon from '../assets/images/tech_icons/icons8-git.svg';
+import gitHubIcon from '../assets/images/tech_icons/icons8-github.svg';
+import npmIcon from '../assets/images/tech_icons/icons8-npm.svg';
+import pipIcon from '../assets/images/tech_icons/icons8-pypi.svg';
+import vscodeIcon from '../assets/images/tech_icons/icons8-vscode.svg';
+import postmanIcon from '../assets/images/tech_icons/postman.svg';
+import tablePlusIcon from '../assets/images/tech_icons/tableplus.png';
+import photoshopIcon from '../assets/images/tech_icons/photoshop.svg';
+import blenderIcon from '../assets/images/tech_icons/icons8-blender-3d.svg';
+import unityIcon from '../assets/images/tech_icons/icons8-unity.svg';
 
 export default function SkillsScene({
   titleText,
@@ -191,12 +204,30 @@ export default function SkillsScene({
                     <p>MongoDB</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={pythonIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='python'
+                    />
                     <p>Python</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={djangoIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='django'
+                    />
                     <p>Django</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={postgresIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='postgreSQL'
+                    />
                     <p>PostgreSQL</p>
                   </div>
                 </div>
@@ -205,9 +236,21 @@ export default function SkillsScene({
                 <h4>Version Control</h4>
                 <div className='skills-content'>
                   <div className='skill-wrapper'>
+                    <img
+                      src={gitIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='git'
+                    />
                     <p>Git</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={gitHubIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='github'
+                    />
                     <p>GitHub</p>
                   </div>
                 </div>
@@ -216,14 +259,26 @@ export default function SkillsScene({
                 <h4>Package</h4>
                 <div className='skills-content'>
                   <div className='skill-wrapper'>
+                    <img
+                      src={npmIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='npm'
+                    />
                     <p>npm</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={pipIcon}
+                      className='tech-icon filter-svg'
+                      draggable='false'
+                      alt='pip'
+                    />
                     <p>pip</p>
                   </div>
-                  <div className='skill-wrapper'>
+                  {/* <div className='skill-wrapper'>
                     <p>PipEnv</p>
-                  </div>
+                  </div> */}
                 </div>
               </div>
               <div className='skills-column'>
@@ -253,21 +308,57 @@ export default function SkillsScene({
                 <h4>Software</h4>
                 <div className='skills-content'>
                   <div className='skill-wrapper'>
+                    <img
+                      src={vscodeIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='visual studio code'
+                    />
                     <p>VSCode</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={postmanIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='postman'
+                    />
                     <p>Postman</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={tablePlusIcon}
+                      className='tech-icon filter-svg'
+                      draggable='false'
+                      alt='tableplus'
+                    />
                     <p>TablePlus</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={photoshopIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='photoshop'
+                    />
                     <p>Photoshop</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={blenderIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='blender'
+                    />
                     <p>Blender</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={unityIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='unity'
+                    />
                     <p>Unity</p>
                   </div>
                 </div>
@@ -277,7 +368,7 @@ export default function SkillsScene({
                 <div className='skills-content'>
                   <div className='skill-wrapper'>
                     <p>VSCode</p>
-                  </div>
+                    </div>
                 </div>
               </div> */}
             </div>

@@ -13,11 +13,12 @@ export default function App() {
   const myFaceRef = useRef(null);
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
+  const laptopRef = useRef(null);
 
   return (
     <div className='App'>
       <div className='scroll'>
-        <LandingScene myFaceRef1={myFaceRef1} myFaceRef2={myFaceRef2} />
+        <LandingScene myFaceRef1={myFaceRef1} myFaceRef2={myFaceRef2} laptopRef={laptopRef} />
         <SkillsScene
           titleText='Skills'
           myFaceRef={myFaceRef}
@@ -29,7 +30,7 @@ export default function App() {
           text={'first'}
           dataName={'first'}
           projectImage={project4Img}
-          titleText='General Assembly Project 4'
+          titleText='Projects'
         />
         <ProjectScene
           // text={'first'}
@@ -62,7 +63,7 @@ export default function App() {
           <div className='monitor_base'></div>
         </div>
         <div className='laptop'>
-          <div className='laptop-screen'>
+          <div className='laptop-screen' ref={laptopRef}>
             <div className='laptop-logo'></div>
           </div>
           <div className='laptop-base'></div>

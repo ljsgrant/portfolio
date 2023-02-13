@@ -236,10 +236,13 @@ h2 {
   border-top: 2px solid lightgray;
   z-index: 999999;
   .laptop-logo {
-    width: 25px;
-    height: 25px;
+    width: 20px;
+    height: 20px;
     background-color: white;
     border-radius: 50%;
+    border-right: 2px solid rgb(222, 222, 222);
+    border-bottom: 2px solid rgb(222, 222, 222);
+    box-sizing: border-box;
   }
 }
 .laptop-base {
