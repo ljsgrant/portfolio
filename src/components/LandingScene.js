@@ -10,8 +10,8 @@ export default function LandingScene({
   myFaceRef1,
   myFaceRef2
 }) {
-  const [isTopInView, setIsTopInView] = useState(false);
-  const [isBottomInView, setIsBottomInView] = useState(false);
+  const [isTopInView, setIsTopInView] = useState(true);
+  const [isBottomInView, setIsBottomInView] = useState(true);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
   const windowSize = useWindowSize();
@@ -26,7 +26,6 @@ export default function LandingScene({
   const [myRolePositionX, setMyRolePositionX] = useState(null);
   const [myRolePositionY, setMyRolePositionY] = useState(null);
   const [scrollTop, setScrollTop] = useState(null);
-  const [isScrolling, setIsScrolling] = useState(null);
 
   const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
@@ -69,7 +68,6 @@ export default function LandingScene({
 
     const onScroll = (e) => {
       setScrollTop(e.target.documentElement.scrollTop);
-      setIsScrolling(e.target.documentElement.scrollTop !== scrollTop);
     };
     window.addEventListener('scroll', onScroll);
 
@@ -77,15 +75,6 @@ export default function LandingScene({
     return () => window.removeEventListener('scroll', onScroll);
     // eslint-disable-next-line
   }, [windowSize, scrollTop]);
-
-  // if (windowSize) {
-  //   console.log(windowSize);
-  // }
-
-  // useEffect(() => {
-  //   console.log('faceX ', myFacePosition2X);
-  //   console.log('faceY ', myFacePosition2Y);
-  // }, [myFacePosition1X, myFacePosition1Y, myFacePosition2X, myFacePosition2Y]);
 
   return (
     <div data-name={dataName} className='scene LandingScene'>
@@ -105,7 +94,8 @@ export default function LandingScene({
             </div>
           </div>
         </div>
-        {myFacePosition1X &&
+        {isBottomInView &&
+          myFacePosition1X &&
           myFacePosition1Y &&
           myFacePosition2X &&
           myFacePosition2Y &&

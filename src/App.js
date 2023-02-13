@@ -51,11 +51,18 @@ export default function App() {
         <div className='monitor_circle-bracket'></div>
         <div className='monitor_base'></div>
       </div>
-      <div className='monitor-right'>
+      <div className='laptop'>
+        <div className='laptop-screen'>
+          <div className='laptop-logo'></div>
+        </div>
+        <div className='laptop-base'></div>
+        <div className='laptop-base-right'></div>
+      </div>
+      {/* <div className='monitor-right'>
         <div className='monitor_stand-column'></div>
         <div className='monitor_circle-bracket'></div>
         <div className='monitor_base'></div>
-      </div>
+      </div> */}
     </div>
   );
 }
