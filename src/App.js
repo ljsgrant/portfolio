@@ -9,12 +9,13 @@ import LandingScene from './components/LandingScene';
 import ExperienceScene from './components/ExperienceScene';
 
 export default function App() {
-  const myFaceRef = useRef(null);
+  const myFaceRef1 = useRef(null);
+  const myFaceRef2 = useRef(null);
 
   return (
     <div className='App'>
       <div className='scroll'>
-        <LandingScene myFaceRef={myFaceRef} />
+        <LandingScene myFaceRef1={myFaceRef1} myFaceRef2={myFaceRef2} />
         <ExperienceScene titleText='Experience' />
         <ProjectScene
           text={'first'}
@@ -41,7 +42,8 @@ export default function App() {
         <div className='engineer-body'></div>
         <div className='my-face-container'>
           <img className='my-face' src={meImg} alt='' />
-          <div ref={myFaceRef} className='my-face-marker'></div>
+          <div ref={myFaceRef1} className='my-face-marker-1'></div>
+          <div ref={myFaceRef2} className='my-face-marker-2'></div>
         </div>
       </div>
       <div className='monitor-left'>

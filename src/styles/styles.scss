@@ -79,15 +79,22 @@ h2 {
     .my-face {
       height: calc($monitor-height * 1.25);
     }
-    .my-face-marker {
+    .my-face-marker-1,
+    .my-face-marker-2 {
       position: fixed;
       // border: 5px solid green;
       width: 0px;
       right: 0;
-      left: -20px;
-      bottom: 150px;
       margin-right: auto;
       margin-left: auto;
+    }
+    .my-face-marker-1 {
+      left: -100px;
+      bottom: 150px;
+    }
+    .my-face-marker-2 {
+      left: 50px;
+      bottom: 150px;
     }
   }
   .engineer-body {
