@@ -4,6 +4,15 @@ import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/SkillsScene.scss';
 import SectionTitle from './common/SectionTitle';
+import reactIcon from '../assets/images/tech_icons/icons8-react-48.png';
+import javaScriptIcon from '../assets/images/tech_icons/icons8-javascript-50.png';
+import expressIcon from '../assets/images/tech_icons/icons8-express-js-50.png';
+import nodeIcon from '../assets/images/tech_icons/icons8-node-js-32.png';
+import htmlIcon from '../assets/images/tech_icons/icons8-html-5-50.png';
+import sassIcon from '../assets/images/tech_icons/icons8-sass-50.png';
+import cssIcon from '../assets/images/tech_icons/icons8-css3-24.png';
+import mongoDbIcon from '../assets/images/tech_icons/icons8-mongodb-24.png';
+import herokuIcon from '../assets/images/tech_icons/icons8-heroku.svg';
 
 export default function SkillsScene({
   titleText,
@@ -99,114 +108,171 @@ export default function SkillsScene({
               ref={skillsBubbleRef}
               className='speech-bubble speech-bubble_skills'
             >
-              <h4>Front-End</h4>
-              <div className='skills-content'>
-                <div className='skill-wrapper'>
-                  <p>React</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>JavaScript</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>HTML</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>CSS</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Sass</p>
-                </div>
-              </div>
-              <hr />
-              <h4>Back-End</h4>
-              <div className='skills-content'>
-                <div className='skill-wrapper'>
-                  <p>Express</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Node.js</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>MongoDB</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Mongoose</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Python</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Django</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>PostgreSQL</p>
-                </div>
-              </div>
-              <div className='skills-content'>
-                <div className='skills-column'>
-                  <h4>Version Control</h4>
-                  <div className='skills-content'>
-                    <div className='skill-wrapper'>
-                      <p>Git</p>
-                    </div>
-                    <div className='skill-wrapper'>
-                      <p>GitHub</p>
-                    </div>
+              {' '}
+              <div className='skills-column'>
+                <h4>Front-End</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={reactIcon}
+                      draggable='false'
+                      className='tech-icon'
+                      alt='react'
+                    />
+                    <p>React</p>
                   </div>
-                </div>
-                <div className='skills-column'>
-                  <h4>Package</h4>
-                  <div className='skills-content'>
-                    <div className='skill-wrapper'>
-                      <p>npm</p>
-                    </div>
-                    <div className='skill-wrapper'>
-                      <p>pip</p>
-                    </div>
-                    <div className='skill-wrapper'>
-                      <p>PipEnv</p>
-                    </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={javaScriptIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='javascript'
+                    />
+                    <p>JavaScript</p>
                   </div>
-                </div>
-                <div className='skills-column'>
-                  <h4>Storage</h4>
-                  <div className='skills-content'>
-                    <div className='skill-wrapper'>
-                      <p>Heroku</p>
-                    </div>
-                    <div className='skill-wrapper'>
-                      <p>Cloudinary</p>
-                    </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={htmlIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='html'
+                    />
+                    <p>HTML</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={cssIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='css'
+                    />
+                    <p>CSS</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={sassIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='sass'
+                    />
+                    <p>Sass</p>
                   </div>
                 </div>
               </div>
-              <h4>Software</h4>
-              <div className='skills-content'>
-                <div className='skill-wrapper'>
-                  <p>VSCode</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Postman</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>TablePlus</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Photoshop</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Blender</p>
-                </div>
-                <div className='skill-wrapper'>
-                  <p>Unity</p>
+              <div className='skills-column'>
+                <h4>Back-End</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={expressIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='express'
+                    />
+                    <p>Express</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={nodeIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='node'
+                    />
+                    <p>Node.js</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={mongoDbIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='mongodb'
+                    />
+                    <p>MongoDB</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Python</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Django</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>PostgreSQL</p>
+                  </div>
                 </div>
               </div>
-              <h4>Soft Skills</h4>
-              <div className='skills-content'>
-                <div className='skill-wrapper'>
-                  <p>VSCode</p>
+              <div className='skills-column'>
+                <h4>Version Control</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <p>Git</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>GitHub</p>
+                  </div>
                 </div>
               </div>
+              <div className='skills-column'>
+                <h4>Package</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <p>npm</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>pip</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>PipEnv</p>
+                  </div>
+                </div>
+              </div>
+              <div className='skills-column'>
+                <h4>Storage</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <img
+                      src={herokuIcon}
+                      className='tech-icon'
+                      draggable='false'
+                      alt='moherokungodb'
+                    />
+                    <p>Heroku</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Cloudinary</p>
+                  </div>
+                </div>
+              </div>
+              <div className='skills-column'>
+                <h4>Software</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <p>VSCode</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Postman</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>TablePlus</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Photoshop</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Blender</p>
+                  </div>
+                  <div className='skill-wrapper'>
+                    <p>Unity</p>
+                  </div>
+                </div>
+              </div>
+              {/* <div className='skills-column'>
+                <h4>Soft Skills</h4>
+                <div className='skills-content'>
+                  <div className='skill-wrapper'>
+                    <p>VSCode</p>
+                  </div>
+                </div>
+              </div> */}
             </div>
           </div>
         </div>
