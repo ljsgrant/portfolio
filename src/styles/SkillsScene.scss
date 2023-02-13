@@ -73,4 +73,7 @@
     width: 24px;
     height: 24px;
   }
+  .filter-svg{
+    filter: saturate(0%) brightness(0%) contrast(100%);
+  }
 }

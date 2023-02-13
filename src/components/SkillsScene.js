@@ -4,15 +4,16 @@ import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/SkillsScene.scss';
 import SectionTitle from './common/SectionTitle';
-import reactIcon from '../assets/images/tech_icons/icons8-react-48.png';
-import javaScriptIcon from '../assets/images/tech_icons/icons8-javascript-50.png';
-import expressIcon from '../assets/images/tech_icons/icons8-express-js-50.png';
-import nodeIcon from '../assets/images/tech_icons/icons8-node-js-32.png';
-import htmlIcon from '../assets/images/tech_icons/icons8-html-5-50.png';
-import sassIcon from '../assets/images/tech_icons/icons8-sass-50.png';
-import cssIcon from '../assets/images/tech_icons/icons8-css3-24.png';
-import mongoDbIcon from '../assets/images/tech_icons/icons8-mongodb-24.png';
+import reactIcon from '../assets/images/tech_icons/icons8-react-native.svg';
+import javaScriptIcon from '../assets/images/tech_icons/icons8-javascript.svg';
+import expressIcon from '../assets/images/tech_icons/icons8-express-js.svg';
+import cssIcon from '../assets/images/tech_icons/icons8-css3.svg';
 import herokuIcon from '../assets/images/tech_icons/icons8-heroku.svg';
+import sassIcon from '../assets/images/tech_icons/icons8-sass.svg';
+import nodeIcon from '../assets/images/tech_icons/icons8-node-js.svg';
+import htmlIcon from '../assets/images/tech_icons/icons8-html-5.svg';
+import mongoDbIcon from '../assets/images/tech_icons/icons8-mongodb-24.png';
+import cloudinaryIcon from '../assets/images/tech_icons/cloudinary_cloud_glyph_regular.svg';
 
 export default function SkillsScene({
   titleText,
@@ -233,11 +234,17 @@ export default function SkillsScene({
                       src={herokuIcon}
                       className='tech-icon'
                       draggable='false'
-                      alt='moherokungodb'
+                      alt='heroku'
                     />
                     <p>Heroku</p>
                   </div>
                   <div className='skill-wrapper'>
+                    <img
+                      src={cloudinaryIcon}
+                      className='tech-icon filter-svg'
+                      draggable='false'
+                      alt='cloudinary'
+                    />
                     <p>Cloudinary</p>
                   </div>
                 </div>
