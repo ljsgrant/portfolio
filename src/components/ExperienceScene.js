@@ -88,12 +88,7 @@ export default function ExperienceScene({
                 TV and digital, for clients including BBC Studios and M&C
                 Saatchi. I managed projects to tight deadlines with rapid
                 turnarounds, worked up technical and visual designs, and
-                communicated clearly on technical specifics with clients,
-                colleagues and other department heads. I handled the practical
-                execution of designs, requiring millimetre-perfect accuracy and
-                close attention to detail, as well as managing small teams,
-                budgets and schedules; designed graphics; and sourced and hired
-                equipment.
+                communicated clearly on technical specifics.
               </>
             }
             rotationStyleNumber={'2'}
@@ -109,12 +104,10 @@ export default function ExperienceScene({
                 Fullscreen Ltd., and pitched to networks including Disney and
                 Netflix, in a small team of writer-producers. Our series
                 “Oscar’s Hotel” broke single-day sales records for Vimeo On
-                Demand. <br/> In this role I had the opportunity to speak on panels
-                discussing project development, presenting to large audiences at
-                Buffer Festival Toronto and MCM London.
+                Demand. 
               </>
             }
-            rotationStyleNumber={'3'}
+            rotationStyleNumber={'1'}
           />
 
           {/* <div className='experience-content-1'></div>

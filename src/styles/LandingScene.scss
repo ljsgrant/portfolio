@@ -29,14 +29,16 @@
       }
       .my-name-container {
         margin-bottom: 10vh;
+        margin-right: 10px;
       }
       .my-role-container {
         margin-top: 10vh;
+        margin-left: 10px;
       }
     }
     .speech-bubbles {
       position: absolute;
-      top: 40vh;
+      top: 45vh;
       width: 100%;
       display: flex;
       justify-content: center;

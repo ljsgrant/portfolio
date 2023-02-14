@@ -222,21 +222,6 @@ export default function LandingScene({
                     L${myFacePosition2X},${myFacePosition2Y - 50} 
                   `}
               />
-              {/* <path
-                id='skills-bubble-tail'
-                className='svg-line'
-                fill='white'
-                d={`
-                    M${myFacePosition2X + 40},${myFacePosition2Y + 40} 
-                    L${
-                      skillsBubblePositionX + (windowSize.width / 100) * 1.5
-                    },${skillsBubblePositionY - 5}  
-                    L${
-                      skillsBubblePositionX - (windowSize.width / 100) * 1.5
-                    },${skillsBubblePositionY - 5} 
-                    z 
-                  `}
-              /> */}
               <path
                 id='contact-bubble-tail'
                 className='svg-line'

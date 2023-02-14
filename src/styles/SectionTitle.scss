@@ -12,7 +12,7 @@ $pole-color: rgb(125, 56, 21);
   .pole {
     position: absolute;
     width: 15px;
-    height: 99vh;
+    height: 120vh;
     background-color: $pole-color;
     border-right: 5px solid darken($pole-color, 5%);
     top: 0;

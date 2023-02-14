@@ -1,16 +1,41 @@
-.ProjectScene{
-  .sticky-child{
+.ProjectScene {
+  height: 250vh;
+  .sticky-child {
     // height: 100%;
   }
-  .SectionTitle{
+  .SectionTitle {
     // position: sticky;
   }
-  .project-container{
+  .project-container {
     position: absolute;
     width: 100%;
-    height: 10px; 
-    background-color: blue;
-    margin-top: 40vh;
+    height: 100vh;
+    border: 2px solid lightseagreen;
     z-index: 100000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    .project-a,
+    .project-b {
+      width: 40vw;
+      height: 75vh;
+      background-color: white;
+      padding-top: 10px;
+      img{
+        width: 90%;
+      }
+    }
+    .project-a {
+      padding-left: 10px;
+    }
+    .project-b {
+      padding-right: 10px;
+    }
+  }
+  .project-container-1 {
+    margin-top: 0;
+  }
+  .project-container-2 {
+    margin-top: 100vh;
   }
 }

@@ -3,6 +3,7 @@ import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/ProjectScene.scss';
 import SectionTitle from './common/SectionTitle';
+import project4Img from '../assets/images/projects/project-4.png';
 
 export default function ProjectScene({
   text,
@@ -47,18 +48,30 @@ export default function ProjectScene({
 
   return (
     <div data-name={dataName} className='scene ProjectScene'>
-      <div className="project-container"></div>
+      <div className='project-container project-container-1'>
+        <div className='project-a'>
+          <h3>birdl (Full stack web app)</h3>
+          <img src={project4Img} alt="" className="project-image" />
+          <p>Team size: Solo project ··· Built over: 1 week</p>
+        </div>
+        <div className='project-b'>
+          <div className='project-image'></div>
+        </div>
+      </div>
+      <div className='project-container project-container-2'>
+        {' '}
+        <div className='project-a'>
+          <div className='project-image'></div>
+        </div>
+        <div className='project-b'><div className="project-image"></div></div>
+      </div>
       <article className='sticky-child'>
         <InView
           as='div'
           className='in-view-trigger'
           onChange={handleViewChangeTop}
         />
-        <SectionTitle titleText={titleText}/>
-        <div className='content project-content'>
-          <div className="project-content-1"></div>
-          <div className="project-content-2"></div>
-        </div>
+        <SectionTitle titleText={titleText} />
         <InView
           as='div'
           className='in-view-trigger'
