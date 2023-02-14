@@ -18,7 +18,7 @@ export default function LandingScene({
   const [isBottomInView, setIsBottomInView] = useState(true);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
-  
+
   const myNameRef = useRef();
   const myRoleRef = useRef();
   const contactBubbleRef = useRef();
@@ -29,8 +29,8 @@ export default function LandingScene({
   const [myFacePosition2Y, setMyFacePosition2Y] = useState(null);
   const [myNamePositionX, setMyNamePositionX] = useState(null);
   const [myNamePositionY, setMyNamePositionY] = useState(null);
-  const [myRolePositionX, setMyRolePositionX] = useState(null);
-  const [myRolePositionY, setMyRolePositionY] = useState(null);
+  // const [myRolePositionX, setMyRolePositionX] = useState(null);
+  // const [myRolePositionY, setMyRolePositionY] = useState(null);
   const [contactBubblePositionX, setContactBubblePositionX] = useState(null);
   const [contactBubblePositionY, setContactBubblePositionY] = useState(null);
   const [laptopPositionX, setLaptopPositionX] = useState(null);
@@ -76,12 +76,12 @@ export default function LandingScene({
         2
     );
     setMyNamePositionY(myNameRef.current.getBoundingClientRect().bottom);
-    setMyRolePositionX(
-      (myRoleRef.current.getBoundingClientRect().left +
-        myRoleRef.current.getBoundingClientRect().right) /
-        2
-    );
-    setMyRolePositionY(myRoleRef.current.getBoundingClientRect().bottom);
+    // setMyRolePositionX(
+    //   (myRoleRef.current.getBoundingClientRect().left +
+    //     myRoleRef.current.getBoundingClientRect().right) /
+    //     2
+    // );
+    // setMyRolePositionY(myRoleRef.current.getBoundingClientRect().bottom);
     setContactBubblePositionX(
       (contactBubbleRef.current.getBoundingClientRect().left +
         contactBubbleRef.current.getBoundingClientRect().right) /
@@ -118,10 +118,11 @@ export default function LandingScene({
           <div className='name-role-container'>
             <div ref={myNameRef} className='my-name-container'>
               <h1>Louis Grant</h1>
-            </div>
-            <div ref={myRoleRef} className='my-role-container'>
               <h2>Junior Software Engineer</h2>
             </div>
+            {/* <div ref={myRoleRef} className='my-role-container'>
+              <h2>Junior Software Engineer</h2>
+            </div> */}
           </div>
           <div className='speech-bubbles'>
             <div
@@ -129,30 +130,33 @@ export default function LandingScene({
               className='speech-bubble speech-bubble_contact'
             >
               <h3>Get In Touch</h3>
-              <p>
-                <strong>Email</strong>:{' '}
-                <a href='mailto:l.j.s.grant@gmail.com'>l.j.s.grant@gmail.com</a>
-              </p>
-              <p>
-                <strong>GitHub</strong>:{' '}
+              <div className='contact-links-wrapper'>
+                <a href='mailto:l.j.s.grant@gmail.com'>
+                  <div className='contact-link'>
+                    <p>Email</p>
+                  </div>
+                </a>
+
                 <a
                   href='http://github.com/ljsgrant'
                   target='_blank'
                   rel='noreferrer'
                 >
-                  github.com/ljsgrant
+                  <div className='contact-link'>
+                    <p>GitHub</p>
+                  </div>
                 </a>
-              </p>
-              <p>
-                <strong>LinkedIn</strong>:{' '}
+
                 <a
                   href='https://www.linkedin.com/in/louisgrant/'
                   target='_blank'
                   rel='noreferrer'
                 >
-                  /in/louisgrant/
+                  <div className='contact-link'>
+                    <p>LinkedIn</p>
+                  </div>
                 </a>
-              </p>
+              </div>
             </div>
           </div>
         </div>
@@ -161,8 +165,9 @@ export default function LandingScene({
           myFacePosition1Y &&
           myFacePosition2X &&
           myFacePosition2Y &&
-          myRolePositionX &&
-          myRolePositionY && (
+          // myRolePositionX &&
+          // myRolePositionY && 
+          (
             <svg
               className='test-svg'
               width={windowSize?.width}
@@ -209,7 +214,7 @@ export default function LandingScene({
                     L${myFacePosition1X},${myFacePosition1Y - 50} 
                   `}
               />
-              <path
+              {/* <path
                 id='role-arrow'
                 className='svg-line'
                 fill='none'
@@ -221,13 +226,15 @@ export default function LandingScene({
                     M${myRolePositionX},${myRolePositionY} 
                     L${myFacePosition2X},${myFacePosition2Y - 50} 
                   `}
-              />
+              /> */}
               <path
                 id='contact-bubble-tail'
                 className='svg-line'
                 fill='white'
                 d={`
-                    M${laptopPositionX + (windowSize.width/100)},${laptopPositionY} 
+                    M${
+                      laptopPositionX + windowSize.width / 100
+                    },${laptopPositionY} 
                     L${contactBubblePositionX + 10},${
                   contactBubblePositionY - 5
                 }  

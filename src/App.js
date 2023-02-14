@@ -1,6 +1,8 @@
 import { useState, useRef } from 'react';
 
 import './styles/styles.scss';
+import './styles/icons.scss';
+
 import meImg from './assets/images/me-v2.png';
 
 import ProjectScene from './components/ProjectScene';

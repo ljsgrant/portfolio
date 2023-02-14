@@ -171,6 +171,15 @@ export default function SkillsScene({
                     />
                     <p>Sass</p>
                   </div>
+                  <div className='skill-wrapper'>
+                    <img
+                      src=''
+                      className='tech-icon'
+                      draggable='false'
+                      alt=''
+                    />
+                    <p>Material UI</p>
+                  </div>
                 </div>
               </div>
               <div className='skills-column'>

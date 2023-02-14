@@ -43,41 +43,32 @@
           background-color: white;
           padding: 5px;
         }
-        .skills-content {
-          display: flex;
-          flex-wrap: wrap;
-          align-items: center;
-          justify-content: center;
-          .skill-wrapper {
-            margin: 5px;
-            // height: 30px;
-          }
-        }
-        .skills-column {
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          justify-content: center;
-          margin: 10px 5px;
-          border: 1px solid grey;
-          border-radius: 10px;
-          padding: 2px 5px;
-        }
       }
     }
   }
   .svg-line {
     filter: drop-shadow(15px 15px 20px #000000af);
   }
-  .tech-icon {
-    width: 24px;
-    height: 24px;
-    filter: drop-shadow(0px 0px 5px rgba(0, 0, 0, 0.342));
-    user-select: none;
-    -moz-user-select: none;
-    -webkit-user-drag: none;
-  }
-  .filter-svg {
-    filter: saturate(0%) brightness(0%) contrast(100%);
-  }
+  
 }
+
+      .skills-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .skill-wrapper {
+          margin: 5px;
+          // height: 30px;
+        }
+      }
+      .skills-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 5px;
+        border: 1px solid grey;
+        border-radius: 10px;
+        padding: 2px 5px;
+      }
