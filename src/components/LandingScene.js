@@ -3,6 +3,9 @@ import { useWindowSize } from '../hooks/useWindowSize';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/LandingScene.scss';
+import githubIcon from '../assets/images/tech_icons/icons8-github.svg'
+import linkedinIcon from '../assets/images/social_icons/icons8-linkedin.svg'
+import emailIcon from '../assets/images/social_icons/email.svg'
 
 export default function LandingScene({
   text,
@@ -97,14 +100,18 @@ export default function LandingScene({
     );
     setLaptopPositionY(laptopRef.current.getBoundingClientRect().top);
 
+    // return () => window.removeEventListener('scroll', onScroll);
+    // eslint-disable-next-line
+  }, [windowSize, scrollTop]);
+
+  useEffect(() => {
     const onScroll = (event) => {
       setScrollTop(event.target.documentElement.scrollTop);
     };
     window.addEventListener('scroll', onScroll);
-    console.log('firing');
-    return () => window.removeEventListener('scroll', onScroll);
+    console.log(scrollTop);
     // eslint-disable-next-line
-  }, [windowSize, scrollTop]);
+  }, []);
 
   return (
     <div data-name={dataName} className='scene LandingScene'>
@@ -129,10 +136,15 @@ export default function LandingScene({
               ref={contactBubbleRef}
               className='speech-bubble speech-bubble_contact'
             >
-              <h3>Get In Touch</h3>
+              <h3>Contact</h3>
               <div className='contact-links-wrapper'>
                 <a href='mailto:l.j.s.grant@gmail.com'>
                   <div className='contact-link'>
+                    <img
+                      className='filter-svg-white'
+                      src={emailIcon}
+                      alt='email'
+                    />
                     <p>Email</p>
                   </div>
                 </a>
@@ -143,6 +155,11 @@ export default function LandingScene({
                   rel='noreferrer'
                 >
                   <div className='contact-link'>
+                    <img
+                      className='filter-svg-white'
+                      src={githubIcon}
+                      alt='github'
+                    />
                     <p>GitHub</p>
                   </div>
                 </a>
@@ -153,10 +170,65 @@ export default function LandingScene({
                   rel='noreferrer'
                 >
                   <div className='contact-link'>
+                    <img
+                      className='filter-svg-white'
+                      src={linkedinIcon}
+                      alt='linkedin'
+                    />
                     <p>LinkedIn</p>
                   </div>
                 </a>
               </div>
+            </div>
+            <div className='thought-tail-full-span'>
+              <div className='thought-tail-half-span-left'>
+                <div className='thought-tail-dot-column'>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-1'></div>
+                  </div>
+                </div>
+                <div className='thought-tail-dot-column'>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-2'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                </div>
+                <div className='thought-tail-dot-column'>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-3'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                </div>
+                <div className='thought-tail-dot-column'>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-4'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                </div>
+                <div className='thought-tail-dot-column'>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-5'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'></div>
+                </div>
+              </div>
+              <div className='thought-tail-half-span-right'></div>
             </div>
           </div>
         </div>
@@ -164,10 +236,9 @@ export default function LandingScene({
           myFacePosition1X &&
           myFacePosition1Y &&
           myFacePosition2X &&
-          myFacePosition2Y &&
-          // myRolePositionX &&
-          // myRolePositionY && 
-          (
+          myFacePosition2Y && (
+            // myRolePositionX &&
+            // myRolePositionY &&
             <svg
               className='test-svg'
               width={windowSize?.width}
@@ -210,7 +281,9 @@ export default function LandingScene({
                 markerEnd='url(#arrow1)'
                 strokeDasharray='10,10,20'
                 d={`
-                    M${myNamePositionX},${myNamePositionY} 
+                    M${myNamePositionX},${
+                  myNamePositionY - windowSize.height / 10
+                } 
                     L${myFacePosition1X},${myFacePosition1Y - 50} 
                   `}
               />
@@ -227,7 +300,7 @@ export default function LandingScene({
                     L${myFacePosition2X},${myFacePosition2Y - 50} 
                   `}
               /> */}
-              <path
+              {/* <path
                 id='contact-bubble-tail'
                 className='svg-line'
                 fill='white'
@@ -243,7 +316,7 @@ export default function LandingScene({
                 } 
                     z 
                   `}
-              />
+              /> */}
             </svg>
           )}
         <InView

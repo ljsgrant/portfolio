@@ -425,10 +425,10 @@ export default function SkillsScene({
                     M${myFaceCenterX},${myFaceCenterY - 80} 
                     L${
                       skillsBubblePositionX + (windowSize.width / 100) * 1.5
-                    },${skillsBubblePositionY - 5}  
+                    },${skillsBubblePositionY - 100}  
                     L${
                       skillsBubblePositionX - (windowSize.width / 100) * 1.5
-                    },${skillsBubblePositionY - 5} 
+                    },${skillsBubblePositionY - 100} 
                     z 
                   `}
             />

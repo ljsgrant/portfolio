@@ -4,6 +4,7 @@ import '../styles/scene.scss';
 import '../styles/ProjectScene.scss';
 import SectionTitle from './common/SectionTitle';
 import project4Img from '../assets/images/projects/project-4.png';
+import project3Img from '../assets/images/projects/project-3.jpg';
 
 import reactIcon from '../assets/images/tech_icons/icons8-react-native.svg';
 import javaScriptIcon from '../assets/images/tech_icons/icons8-javascript.svg';
@@ -137,7 +138,7 @@ export default function ProjectScene({
         <div className='project-b'>
           <div className='project-content'>
             <h3>The Forum (Full stack web app)</h3>
-            <img src={project4Img} alt='' className='project-image' />
+            <img src={project3Img} alt='' className='project-image' />
             <p>Team size: 3 people ··· Built over: 1 week</p>
             <div className='skills-column'>
               <h4>Built with:</h4>
