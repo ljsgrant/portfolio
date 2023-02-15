@@ -25,7 +25,9 @@ export default function LandingScene({
 
   const myNameRef = useRef();
   // const myRoleRef = useRef();
+  const nameArrowRef = useRef();
   const contactBubbleRef = useRef();
+  const contactBubbleContainerRef = useRef();
 
   const [myFacePosition1X, setMyFacePosition1X] = useState(null);
   const [myFacePosition1Y, setMyFacePosition1Y] = useState(null);
@@ -57,6 +59,32 @@ export default function LandingScene({
   };
 
   useEffect(() => {
+    isSkillsTopInView ? hideElements() : showElements();
+  }, [isSkillsTopInView]);
+
+  function showElements() {
+    if (contactBubbleContainerRef.current) {
+      contactBubbleContainerRef.current.classList.remove('invisible');
+      contactBubbleContainerRef.current.classList.add('visible');
+    }
+    if (nameArrowRef.current) {
+      nameArrowRef.current.classList.remove('invisible');
+      nameArrowRef.current.classList.add('visible');
+    }
+  }
+
+  function hideElements() {
+    if (contactBubbleContainerRef.current) {
+      contactBubbleContainerRef.current.classList.remove('visible');
+      contactBubbleContainerRef.current.classList.add('invisible');
+    }
+    if (nameArrowRef.current) {
+      nameArrowRef.current.classList.remove('visible');
+      nameArrowRef.current.classList.add('invisible');
+    }
+  }
+
+  useEffect(() => {
     if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
       console.log('landing entry animation');
       setHasEntryAnimPlayed(true);
@@ -80,6 +108,7 @@ export default function LandingScene({
         2
     );
     setMyNamePositionY(myNameRef.current.getBoundingClientRect().bottom);
+    // eslint-disable-next-line
   }, [windowSize, scrollTop]);
 
   useEffect(() => {
@@ -113,7 +142,7 @@ export default function LandingScene({
               <h2>Junior Software Engineer</h2>
             </div> */}
           </div>
-          <div className='speech-bubbles'>
+          <div ref={contactBubbleContainerRef} className='speech-bubbles'>
             <div
               ref={contactBubbleRef}
               className='speech-bubble speech-bubble_contact'
@@ -215,7 +244,6 @@ export default function LandingScene({
           </div>
         </div>
         {isBottomInView &&
-          !isSkillsTopInView &&
           myFacePosition1X &&
           myFacePosition1Y &&
           myFacePosition2X &&
@@ -256,6 +284,7 @@ export default function LandingScene({
                 </marker>
               </defs>
               <path
+                ref={nameArrowRef}
                 id='name-arrow'
                 className='svg-line'
                 fill='none'

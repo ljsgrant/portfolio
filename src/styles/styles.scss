@@ -291,3 +291,11 @@ h2 {
   border-right: 5px solid rgb(245, 216, 221);
   z-index: -99;
 }
+.visible{
+  opacity: 100%;
+  transition: opacity .3s;
+}
+.invisible{
+  opacity: 0%;
+  transition: opacity .3s;
+}
