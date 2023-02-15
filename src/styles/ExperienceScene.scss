@@ -2,16 +2,80 @@
   .sticky-child {
     .experience-content {
       max-height: 100%;
-      border: 2px solid green;
+      // border: 2px solid green;
       display: flex;
+      flex-direction: column;
       align-items: center;
-      justify-content: space-evenly;
-      .PaperSheet{
-        position: absolute;
+      justify-content: flex-start;
+      .shuffle-buttons {
+        display: flex;
+        margin-bottom: 5vh;
+        width: 100%;
+        justify-content: space-between;
+        z-index: 999;
+        button {
+          margin: 0 5vw;
+          width: 20vw;
+          background-color: rgb(174, 43, 43);
+          border: none;
+          border-radius: 2vw;
+          color: white;
+          padding: 1vh 0;
+
+          &:disabled {
+            background-color: rgb(162, 106, 106);
+            color: rgb(174, 43, 43);
+          }
+        }
+        .left-button {
+          &:active {
+            transform: translate(0, 1vh);
+            transform: rotate(-10deg);
+          }
+        }
+        .right-button {
+          &:active {
+            transform: translate(0, 1vh);
+            transform: rotate(10deg);
+          }
+        }
+      }
+      .papersheets {
+        width: 100%;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
       }
     }
   }
   // h2 {
   //   margin: 0px 80px;
   // }
+}
+@media only screen and (max-width: 600px) {
+  .ExperienceScene {
+    .sticky-child {
+      .experience-content {
+        display: flex;
+        flex-direction: column;
+
+        .papersheets {
+          .PaperSheet {
+            position: absolute;
+            max-width: 75vw;
+            top: 13vh;
+            h3 {
+              font-size: 2.5vh;
+            }
+            .date-location-text {
+              font-size: 3vw;
+            }
+          }
+          .at-front {
+            z-index: 998;
+          }
+        }
+      }
+    }
+  }
 }
