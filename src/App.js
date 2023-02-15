@@ -24,6 +24,7 @@ export default function App() {
     <div className='App'>
       <div className='scrolling-visual-element'>
         {/* <Cog /> */}
+        {/* <Cog/> */}
         {[...Array(cogNumber)].map((entry, index) => (
           <Cog key={index} />
         ))}

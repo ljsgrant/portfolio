@@ -2,9 +2,9 @@
 
 .SkillsScene {
   .SectionTitle {
-    h2 {
-      margin: 0px 120px;
-    }
+    // h2 {
+    //   margin: 0px 120px;
+    // }
   }
   .landing-content {
     display: flex;
@@ -37,6 +37,8 @@
         display: flex;
         flex-direction: row;
         flex-wrap: wrap;
+        max-height: 80vh;
+        
         h4 {
           margin: 0px 5px;
           margin-top: -17px;

@@ -2,9 +2,9 @@
 
 .AboutScene {
   .SectionTitle {
-    h2 {
-      margin: 0px 120px;
-    }
+    // h2 {
+    //   margin: 0px 120px;
+    // }
   }
   .about-content {
     // border: 5px solid blue;
@@ -71,5 +71,23 @@
   }
   .svg-line {
     filter: drop-shadow(15px 15px 20px #000000af);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .AboutScene {
+    .sticky-child {
+      .about-content {
+        .hide-below-600px {
+          display: none;
+        }
+        .speech-bubbles {
+          .about-bubble-container{
+            .speech-bubble {
+
+            }
+          }
+        }
+      }
+    }
   }
 }

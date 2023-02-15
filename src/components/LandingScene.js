@@ -189,7 +189,7 @@ export default function LandingScene({
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-1'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-1 thought-bubble-dot-desktop'></div>
                   </div>
                 </div>
                 <div className='thought-tail-dot-column'>
@@ -197,23 +197,32 @@ export default function LandingScene({
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-2'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-2 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                 </div>
                 <div className='thought-tail-dot-column'>
-                  <div className='thought-tail-dot-wrapper'></div>
-                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-5 thought-bubble-dot-mobile'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'>
+                    {' '}
+                    <div className='thought-bubble-dot thought-bubble-dot-4 thought-bubble-dot-mobile'></div>
+                  </div>
                   <div className='thought-tail-dot-wrapper'>
                     <div className='thought-bubble-dot thought-bubble-dot-3'></div>
                   </div>
-                  <div className='thought-tail-dot-wrapper'></div>
-                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-2 thought-bubble-dot-mobile'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-1 thought-bubble-dot-mobile'></div>
+                  </div>
                 </div>
                 <div className='thought-tail-dot-column'>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-4'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-4 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
@@ -221,7 +230,7 @@ export default function LandingScene({
                 </div>
                 <div className='thought-tail-dot-column'>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-5'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-5 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
@@ -276,7 +285,7 @@ export default function LandingScene({
               <path
                 ref={nameArrowRef}
                 id='name-arrow'
-                className='svg-line'
+                className='svg-line hide-below-600px'
                 fill='none'
                 stroke='white'
                 strokeWidth='1.5vw'
@@ -287,6 +296,27 @@ export default function LandingScene({
                   myNamePositionY - windowSize.height / 10
                 } 
                     L${myFacePosition1X},${myFacePosition1Y - 50} 
+                  `}
+              />
+              <path
+                ref={nameArrowRef}
+                id='name-arrow'
+                className='svg-line show-below-600px hide-above-600px'
+                fill='none'
+                stroke='white'
+                strokeWidth='5.5vw'
+                markerEnd='url(#arrow1)'
+                strokeDasharray='5,5,10'
+                d={`
+                    M${myNamePositionX - windowSize.width / 4},${
+                  myNamePositionY - windowSize.height / 10
+                } 
+                    L${myNamePositionX - windowSize.width / 4},${
+                  myNamePositionY + (windowSize.height /3.5)
+                } 
+                    L${
+                      myFacePosition1X - windowSize.width / 8
+                    },${myFacePosition1Y - (windowSize.height / 16)} 
                   `}
               />
               {/* <path

@@ -5,10 +5,15 @@ $banner-color: rgb(211, 69, 69);
 $pole-color: rgb(125, 56, 21);
 
 .SectionTitle {
+  margin-right: 0;
+  margin-left: 0;
   display: flex;
   justify-content: center;
   padding-top: 20px;
   filter: drop-shadow(15px 15px 20px #0000006a);
+  .banner {
+    display: flex;
+  }
   .pole {
     position: absolute;
     width: 15px;
@@ -24,29 +29,34 @@ $pole-color: rgb(125, 56, 21);
   }
   .pole-left {
     left: 0;
-    right: 275px;
+    right: 10vw;
   }
   .pole-right {
-    left: 275px;
+    left: 10vw;
     right: 0;
   }
   .banner-center {
     background-color: $banner-color;
-    padding: 5px 10px;
+    padding: 0.9vh 2vw;
     height: $banner-height;
     border-radius: 5px 5px 5px 5px;
     color: white;
     display: flex;
+
     h2 {
       filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.489));
     }
     z-index: 1;
   }
-  .banner-left {
-    width: 30px;
+  .banner-left,
+  .banner-right {
+    width: 2vw;
+    min-width: 25px;
     background-color: darken($banner-color, 5%);
-    height: $banner-height;
     margin-top: -6px;
+    height: $banner-height;
+  }
+  .banner-left {
     margin-right: -$banner-offset;
     border-right: $banner-offset solid darken($banner-color, 40%);
     border-bottom: $banner-offset solid transparent;
@@ -54,10 +64,6 @@ $pole-color: rgb(125, 56, 21);
     border-radius: 0px 5px 5px 0px;
   }
   .banner-right {
-    width: 30px;
-    background-color: darken($banner-color, 5%);
-    height: 50px;
-    margin-top: -6px;
     margin-left: -$banner-offset;
     border-left: $banner-offset solid darken($banner-color, 40%);
     border-bottom: $banner-offset solid transparent;
@@ -127,7 +133,7 @@ $pole-color: rgb(125, 56, 21);
   .cog-container {
     position: absolute;
     margin-top: -50px;
-    transform: scale(.75);
+    transform: scale(0.75);
     .cog {
       background-color: rgb(0, 111, 191);
       width: 150px;

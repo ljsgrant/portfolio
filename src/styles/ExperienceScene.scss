@@ -1,10 +1,17 @@
 .ExperienceScene {
-  .experience-content {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+  .sticky-child {
+    .experience-content {
+      max-height: 100%;
+      border: 2px solid green;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      .PaperSheet{
+        position: absolute;
+      }
+    }
   }
-  h2 {
-    margin: 0px 80px;
-  }
+  // h2 {
+  //   margin: 0px 80px;
+  // }
 }

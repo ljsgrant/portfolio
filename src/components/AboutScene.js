@@ -111,7 +111,7 @@ export default function AboutScene({
         <SectionTitle titleText={titleText} />
         <div className='content about-content'>
           <div className='speech-bubbles'>
-            <div className='about-bubble-container about-bubble-container_left'>
+            <div className='about-bubble-container about-bubble-container_left hide-below-600px'>
               <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
                 <div className='about-text'>
                   <p>
@@ -123,7 +123,7 @@ export default function AboutScene({
                 </div>
               </div>
             </div>
-            <div className='about-bubble-container about-bubble-container_right'>
+            <div className='about-bubble-container about-bubble-container_right hide-below-600px'>
               <div className='speech-bubble speech-bubble_about speech-bubble_about-right'>
                 {' '}
                 <div className='about-text'>
@@ -141,9 +141,9 @@ export default function AboutScene({
                 </div>
               </div>
             </div>
-            <div className='about-bubble-container about-bubble-container_left'>
+            <div className='about-bubble-container about-bubble-container_left hide-below-600px'>
               <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
-                <div className='about-text'>
+                <div className='about-text '>
                   <p>
                     After <strong>starting my coding journey</strong> to make
                     use of free time during the Covid lockdowns and discovering
@@ -157,7 +157,7 @@ export default function AboutScene({
             <div className='about-bubble-container about-bubble-container_right'>
               <div
                 ref={aboutBubbleRef}
-                className='speech-bubble speech-bubble_about speech-bubble_about-right'
+                className='speech-bubble speech-bubble_about speech-bubble_about-right hide-below-600px'
               >
                 {' '}
                 {/* <h4>Front-End</h4> */}
@@ -170,12 +170,23 @@ export default function AboutScene({
                     grow my skills, build lasting working relationships, and
                     make a difference as a junior member of the team.
                   </p>
-                  {/* <img
-                  src={reactIcon}
-                  draggable='false'
-                  className='tech-icon'
-                  alt='react'
-                /> */}
+                </div>
+              </div>
+              <div
+                ref={aboutBubbleRef}
+                className='speech-bubble speech-bubble_about speech-bubble_about-right hide-below-600px'
+              >
+                {' '}
+                {/* <h4>Front-End</h4> */}
+                <div className='about-text about-text_right'>
+                  <p>
+                    In my past career, I would need a van-load of equipment for
+                    every project; now I'm excited to build things with just my
+                    brain, a few colleagues, and a laptop.{' '}
+                    <strong>I'm seeking a role</strong> where I can continue to
+                    grow my skills, build lasting working relationships, and
+                    make a difference as a junior member of the team.
+                  </p>
                 </div>
               </div>
             </div>

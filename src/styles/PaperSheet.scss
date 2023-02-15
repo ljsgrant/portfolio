@@ -1,9 +1,8 @@
 .PaperSheet {
   z-index: 100;
-  width: 25vw;
+  max-width: 25vw;
   margin-bottom: 22vh;
   filter: drop-shadow(15px 15px 7px #0000006a);
-
   .PaperSheet-content {
     // border: 5px solid blue;
     background-color: white;
@@ -21,11 +20,11 @@
     height: 100%;
     margin-top: -1px;
     overflow-x: hidden;
-    height: 50px;
+    height: 5vh;
     .PaperSheet-rip {
-      border-top: 25px solid white;
-      border-left: 15px solid transparent;
-      border-right: 25px solid transparent;
+      border-top: 3vh solid white;
+      border-left: 2vh solid transparent;
+      border-right: 3.5vh solid transparent;
     }
   }
 }
