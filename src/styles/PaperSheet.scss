@@ -1,0 +1,40 @@
+.PaperSheet {
+  z-index: 100;
+  width: 25vw;
+  margin-bottom: 22vh;
+  filter: drop-shadow(15px 15px 7px #0000006a);
+
+  .PaperSheet-content {
+    // border: 5px solid blue;
+    background-color: white;
+    padding: 20px 10px 20px 10px;
+    hr {
+      margin: 3px 0px;
+    }
+    p{
+      font-size: 90%;
+    }
+  }
+  .PaperSheet-torn {
+    // border: 5px solid green;
+    display: flex;
+    height: 100%;
+    margin-top: -1px;
+    overflow-x: hidden;
+    height: 50px;
+    .PaperSheet-rip {
+      border-top: 25px solid white;
+      border-left: 15px solid transparent;
+      border-right: 25px solid transparent;
+    }
+  }
+}
+.rotation-1 {
+  transform: rotate(5deg);
+}
+.rotation-2 {
+  transform: rotate(-5deg);
+}
+.rotation-3 {
+  transform: rotate(-2deg);
+}

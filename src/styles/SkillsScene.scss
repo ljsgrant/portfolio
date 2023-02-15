@@ -1,0 +1,74 @@
+@import './variables';
+
+.SkillsScene {
+  .SectionTitle {
+    h2 {
+      margin: 0px 120px;
+    }
+  }
+  .landing-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .speech-bubbles {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 500;
+      // border: 5px solid blue;
+      .speech-bubble {
+        min-height: 10vh;
+        min-width: 10vw;
+        max-width: 80vw;
+        background-color: #ffffff;
+        border-radius: 50px;
+        padding: 10px 15px 30px 15px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: 35vh;
+        h3 {
+          margin: 3px 0px 10px 0px;
+        }
+      }
+      .speech-bubble_skills {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        h4 {
+          margin: 0px 5px;
+          margin-top: -17px;
+          background-color: white;
+          padding: 5px;
+        }
+      }
+    }
+  }
+  .svg-line {
+    filter: drop-shadow(15px 15px 20px #000000af);
+  }
+  
+}
+
+      .skills-content {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        .skill-wrapper {
+          margin: 5px;
+          // height: 30px;
+        }
+      }
+      .skills-column {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 10px 5px;
+        border: 1px solid grey;
+        border-radius: 10px;
+        padding: 2px 5px;
+      }

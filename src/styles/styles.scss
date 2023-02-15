@@ -1,30 +1,53 @@
-@import url('https://fonts.googleapis.com/css2?family=Itim&display=swap');
-
-$monitor-width: 210px;
-$monitor-height: 130px;
-$color_monitor: rgb(25, 25, 25);
-
-$desk-width: 600px;
-$desk-height: 30px;
-$color_desk: rgb(11, 99, 154);
-$color_engineer-body: darken($color_desk, 25%);
-
-$name-top: 10px;
+@import url('https://fonts.googleapis.com/css2?family=Recursive:wght@300;400;500;600;800&display=swap');
+@import './variables';
+$wallpaper-color: rgb(2, 41, 73);
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow-x: hidden;
-  font-family: 'Itim', cursive;
+  font-family: 'Recursive', sans-serif;
+}
+.scrolling-visual-element {
+  position: absolute;
+  // background-color: hotpink;
+  width: 400px;
+  height: 800vh;
+  top: 0;
+  z-index: -9;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
 }
 .background {
   position: fixed;
   top: 0;
-  width: 100vw;
-  height: 100vh;
-  background: linear-gradient(#00254b, #ffe8be);
-  z-index: -1;
+  width: 100%;
+  height: 200vh;
+  z-index: -10;
+  background-color: rgb(25, 51, 72);
+  background-color: #e5e5f7;
+  opacity: 0.8;
+  background-image: linear-gradient(
+    to right,
+    $wallpaper-color,
+    $wallpaper-color 40px,
+    lighten($wallpaper-color, 10%) 20px,
+    lighten($wallpaper-color, 10%)
+  );
+  background-size: 80px 100%;
+}
+.background-overlay {
+  position: fixed;
+  top: 0;
+  left: -20px;
+  width: 110vw;
+  height: 1px;
+  z-index: -8;
+  background-color: rgb(0, 0, 50);
+  box-shadow: 0px 10px 50vh 40vh rgba(0, 31, 63, 0.406);
+  mix-blend-mode: multiply;
 }
 .App {
   font-family: sans-serif;
@@ -37,67 +60,52 @@ p {
   padding: 0;
 }
 h1 {
-  font-size: 100px;
+  font-size: 50px;
 }
 h2 {
-  font-size: 60px;
+  font-size: 30px;
 }
 .test-svg {
   position: fixed;
   top: 0px;
   left: 0px;
 }
-
-.whiteboard {
-  background-color: white;
-  position: fixed;
-  top: 5vh;
-  right: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  width: 90vw;
-  height: 90vh;
-
-  border: 5px solid rgb(222, 222, 222);
-  border-radius: 3px;
-  .my-name-container,
-  .my-role-container {
-    position: fixed;
-
-    right: 0;
-    left: 0;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .my-name-container {
-    top: $name-top;
-    // left: -400px;
-  }
-  .my-role-container {
-    top: calc($name-top + 100px);
-    // left: 400px;
-  }
-}
-
 .engineer {
   position: fixed;
   right: 0;
   left: 0;
   margin-right: auto;
   margin-left: auto;
-  bottom: 50px;
   z-index: 1;
+
   .my-face-container {
     position: fixed;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
-    bottom: 91px;
+    bottom: 71px;
     z-index: 9999;
+    filter: drop-shadow(15px 15px 20px #0000006a);
     .my-face {
       height: calc($monitor-height * 1.25);
+    }
+    .my-face-marker-1,
+    .my-face-marker-2 {
+      position: fixed;
+      // border: 5px solid green;
+      width: 0px;
+      right: 0;
+      margin-right: auto;
+      margin-left: auto;
+    }
+    .my-face-marker-1 {
+      left: -4vw;
+      bottom: 150px;
+    }
+    .my-face-marker-2 {
+      left: 50px;
+      bottom: 130px;
     }
   }
   .engineer-body {
@@ -107,36 +115,22 @@ h2 {
     border-top: 5px solid lighten($color_engineer-body, 10%);
     width: 200px;
     height: 100px;
-    bottom: 30px;
+    bottom: 15px;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
     z-index: 1;
     border-radius: 80px 80px 0px 0px;
+    filter: drop-shadow(15px 15px 20px #0000006a);
   }
-}
-
-.project-display-main {
-  display: none; // shown via script
-  position: fixed;
-  right: 0;
-  left: 0;
-  margin-right: auto;
-  margin-left: auto;
-  top: 10px;
-  width: 90vw;
-  max-width: 900px;
-  aspect-ratio: 16/9;
-  background-color: blue;
-  transition: all 4s ease-in-out;
 }
 .desk {
   position: fixed;
   background-color: $color_desk;
   width: $desk-width;
   height: $desk-height;
-  bottom: 0;
+  bottom: -10px;
   right: 0;
   left: 0;
   margin-right: auto;
@@ -144,25 +138,33 @@ h2 {
   z-index: 999;
   .desktop {
     position: fixed;
-    bottom: calc($desk-height);
+    bottom: 7px;
     right: 0;
     left: 0;
     margin-right: auto;
     margin-left: auto;
     width: calc($desk-width + 20px);
     border-bottom: 5px solid darken($color_desk, 10%);
-    border-top: 5px solid lighten($color_desk, 10%);
-    border-left: 5px solid lighten($color_desk, 6%);
-    border-right: 5px solid darken($color_desk, 6%);
-    border-radius: 5px;
-    height: 15px;
+    border-top: 3px solid lighten($color_desk, 10%);
+    border-left: 3px solid lighten($color_desk, 6%);
+    border-right: 3px solid darken($color_desk, 6%);
+    border-radius: 3px;
+    height: 25px;
     background-color: $color_desk;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    p {
+      font-size: 12px;
+      margin: 0px 20px;
+    }
   }
 }
 .monitor-left,
 .monitor-right {
   position: fixed;
-  bottom: 80px;
+  bottom: 65px;
   width: $monitor-width;
   height: $monitor-height;
   background-color: $color_monitor;
@@ -196,7 +198,7 @@ h2 {
 }
 .monitor_base {
   position: fixed;
-  bottom: calc($desk-height - ($desk-height / 2));
+  bottom: 0px;
   background-color: blue;
   border-radius: 50% 50% 0 0;
   width: 100px;
@@ -204,6 +206,7 @@ h2 {
   background-color: $color_monitor;
   border-left: 5px solid lighten($color_monitor, 10%);
   border-top: 5px solid lighten($color_monitor, 10%);
+  z-index: 99999999;
 }
 .monitor_stand-column {
   position: fixed;
@@ -213,14 +216,86 @@ h2 {
   border-top: 15px solid lighten($color_monitor, 10%);
   width: 25px;
   height: 90px;
-  bottom: 59px;
+  bottom: 49px;
   z-index: 99999;
   border-radius: 10px 10px 0 0;
 }
-.scene {
-  border: 2px solid blue;
-  width: 100vw;
-  height: 100vh;
-  z-index: 9999999999999;
-  box-sizing: border-box;
+.laptop {
+  position: fixed;
+  z-index: 99999;
+}
+.laptop-screen,
+.laptop-base,
+.laptop-base-right,
+.mouse {
+  position: fixed;
+  margin-right: auto;
+  margin-left: auto;
+}
+.laptop-screen {
+  bottom: 42px;
+  left: 290px;
+  right: 0;
+  width: 150px;
+  height: 95px;
+  background-color: gray;
+  border-radius: 8px;
+  transform: skew(-15deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-left: 2px solid lightgray;
+  border-top: 2px solid lightgray;
+  z-index: 999999;
+  .laptop-logo {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border-radius: 50%;
+    border-right: 2px solid rgb(222, 222, 222);
+    border-bottom: 2px solid rgb(222, 222, 222);
+    box-sizing: border-box;
+  }
+}
+.laptop-base {
+  bottom: 32px;
+  left: 45px;
+  right: 0;
+  width: 70px;
+  height: 10px;
+  background-color: gray;
+  border-radius: 0px 0px 0px 10px;
+  border-top: 1px solid lightgray;
+  z-index: 9999991;
+}
+.laptop-base-right {
+  bottom: 32px;
+  left: 265px;
+  right: 0;
+  width: 150px;
+  height: 10px;
+  background-color: rgb(107, 107, 107);
+  border-radius: 0px 0px 10px 0px;
+  border-top: 1px solid rgb(57, 57, 57);
+  z-index: 999999;
+}
+.mouse {
+  width: 50px;
+  height: 30px;
+  left: -200px;
+  right: 0;
+  background-color: $color_monitor;
+  bottom: 30px;
+  border-radius: 50%;
+  border-top: 7px solid rgb(245, 216, 221);
+  border-right: 5px solid rgb(245, 216, 221);
+  z-index: -99;
+}
+.visible{
+  opacity: 100%;
+  transition: opacity .2s;
+}
+.invisible{
+  opacity: 0%;
+  transition: opacity .2s;
 }

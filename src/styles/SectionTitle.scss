@@ -1,0 +1,181 @@
+$banner-offset: 10px;
+$offset-multiplier: 5;
+$banner-height: calc($banner-offset * $offset-multiplier);
+$banner-color: rgb(211, 69, 69);
+$pole-color: rgb(125, 56, 21);
+
+.SectionTitle {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+  filter: drop-shadow(15px 15px 20px #0000006a);
+  .pole {
+    position: absolute;
+    width: 15px;
+    height: 100vh;
+    background-color: $pole-color;
+    border-right: 5px solid darken($pole-color, 5%);
+    top: 0;
+    z-index: -1;
+    filter: drop-shadow(15px 15px 20px #0000006a);
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 3px;
+  }
+  .pole-left {
+    left: 0;
+    right: 275px;
+  }
+  .pole-right {
+    left: 275px;
+    right: 0;
+  }
+  .banner-center {
+    background-color: $banner-color;
+    padding: 5px 10px;
+    height: $banner-height;
+    border-radius: 5px 5px 5px 5px;
+    color: white;
+    display: flex;
+    h2 {
+      filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.489));
+    }
+    z-index: 1;
+  }
+  .banner-left {
+    width: 30px;
+    background-color: darken($banner-color, 5%);
+    height: $banner-height;
+    margin-top: -6px;
+    margin-right: -$banner-offset;
+    border-right: $banner-offset solid darken($banner-color, 40%);
+    border-bottom: $banner-offset solid transparent;
+    border-top: $banner-offset solid transparent;
+    border-radius: 0px 5px 5px 0px;
+  }
+  .banner-right {
+    width: 30px;
+    background-color: darken($banner-color, 5%);
+    height: 50px;
+    margin-top: -6px;
+    margin-left: -$banner-offset;
+    border-left: $banner-offset solid darken($banner-color, 40%);
+    border-bottom: $banner-offset solid transparent;
+    border-top: $banner-offset solid transparent;
+    border-radius: 5px 0px 0px 0px;
+  }
+  .streamers-left {
+    margin-right: -1px;
+  }
+  .streamers-right {
+    margin-left: -1px;
+  }
+  .streamer-top-left {
+    margin-top: -6px;
+    width: 30px;
+    height: calc($banner-height / 2);
+    border-top: calc($banner-height / 2) solid darken($banner-color, 5%);
+    border-left: 30px solid transparent;
+  }
+  .streamer-top-right {
+    margin-top: -6px;
+    width: 30px;
+    height: calc($banner-height / 2);
+    border-top: calc($banner-height / 2) solid darken($banner-color, 5%);
+    border-right: 30px solid transparent;
+  }
+  .streamer-bottom-left {
+    width: 30px;
+    height: calc($banner-height / 2);
+    border-bottom: calc($banner-height / 2) solid darken($banner-color, 5%);
+    border-left: 30px solid transparent;
+  }
+  .streamer-bottom-right {
+    width: 30px;
+    height: calc($banner-height / 2);
+    border-bottom: calc($banner-height / 2) solid darken($banner-color, 5%);
+    border-right: 30px solid transparent;
+  }
+
+  .tooth + .tooth {
+    transform: rotateZ(22.5deg);
+  }
+
+  .tooth + .tooth + .tooth {
+    transform: rotateZ(-22.5deg);
+  }
+
+  .tooth + .tooth + .tooth + .tooth {
+    transform: rotateZ(45deg);
+  }
+
+  .tooth + .tooth + .tooth + .tooth + .tooth {
+    transform: rotateZ(-45deg);
+  }
+
+  .tooth + .tooth + .tooth + .tooth + .tooth + .tooth {
+    transform: rotateZ(67.5deg);
+  }
+
+  .tooth + .tooth + .tooth + .tooth + .tooth + .tooth + .tooth {
+    transform: rotateZ(-67.5deg);
+  }
+
+  .tooth + .tooth + .tooth + .tooth + .tooth + .tooth + .tooth + .tooth {
+    transform: rotateZ(90deg);
+  }
+  .cog-container {
+    position: absolute;
+    margin-top: -50px;
+    transform: scale(.75);
+    .cog {
+      background-color: rgb(0, 111, 191);
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      z-index: -1;
+      animation: spin 10s infinite linear;
+    }
+    .tooth {
+      background-color: rgb(0, 111, 191);
+      position: absolute;
+      height: 175px;
+      width: 15px;
+      margin-left: -7.5px;
+      margin-top: -12.5px;
+      left: 50%;
+      border-radius: 2px;
+      z-index: 10;
+    }
+    .cog-center {
+      position: absolute;
+      width: 130px;
+      height: 130px;
+      margin-left: 10px;
+      margin-top: 10px;
+      background-color: darken(rgb(0, 111, 191), 10%);
+      border-radius: 50%;
+      z-index: 3000;
+      box-shadow: inset 0 0 90px darken(rgb(0, 111, 191), 40%);
+    }
+
+    @keyframes spin {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+    @keyframes spin2 {
+      0% {
+        transform: rotate(0deg);
+      }
+
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+}
