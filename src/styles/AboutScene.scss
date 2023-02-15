@@ -66,6 +66,9 @@
       }
       .about-bubble-container_right {
         justify-content: flex-end;
+        .hide-above-600px {
+          display: none;
+        }
       }
     }
   }
@@ -81,9 +84,19 @@
           display: none;
         }
         .speech-bubbles {
-          .about-bubble-container{
+          .about-bubble-container {
             .speech-bubble {
-
+              max-height: 45vh;
+              .about-text {
+                overflow-y: scroll;
+                p {
+                  font-size: 3vw;
+                  margin: 1.5vh 0;
+                }
+              }
+              .about-text-mobile{
+                overflow-y: scroll;
+              }
             }
           }
         }
