@@ -87,14 +87,18 @@
           .about-bubble-container {
             .speech-bubble {
               max-height: 45vh;
+              width: 100%;
+              border-radius: 5vw;
+              padding: 2vw 4vw;
               .about-text {
                 overflow-y: scroll;
                 p {
-                  font-size: 3vw;
+                  font-size: 4vw;
                   margin: 1.5vh 0;
+                  padding-right: 2vw;
                 }
               }
-              .about-text-mobile{
+              .about-text-mobile {
                 overflow-y: scroll;
               }
             }
