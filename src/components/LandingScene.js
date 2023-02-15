@@ -24,7 +24,6 @@ export default function LandingScene({
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
   const myNameRef = useRef();
-  // const myRoleRef = useRef();
   const nameArrowRef = useRef();
   const contactBubbleRef = useRef();
   const contactBubbleContainerRef = useRef();
@@ -35,12 +34,6 @@ export default function LandingScene({
   const [myFacePosition2Y, setMyFacePosition2Y] = useState(null);
   const [myNamePositionX, setMyNamePositionX] = useState(null);
   const [myNamePositionY, setMyNamePositionY] = useState(null);
-  // const [myRolePositionX, setMyRolePositionX] = useState(null);
-  // const [myRolePositionY, setMyRolePositionY] = useState(null);
-  // const [contactBubblePositionX, setContactBubblePositionX] = useState(null);
-  // const [contactBubblePositionY, setContactBubblePositionY] = useState(null);
-  // const [laptopPositionX, setLaptopPositionX] = useState(null);
-  // const [laptopPositionY, setLaptopPositionY] = useState(null);
 
   const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
@@ -138,9 +131,6 @@ export default function LandingScene({
               <h1>Louis Grant</h1>
               <h2>Junior Software Engineer</h2>
             </div>
-            {/* <div ref={myRoleRef} className='my-role-container'>
-              <h2>Junior Software Engineer</h2>
-            </div> */}
           </div>
           <div ref={contactBubbleContainerRef} className='speech-bubbles'>
             <div

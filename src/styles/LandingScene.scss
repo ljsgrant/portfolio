@@ -92,7 +92,7 @@ $bubble-dot-increment: 1.1%;
                 padding-bottom: $first-bubble-dot-size;
               }
               .thought-bubble-dot-2 {
-                  position: absolute;
+                position: absolute;
                 width: calc(($first-bubble-dot-size + $bubble-dot-increment));
                 padding-bottom: calc(
                   $first-bubble-dot-size + $bubble-dot-increment
@@ -100,7 +100,7 @@ $bubble-dot-increment: 1.1%;
                 margin-left: -2%;
               }
               .thought-bubble-dot-3 {
-                  position: absolute;
+                position: absolute;
                 width: calc(
                   $first-bubble-dot-size + ($bubble-dot-increment * 2)
                 );
@@ -110,7 +110,7 @@ $bubble-dot-increment: 1.1%;
                 margin-left: -2%;
               }
               .thought-bubble-dot-4 {
-                  position: absolute;
+                position: absolute;
                 width: calc(
                   $first-bubble-dot-size + ($bubble-dot-increment * 3)
                 );
@@ -162,7 +162,7 @@ $bubble-dot-increment: 1.1%;
       }
       .speech-bubble_contact {
         // margin-left: 40vw;
-        h3{
+        h3 {
           font-size: 1.5vw;
         }
         .contact-links-wrapper {
@@ -170,7 +170,7 @@ $bubble-dot-increment: 1.1%;
           align-items: center;
           justify-content: center;
           padding: 1vw;
-          a{
+          a {
             color: white;
             text-decoration: none;
           }
@@ -186,11 +186,18 @@ $bubble-dot-increment: 1.1%;
             background-color: rgb(174, 43, 43);
             color: white;
             font-weight: bold;
-            filter: drop-shadow(.3vw .3vw 5px rgba(0, 0, 0, 0.443));
+            transition: transform 0.1s;
+            &:hover {
+              transform: translate(0, -1vh);
+            }
+            &:active {
+              transform: rotate(5deg);
+            }
+            filter: drop-shadow(0.3vw 0.3vw 5px rgba(0, 0, 0, 0.443));
             p {
               font-size: 1.2vw;
             }
-            img{
+            img {
               height: 50%;
             }
           }

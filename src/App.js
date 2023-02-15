@@ -9,6 +9,7 @@ import ProjectScene from './components/ProjectScene';
 import LandingScene from './components/LandingScene';
 import ExperienceScene from './components/ExperienceScene';
 import SkillsScene from './components/SkillsScene';
+import AboutScene from './components/AboutScene';
 import Cog from './components/common/Cog';
 
 export default function App() {
@@ -33,6 +34,13 @@ export default function App() {
           myFaceRef2={myFaceRef2}
           laptopRef={laptopRef}
           isSkillsTopInView={isSkillsTopInView}
+        />
+        <AboutScene
+          titleText='About Me'
+          myFaceRef={myFaceRef}
+          myFaceRef1={myFaceRef1}
+          myFaceRef2={myFaceRef2}
+          setIsSkillsTopInView={setIsSkillsTopInView}
         />
         <SkillsScene
           titleText='Skills'
