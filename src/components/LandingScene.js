@@ -3,16 +3,17 @@ import { useWindowSize } from '../hooks/useWindowSize';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/LandingScene.scss';
-import githubIcon from '../assets/images/tech_icons/icons8-github.svg'
-import linkedinIcon from '../assets/images/social_icons/icons8-linkedin.svg'
-import emailIcon from '../assets/images/social_icons/email.svg'
+import githubIcon from '../assets/images/tech_icons/icons8-github.svg';
+import linkedinIcon from '../assets/images/social_icons/icons8-linkedin.svg';
+import emailIcon from '../assets/images/social_icons/email.svg';
 
 export default function LandingScene({
   text,
   dataName,
   myFaceRef1,
   myFaceRef2,
-  laptopRef
+  laptopRef,
+  isSkillsTopInView
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
@@ -23,7 +24,7 @@ export default function LandingScene({
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
   const myNameRef = useRef();
-  const myRoleRef = useRef();
+  // const myRoleRef = useRef();
   const contactBubbleRef = useRef();
 
   const [myFacePosition1X, setMyFacePosition1X] = useState(null);
@@ -34,10 +35,10 @@ export default function LandingScene({
   const [myNamePositionY, setMyNamePositionY] = useState(null);
   // const [myRolePositionX, setMyRolePositionX] = useState(null);
   // const [myRolePositionY, setMyRolePositionY] = useState(null);
-  const [contactBubblePositionX, setContactBubblePositionX] = useState(null);
-  const [contactBubblePositionY, setContactBubblePositionY] = useState(null);
-  const [laptopPositionX, setLaptopPositionX] = useState(null);
-  const [laptopPositionY, setLaptopPositionY] = useState(null);
+  // const [contactBubblePositionX, setContactBubblePositionX] = useState(null);
+  // const [contactBubblePositionY, setContactBubblePositionY] = useState(null);
+  // const [laptopPositionX, setLaptopPositionX] = useState(null);
+  // const [laptopPositionY, setLaptopPositionY] = useState(null);
 
   const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
@@ -79,29 +80,6 @@ export default function LandingScene({
         2
     );
     setMyNamePositionY(myNameRef.current.getBoundingClientRect().bottom);
-    // setMyRolePositionX(
-    //   (myRoleRef.current.getBoundingClientRect().left +
-    //     myRoleRef.current.getBoundingClientRect().right) /
-    //     2
-    // );
-    // setMyRolePositionY(myRoleRef.current.getBoundingClientRect().bottom);
-    setContactBubblePositionX(
-      (contactBubbleRef.current.getBoundingClientRect().left +
-        contactBubbleRef.current.getBoundingClientRect().right) /
-        2
-    );
-    setContactBubblePositionY(
-      contactBubbleRef.current.getBoundingClientRect().bottom
-    );
-    setLaptopPositionX(
-      (laptopRef.current.getBoundingClientRect().left +
-        laptopRef.current.getBoundingClientRect().right) /
-        2
-    );
-    setLaptopPositionY(laptopRef.current.getBoundingClientRect().top);
-
-    // return () => window.removeEventListener('scroll', onScroll);
-    // eslint-disable-next-line
   }, [windowSize, scrollTop]);
 
   useEffect(() => {
@@ -112,6 +90,10 @@ export default function LandingScene({
     console.log(scrollTop);
     // eslint-disable-next-line
   }, []);
+
+  useEffect(() => {
+    console.log(isSkillsTopInView);
+  }, [isSkillsTopInView]);
 
   return (
     <div data-name={dataName} className='scene LandingScene'>
@@ -233,6 +215,7 @@ export default function LandingScene({
           </div>
         </div>
         {isBottomInView &&
+          !isSkillsTopInView &&
           myFacePosition1X &&
           myFacePosition1Y &&
           myFacePosition2X &&

@@ -16,7 +16,8 @@ export default function App() {
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
   const laptopRef = useRef(null);
-  const [cogNumber, setCogNumber] = useState(12);
+  const [cogNumber] = useState(12);
+  const [isSkillsTopInView, setIsSkillsTopInView] = useState(false);
 
   return (
     <div className='App'>
@@ -31,19 +32,17 @@ export default function App() {
           myFaceRef1={myFaceRef1}
           myFaceRef2={myFaceRef2}
           laptopRef={laptopRef}
+          isSkillsTopInView={isSkillsTopInView}
         />
         <SkillsScene
           titleText='Skills'
           myFaceRef={myFaceRef}
           myFaceRef1={myFaceRef1}
           myFaceRef2={myFaceRef2}
+          setIsSkillsTopInView={setIsSkillsTopInView}
         />
         <ExperienceScene titleText='Experience' />
-        <ProjectScene
-          text={'first'}
-          dataName={'first'}
-          titleText='Projects'
-        />
+        <ProjectScene text={'first'} dataName={'first'} titleText='Projects' />
       </div>
       <div className='background-overlay'></div>
       <div className='background'></div>
@@ -53,11 +52,14 @@ export default function App() {
           <div className='mouse'></div>
           <div className='keyboard'></div>
           <div className='desktop'>
-            <p>&copy; Louis Grant 2023</p><p>·</p>
-            <p>Icons by{' '}
-            <a target='_blank' href='https://icons8.com'>
-              Icons8
-            </a></p>
+            <p>&copy; Louis Grant 2023</p>
+            <p>·</p>
+            <p>
+              Icons by{' '}
+              <a target='_blank' rel='noreferrer' href='https://icons8.com'>
+                Icons8
+              </a>
+            </p>
           </div>
         </div>
         <div className='engineer'>

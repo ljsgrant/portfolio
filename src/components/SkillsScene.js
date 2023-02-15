@@ -33,7 +33,8 @@ export default function SkillsScene({
   dataName,
   myFaceRef,
   myFaceRef1,
-  myFaceRef2
+  myFaceRef2,
+  setIsSkillsTopInView
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
@@ -52,8 +53,10 @@ export default function SkillsScene({
   const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
       setIsTopInView(true);
+      setIsSkillsTopInView(true);
     } else {
       setIsTopInView(false);
+      setIsSkillsTopInView(false);
     }
   };
 
@@ -67,11 +70,11 @@ export default function SkillsScene({
 
   useEffect(() => {
     if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
-      console.log('landing entry animation');
+      // console.log('skills entry animation');
       setHasEntryAnimPlayed(true);
       setHasExitAnimPlayed(false);
     } else if ((!isTopInView || !isBottomInView) && !hasExitAnimPlayed) {
-      console.log('landing exit animation');
+      // console.log('skills exit animation');
       setHasExitAnimPlayed(true);
       setHasEntryAnimPlayed(false);
     }
@@ -102,7 +105,6 @@ export default function SkillsScene({
       setScrollTop(event.target.documentElement.scrollTop);
     };
     window.addEventListener('scroll', onScroll);
-    console.log('firing');
     return () => window.removeEventListener('scroll', onScroll);
     // eslint-disable-next-line
   }, [windowSize, scrollTop]);
