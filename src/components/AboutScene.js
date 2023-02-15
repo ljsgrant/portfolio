@@ -181,21 +181,27 @@ export default function AboutScene({
                 ) : (
                   <div className='about-text about-text-mobile'>
                     <p>
+                      <strong>Hi, I'm Louis!</strong> In my previous career in
+                      TV Production, I would need a van-load of equipment for
+                      every project; now I've fallen in love with coding, and
+                      I'm excited to build things with just my brain, a few
+                      colleagues, and a laptop.
+                    </p>
+                    <p>
                       <strong>The driving forces in my career</strong> have
                       always been a love of working in collaborative teams, the
                       thrill of finding solutions to unfamiliar briefs, and a
                       thirst for personal development, new skills and knowledge.
                     </p>
                     <p>
-                      <strong>My background</strong> is in TV production, from
-                      which I bring a dedicated work ethic and a host of
-                      transferable skills. I have managed fast-paced projects,
-                      been adaptable to varied briefs (including building an
-                      exploding suitcase), and honed my eye for design. I use
-                      the mix of disciplines in my career to inform my work when
-                      tackling new challenges, and I thrive in teams that
-                      combine unique experiences, skill sets and backgrounds to
-                      achieve a common goal.
+                      From <strong>my past experience</strong>, I bring a
+                      dedicated work ethic and a host of transferable skills. I
+                      have managed fast-paced projects, been adaptable to varied
+                      briefs (including building an exploding suitcase), and
+                      honed my eye for design. I use the mix of disciplines in
+                      my career to inform my work when tackling new challenges,
+                      and I thrive in teams that combine unique experiences,
+                      skill sets and backgrounds to achieve a common goal.
                     </p>
                     <p>
                       After <strong>starting my coding journey</strong> to make
@@ -206,9 +212,6 @@ export default function AboutScene({
                       Assembly.
                     </p>
                     <p>
-                      In my past career, I would need a van-load of equipment
-                      for every project; now I'm excited to build things with
-                      just my brain, a few colleagues, and a laptop.{' '}
                       <strong>I'm seeking a role</strong> where I can continue
                       to grow my skills, build lasting working relationships,
                       and make a difference as a junior member of the team.
