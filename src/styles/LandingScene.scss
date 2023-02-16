@@ -258,12 +258,13 @@ $bubble-dot-increment: 1.1%;
         margin-left: auto;
         margin-right: auto;
         justify-content: space-between;
+        height: 40vh;
         .speech-bubble {
           min-width: 100%;
-          height: 50%;
+          height: 70%;
           border-radius: 6vw;
           h3 {
-            font-size: 9vw;
+            font-size: 7vw;
           }
           .contact-links-wrapper {
             .contact-link {
