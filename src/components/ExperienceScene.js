@@ -11,7 +11,8 @@ export default function ExperienceScene({
   dataName,
   projectImage,
   titleText,
-  infoText
+  infoText,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
 
@@ -108,7 +109,7 @@ export default function ExperienceScene({
   }, [atFront]);
 
   return (
-    <div data-name={dataName} className='scene ExperienceScene'>
+    <div ref={scrollRef} data-name={dataName} className='scene ExperienceScene'>
       <article className='sticky-child'>
         <InView
           as='div'

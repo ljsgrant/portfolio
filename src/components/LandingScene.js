@@ -13,7 +13,8 @@ export default function LandingScene({
   myFaceRef1,
   myFaceRef2,
   laptopRef,
-  isSkillsTopInView
+  isSkillsTopInView,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
@@ -127,7 +128,7 @@ export default function LandingScene({
   }, [isSkillsTopInView]);
 
   return (
-    <div data-name={dataName} className='scene LandingScene'>
+    <div ref={scrollRef} data-name={dataName} className='scene LandingScene'>
       <article className='sticky-child'>
         <InView
           as='div'

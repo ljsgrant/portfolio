@@ -1,7 +1,8 @@
+@import './variables';
+
 $banner-offset: 10px;
 $offset-multiplier: 5;
 $banner-height: calc($banner-offset * $offset-multiplier);
-$banner-color: rgb(211, 69, 69);
 $pole-color: rgb(125, 56, 21);
 
 .SectionTitle {

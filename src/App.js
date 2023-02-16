@@ -13,6 +13,14 @@ import AboutScene from './components/AboutScene';
 import Cog from './components/common/Cog';
 
 export default function App() {
+  const [isNavShowing, setIsNavShowing] = useState(false);
+
+  const landingScrollRef = useRef(null);
+  const aboutScrollRef = useRef(null);
+  const skillsScrollRef = useRef(null);
+  const experienceScrollRef = useRef(null);
+  const projectScrollRef = useRef(null);
+
   const myFaceRef = useRef(null);
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
@@ -20,8 +28,65 @@ export default function App() {
   const [cogNumber] = useState(12);
   const [isSkillsTopInView, setIsSkillsTopInView] = useState(false);
 
+  const handleMenuToggle = () => {
+    setIsNavShowing(!isNavShowing);
+  };
+
+  function scrollToElement(scrollRef) {
+    if (scrollRef.current) {
+      scrollRef.current.scrollIntoView(true, {
+        behavior: 'smooth',
+        block: 'start'
+      });
+    }
+  }
+
   return (
     <div className='App'>
+      <div className='menu-toggle-container'>
+        <div className={`nav-links ${!isNavShowing && 'transparent'}`}>
+          <button
+            className='nav-link nav-link-5'
+            onClick={() => scrollToElement(landingScrollRef)}
+          >
+            Contact
+          </button>
+          <button
+            className='nav-link nav-link-4'
+            onClick={() => scrollToElement(aboutScrollRef)}
+          >
+            About
+          </button>
+          <button
+            className='nav-link nav-link-3'
+            onClick={() => scrollToElement(skillsScrollRef)}
+          >
+            Skills
+          </button>
+          <button
+            className='nav-link nav-link-2'
+            onClick={() => scrollToElement(experienceScrollRef)}
+          >
+            Experience
+          </button>
+          <button
+            className='nav-link nav-link-1'
+            onClick={() => scrollToElement(projectScrollRef)}
+          >
+            Projects
+          </button>
+        </div>
+        {/* <button className="menutoggle-mobile"></button> */}
+
+        <div className={`prompt ${isNavShowing && 'nav-hidden'}`}>
+          <p>Click to Navigate</p>
+        </div>
+        <div className={`triangle ${isNavShowing && 'flipped'}`}></div>
+        <button onClick={handleMenuToggle} className='menu-toggle'>
+          <p>&#9776;</p>
+        </button>
+      </div>
+      <div className='menumodal'></div>
       <div className='scrolling-visual-element'>
         {/* <Cog /> */}
         {/* <Cog/> */}
@@ -31,12 +96,14 @@ export default function App() {
       </div>
       <div className='scroll'>
         <LandingScene
+          scrollRef={landingScrollRef}
           myFaceRef1={myFaceRef1}
           myFaceRef2={myFaceRef2}
           laptopRef={laptopRef}
           isSkillsTopInView={isSkillsTopInView}
         />
         <AboutScene
+          scrollRef={aboutScrollRef}
           titleText='About'
           myFaceRef={myFaceRef}
           myFaceRef1={myFaceRef1}
@@ -44,14 +111,23 @@ export default function App() {
           setIsSkillsTopInView={setIsSkillsTopInView}
         />
         <SkillsScene
+          scrollRef={skillsScrollRef}
           titleText='Skills'
           myFaceRef={myFaceRef}
           myFaceRef1={myFaceRef1}
           myFaceRef2={myFaceRef2}
           setIsSkillsTopInView={setIsSkillsTopInView}
         />
-        <ExperienceScene titleText='Experience' />
-        <ProjectScene text={'first'} dataName={'first'} titleText='Projects' />
+        <ExperienceScene
+          titleText='Experience'
+          scrollRef={experienceScrollRef}
+        />
+        <ProjectScene
+          scrollRef={projectScrollRef}
+          text={'first'}
+          dataName={'first'}
+          titleText='Projects'
+        />
       </div>
       <div className='background-overlay'></div>
       <div className='background'></div>

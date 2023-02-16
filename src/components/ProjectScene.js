@@ -34,7 +34,8 @@ export default function ProjectScene({
   dataName,
   projectImage,
   titleText,
-  infoText
+  infoText,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
 
@@ -73,7 +74,7 @@ export default function ProjectScene({
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div data-name={dataName} className='scene ProjectScene'>
+    <div ref={scrollRef} data-name={dataName} className='scene ProjectScene'>
       <div className='project-container project-container-1'>
         <div className='project-a'>
           <div className='project-content'>

@@ -34,7 +34,8 @@ export default function SkillsScene({
   myFaceRef,
   myFaceRef1,
   myFaceRef2,
-  setIsSkillsTopInView
+  setIsSkillsTopInView,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
@@ -110,7 +111,7 @@ export default function SkillsScene({
   }, [windowSize, scrollTop]);
 
   return (
-    <div data-name={dataName} className='scene SkillsScene'>
+    <div ref={scrollRef} data-name={dataName} className='scene SkillsScene'>
       <article className='sticky-child'>
         <InView
           as='div'

@@ -23,7 +23,7 @@ $bubble-dot-increment: 1.1%;
         flex-direction: column;
         padding: 1vw;
         color: rgb(255, 255, 255);
-        background-color: rgb(174, 43, 43);
+        background-color:$button-red;
         // border-radius: 1.5vw;
         z-index: 1000000;
         h1 {
@@ -186,7 +186,7 @@ $bubble-dot-increment: 1.1%;
             justify-content: center;
             border-radius: 1.5vw;
             margin: 0px 5px;
-            background-color: rgb(174, 43, 43);
+            background-color:$button-red;
             color: white;
             font-weight: bold;
             transition: transform 0.1s;
