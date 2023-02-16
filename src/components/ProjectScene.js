@@ -128,6 +128,7 @@ export default function ProjectScene({
               distribution through interactive maps.
             </p>
           </div>
+          
           <div className='project-links-container'>
             <a
               href='https://birdspotter.netlify.app/'
@@ -380,6 +381,7 @@ export default function ProjectScene({
           onChange={handleViewChangeBottom}
         />
       </article>
+      
     </div>
   );
 }
