@@ -26,6 +26,8 @@ export default function ExperienceScene({
   const paper3 = useRef();
   const buttonNewer = useRef();
   const buttonOlder = useRef();
+  const [newerButtonDisabled, setNewerButtonDisabled] = useState(true);
+  const [olderButtonDisabled, setOlderButtonDisabled] = useState(false);
 
   const handleViewChangeTop = (inView, entry) => {
     if (entry.isIntersecting) {
@@ -57,25 +59,26 @@ export default function ExperienceScene({
   }, [isTopInView, isBottomInView]);
 
   const handleNewerClick = () => {
-    if (atFront > 1) {
-      setAtFront(atFront - 1);
-    } else {
+    if (atFront === 1) {
       setAtFront(1);
+    } else {
+      setAtFront(atFront - 1);
     }
   };
   const handleOlderClick = () => {
-    if (atFront < 3) {
-      setAtFront(atFront + 1);
-    } else {
+    if (atFront === 3) {
       setAtFront(3);
+    } else {
+      setAtFront(atFront + 1);
     }
   };
 
   useEffect(() => {
-    console.log('firing');
     switch (atFront) {
       case 1:
         if (paper1.current && paper2.current && paper3.current) {
+          setNewerButtonDisabled(true);
+          setOlderButtonDisabled(false);
           paper1.current.classList.add('at-front');
           paper2.current.classList.remove('at-front');
           paper3.current.classList.remove('at-front');
@@ -83,6 +86,8 @@ export default function ExperienceScene({
         break;
       case 2:
         if (paper1.current && paper2.current && paper3.current) {
+          setNewerButtonDisabled(false);
+          setOlderButtonDisabled(false);
           paper1.current.classList.remove('at-front');
           paper2.current.classList.add('at-front');
           paper3.current.classList.remove('at-front');
@@ -90,6 +95,8 @@ export default function ExperienceScene({
         break;
       case 3:
         if (paper1.current && paper2.current && paper3.current) {
+          setNewerButtonDisabled(false);
+          setOlderButtonDisabled(true);
           paper1.current.classList.remove('at-front');
           paper2.current.classList.remove('at-front');
           paper3.current.classList.add('at-front');
@@ -112,10 +119,20 @@ export default function ExperienceScene({
         <div className='content experience-content'>
           {windowSize.width < 600 && (
             <div className='shuffle-buttons'>
-              <button onClick={handleNewerClick} className='left-button'>
+              <button
+                ref={buttonNewer}
+                disabled={newerButtonDisabled}
+                onClick={handleNewerClick}
+                className='left-button'
+              >
                 &#9664; Newer
               </button>
-              <button onClick={handleOlderClick} className='right-button'>
+              <button
+                ref={buttonOlder}
+                disabled={olderButtonDisabled}
+                onClick={handleOlderClick}
+                className='right-button'
+              >
                 Older &#9654;
               </button>
             </div>
