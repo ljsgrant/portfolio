@@ -37,7 +37,7 @@ export default function App() {
           isSkillsTopInView={isSkillsTopInView}
         />
         <AboutScene
-          titleText='About Me'
+          titleText='About'
           myFaceRef={myFaceRef}
           myFaceRef1={myFaceRef1}
           myFaceRef2={myFaceRef2}

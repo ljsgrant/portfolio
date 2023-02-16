@@ -100,6 +100,13 @@ export default function AboutScene({
     // eslint-disable-next-line
   }, [windowSize, scrollTop]);
 
+
+const handleBubbleViewChange = (inView, entry) => {
+  if (entry.isIntersecting){
+    
+  }
+}
+
   return (
     <div data-name={dataName} ref={titleRef} className='scene AboutScene'>
       <article className='sticky-child'>
@@ -213,7 +220,7 @@ export default function AboutScene({
                     <p>
                       I started <strong>my coding journey</strong> to make use
                       of free time during the Covid lockdowns, discovered I
-                      couldn't get enough, and recently took the next step in
+                      couldn't get enough, and recently <InView as='span' onChange={handleBubbleViewChange}/>took the next step in
                       consolidating my skills through the Software Engineering
                       Immersive course with General Assembly.
                     </p>

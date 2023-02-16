@@ -20,6 +20,104 @@ export default function SectionTitle({ titleText }) {
           <div className='streamer streamer-bottom-right'></div>
         </div>
       </div>
+      <div className='platform'>
+        <div className='platform-top'></div>
+        <div className='platform-middle'>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+          <div className='girder-aframe'>
+            <div className='girder-strut girder-strut-a'></div>
+            <div className='girder-strut girder-strut-b'></div>
+          </div>
+        </div>
+          <div className='platform-bottom'></div>
+      </div>
       <div className='cog-container'>
         <div className='cog'>
           <div className='tooth'></div>

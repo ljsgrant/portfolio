@@ -14,6 +14,49 @@ $pole-color: rgb(125, 56, 21);
   .banner {
     display: flex;
   }
+  .platform {
+    position: absolute;
+    width: 100vw;
+    top: 100vh;
+    .platform-top, .platform-bottom {
+      height: 2vh;
+      background-color: rgb(138, 143, 178);
+      border-top: .4vh solid lighten(rgb(138, 143, 178), 10%);
+      border-bottom: .4vh solid darken(rgb(138, 143, 178), 10%);
+      width: 100%;
+      z-index: 900;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.505));
+    }
+    .platform-top{
+      position: absolute;
+    }
+    .platform-middle {
+      margin-top: 1.5vh;
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      .girder-aframe {
+        display: flex;
+        margin-right: 4vh;
+        .girder-strut {
+          margin-top: -1.5vh;
+          width: 1vh;
+          height: 8vh;
+          background-color: rgb(138, 143, 178);
+          background: linear-gradient(0.25turn, darken(rgb(138, 143, 178), 10%), rgb(138, 143, 178), darken(rgb(138, 143, 178), 10%));
+        }
+        .girder-strut-a {
+          margin-right: 4vh;
+          transform: rotate(45deg);
+        }
+        .girder-strut-b {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
   .pole {
     position: absolute;
     width: 15px;
@@ -29,10 +72,10 @@ $pole-color: rgb(125, 56, 21);
   }
   .pole-left {
     left: 0;
-    right: 10vw;
+    right: 40vw;
   }
   .pole-right {
-    left: 10vw;
+    left: 40vw;
     right: 0;
   }
   .banner-center {
@@ -42,8 +85,12 @@ $pole-color: rgb(125, 56, 21);
     border-radius: 5px 5px 5px 5px;
     color: white;
     display: flex;
-
+    max-width: 80vw;
+    padding: 0 20vw;
+    display: flex;
+    align-items: center;
     h2 {
+      margin: 0;
       filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.489));
     }
     z-index: 1;
@@ -182,6 +229,15 @@ $pole-color: rgb(125, 56, 21);
       100% {
         transform: rotate(360deg);
       }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pole-left {
+      right: 50vw;
+    }
+    .pole-right {
+      left: 50vw;
     }
   }
 }
