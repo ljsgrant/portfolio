@@ -106,7 +106,7 @@ body {
         background-color: $button-red;
         border: none;
         &:hover {
-          transform: translate(-.5vw, 0);
+          transform: translate(-0.5vw, 0);
           cursor: pointer;
         }
         &:active {
@@ -140,6 +140,71 @@ body {
       }
       &:hover {
         cursor: pointer;
+      }
+    }
+    .menu-toggle-active {
+      background-color: darken($button-red, 10%);
+      border-right: 0.5vw solid lighten($button-red, 4%);
+      border-bottom: 0.5vw solid lighten($button-red, 7%);
+      border-top: 0.5vw solid darken($button-red, 16%);
+      border-left: 0.5vw solid darken($button-red, 13%);
+      p {
+        color: lightgrey;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .App {
+    .menu-toggle-container {
+      bottom: 33px;
+      right: 5vw;
+      z-index: 999999;
+      filter: drop-shadow(0px 0px 10px black);
+      .triangle {
+        border-top: 5vw solid $button-red;
+        border-left: 5vw solid transparent;
+        border-right: 5vw solid transparent;
+        margin-bottom: 1vw;
+      }
+      .flipped {
+        transform: scale(0.25, 1);
+      }
+      .prompt {
+        max-width: 20vw;
+        padding: 1vw;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        margin: 1vw 0;
+      }
+      .nav-links {
+        .nav-link {
+          filter: drop-shadow(0px 0px 5px black);
+          min-width: 20vw;
+          font-size: 3vh;
+          padding: 1vw;
+          margin-top: 1vh;
+          border-radius: 1vw;
+        }
+      }
+      .menu-toggle {
+        width: 20vw;
+        height: 20vw;
+        border-radius: 5vw;
+        font-size: 12vw;
+        border-left: 1.5vw solid lighten($button-red, 7%);
+        border-top: 1.5vw solid lighten($button-red, 10%);
+        border-bottom: 1.5vw solid darken($button-red, 10%);
+        border-right: 1.5vw solid darken($button-red, 7%);
+        p {
+          margin-top: -2vw;
+        }
+        &:hover {
+        }
+      }
+      .menu-toggle-active {
+        p {
+        }
       }
     }
   }

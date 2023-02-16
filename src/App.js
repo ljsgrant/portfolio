@@ -79,10 +79,13 @@ export default function App() {
         {/* <button className="menutoggle-mobile"></button> */}
 
         <div className={`prompt ${isNavShowing && 'nav-hidden'}`}>
-          <p>Click to Navigate</p>
+          <p>Scroll or click to navigate</p>
         </div>
         <div className={`triangle ${isNavShowing && 'flipped'}`}></div>
-        <button onClick={handleMenuToggle} className='menu-toggle'>
+        <button
+          onClick={handleMenuToggle}
+          className={`menu-toggle ${isNavShowing && 'menu-toggle-active'}`}
+        >
           <p>&#9776;</p>
         </button>
       </div>
