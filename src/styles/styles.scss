@@ -14,9 +14,9 @@ body {
 .scrolling-visual-element {
   position: absolute;
   // background-color: hotpink;
-  border: 5px solid pink;
+  // border: 5px solid pink;
   width: 100vw;
-  height: 100%;
+  height: 800vh;
   top: 0;
   z-index: -9;
   display: flex;
@@ -24,15 +24,24 @@ body {
   align-items: flex-start;
   justify-content: space-between;
   .cogs-left, .cogs-right{
-    border: 5px solid green;
+    border: 2vw solid rgb(73, 4, 4);
     width: 20vw;
     height: 100%;
+    box-sizing: border-box;
+    border-radius: 10vw;
   }
   .cogs-left{
-    // margin-left: -10vw;
+    margin-left: -12vw;
+    .CogResponsive{
+      left: -4vw;
+      top: -1vh;
+    }
   }
   .cogs-right{
-    // margin-right: -10vw;
+    margin-right: -9vw;
+        .CogResponsive{
+      top: -1vh;
+    }
   }
 }
   .cogs-left {
@@ -487,6 +496,9 @@ p {
 .invisible {
   opacity: 0%;
   transition: opacity 0.2s;
+}
+.display-none{
+  display: none;
 }
 
 // remove for production

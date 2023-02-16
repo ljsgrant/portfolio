@@ -1,5 +1,5 @@
 import { useState, useRef } from 'react';
-
+import { useWindowSize } from './hooks/useWindowSize';
 import './styles/styles.scss';
 import './styles/icons.scss';
 
@@ -13,8 +13,8 @@ import AboutScene from './components/AboutScene';
 // import Cog from './components/common/Cog';
 import CogResponsive from './components/common/CogResponsive';
 
-
 export default function App() {
+  const windowSize = useWindowSize();
   const [isNavShowing, setIsNavShowing] = useState(false);
 
   const landingScrollRef = useRef(null);
@@ -92,12 +92,12 @@ export default function App() {
         </button>
       </div>
       <div className='menumodal'></div>
-      <div className='scrolling-visual-element'>
+      <div className={`scrolling-visual-element ${windowSize.width < 600 && 'display-none'}`}>
         {/* <Cog /> */}
         {/* <Cog/> */}
         {/* <div className='cogs cogs-left'>
           {[...Array(cogNumber)].map((entry, index) => (
-            <Cog key={index} className='cog'/>
+            <CogResponsive key={index}/>
             ))}
             </div>
             <div className='cogs cogs-right'>
@@ -105,8 +105,16 @@ export default function App() {
             <Cog key={index} />
             ))}
           </div> */}
-        <div className='cogs-left'><CogResponsive/></div>
-        <div className='cogs-right'></div>
+        <div className='cogs-left'>
+          {[...Array(cogNumber)].map((entry, index) => (
+            <CogResponsive key={index} />
+          ))}
+        </div>
+        <div className='cogs-right'>
+          {[...Array(cogNumber)].map((entry, index) => (
+            <CogResponsive key={index} />
+          ))}
+        </div>
       </div>
       <div className='scroll'>
         <LandingScene
