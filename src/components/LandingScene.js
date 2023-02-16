@@ -20,6 +20,7 @@ export default function LandingScene({
 
   const [isTopInView, setIsTopInView] = useState(true);
   const [isBottomInView, setIsBottomInView] = useState(true);
+  const [isNameRoleInView, setIsNameRoleInView] = useState(false);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
@@ -51,31 +52,39 @@ export default function LandingScene({
     }
   };
 
-  useEffect(() => {
-    isSkillsTopInView ? hideElements() : showElements();
-  }, [isSkillsTopInView]);
+  const handleNameRoleViewChange = (inView, entry) => {
+    if (entry.isIntersecting) {
+      setIsNameRoleInView(true);
+    } else {
+      setIsNameRoleInView(false);
+    }
+  };
 
-  function showElements() {
-    if (contactBubbleContainerRef.current) {
-      contactBubbleContainerRef.current.classList.remove('invisible');
-      contactBubbleContainerRef.current.classList.add('visible');
-    }
-    if (nameArrowRef.current) {
-      nameArrowRef.current.classList.remove('invisible');
-      nameArrowRef.current.classList.add('visible');
-    }
-  }
+  // useEffect(() => {
+  //   isSkillsTopInView ? hideElements() : showElements();
+  // }, [isSkillsTopInView]);
 
-  function hideElements() {
-    if (contactBubbleContainerRef.current) {
-      contactBubbleContainerRef.current.classList.remove('visible');
-      contactBubbleContainerRef.current.classList.add('invisible');
-    }
-    if (nameArrowRef.current) {
-      nameArrowRef.current.classList.remove('visible');
-      nameArrowRef.current.classList.add('invisible');
-    }
-  }
+  // function showElements() {
+  //   if (contactBubbleContainerRef.current) {
+  //     contactBubbleContainerRef.current.classList.remove('invisible');
+  //     contactBubbleContainerRef.current.classList.add('visible');
+  //   }
+  //   if (nameArrowRef.current) {
+  //     nameArrowRef.current.classList.remove('invisible');
+  //     nameArrowRef.current.classList.add('visible');
+  //   }
+  // }
+
+  // function hideElements() {
+  //   if (contactBubbleContainerRef.current) {
+  //     contactBubbleContainerRef.current.classList.remove('visible');
+  //     contactBubbleContainerRef.current.classList.add('invisible');
+  //   }
+  //   if (nameArrowRef.current) {
+  //     nameArrowRef.current.classList.remove('visible');
+  //     nameArrowRef.current.classList.add('invisible');
+  //   }
+  // }
 
   useEffect(() => {
     if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
@@ -130,9 +139,19 @@ export default function LandingScene({
             <div ref={myNameRef} className='my-name-container'>
               <h1>Louis Grant</h1>
               <h2>Junior Software Engineer</h2>
+              <InView
+                as='div'
+                className='in-view-trigger'
+                onChange={handleNameRoleViewChange}
+              />
             </div>
           </div>
-          <div ref={contactBubbleContainerRef} className='speech-bubbles'>
+          <div
+            ref={contactBubbleContainerRef}
+            className={`speech-bubbles ${
+              isNameRoleInView ? 'visible' : 'invisible'
+            }`}
+          >
             <div
               ref={contactBubbleRef}
               className='speech-bubble speech-bubble_contact'
@@ -285,7 +304,9 @@ export default function LandingScene({
               <path
                 ref={nameArrowRef}
                 id='name-arrow'
-                className='svg-line hide-below-600px'
+                className={`svg-line hide-below-600px ${
+                  isNameRoleInView ? 'visible' : 'invisible'
+                }`}
                 fill='none'
                 stroke='white'
                 strokeWidth='1.5vw'
@@ -301,7 +322,9 @@ export default function LandingScene({
               <path
                 ref={nameArrowRef}
                 id='name-arrow'
-                className='svg-line show-below-600px hide-above-600px'
+                className={`svg-line show-below-600px hide-above-600px ${
+                  isNameRoleInView ? 'visible' : 'invisible'
+                }`}
                 fill='none'
                 stroke='white'
                 strokeWidth='5.5vw'
@@ -312,11 +335,11 @@ export default function LandingScene({
                   myNamePositionY - windowSize.height / 10
                 } 
                     L${myNamePositionX - windowSize.width / 4},${
-                  myNamePositionY + (windowSize.height /3.5)
+                  myNamePositionY + windowSize.height / 3.5
                 } 
-                    L${
-                      myFacePosition1X - windowSize.width / 8
-                    },${myFacePosition1Y - (windowSize.height / 16)} 
+                    L${myFacePosition1X - windowSize.width / 8},${
+                  myFacePosition1Y - windowSize.height / 16
+                } 
                   `}
               />
               {/* <path
