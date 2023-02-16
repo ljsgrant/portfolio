@@ -10,7 +10,9 @@ import LandingScene from './components/LandingScene';
 import ExperienceScene from './components/ExperienceScene';
 import SkillsScene from './components/SkillsScene';
 import AboutScene from './components/AboutScene';
-import Cog from './components/common/Cog';
+// import Cog from './components/common/Cog';
+import CogResponsive from './components/common/CogResponsive';
+
 
 export default function App() {
   const [isNavShowing, setIsNavShowing] = useState(false);
@@ -25,7 +27,7 @@ export default function App() {
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
   const laptopRef = useRef(null);
-  const [cogNumber] = useState(12);
+  const [cogNumber] = useState(22);
   const [isSkillsTopInView, setIsSkillsTopInView] = useState(false);
 
   const handleMenuToggle = () => {
@@ -93,9 +95,18 @@ export default function App() {
       <div className='scrolling-visual-element'>
         {/* <Cog /> */}
         {/* <Cog/> */}
-        {[...Array(cogNumber)].map((entry, index) => (
-          <Cog key={index} />
-        ))}
+        {/* <div className='cogs cogs-left'>
+          {[...Array(cogNumber)].map((entry, index) => (
+            <Cog key={index} className='cog'/>
+            ))}
+            </div>
+            <div className='cogs cogs-right'>
+          {[...Array(cogNumber)].map((entry, index) => (
+            <Cog key={index} />
+            ))}
+          </div> */}
+        <div className='cogs-left'><CogResponsive/></div>
+        <div className='cogs-right'></div>
       </div>
       <div className='scroll'>
         <LandingScene
