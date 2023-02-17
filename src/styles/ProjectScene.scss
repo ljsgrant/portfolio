@@ -1,7 +1,8 @@
 .ProjectScene {
-  height: 250vh;
+  height: 200vh;
   .sticky-child {
-    height: 170vh;
+    height: 120vh;
+    // border: 5px solid green;
   }
   .SectionTitle {
     // position: sticky;
@@ -9,12 +10,12 @@
   .project-container {
     position: absolute;
     width: 100%;
-    height: 100vh;
+    // height: 100vh;
     // border: 2px solid lightseagreen;
     z-index: 100000;
     display: flex;
     flex-direction: row;
-    align-items: center;
+    align-items: flex-start;
     justify-content: space-between;
     overflow-x: hidden;
     .project-a,
@@ -96,18 +97,19 @@
     }
   }
   .project-container-1 {
-    margin-top: 0;
+    margin-top: 10vh;
   }
   .project-container-2 {
-    margin-top: 80vh;
+    margin-top: 90vh;
   }
 }
 @media only screen and (max-width: 600px) {
   .ProjectScene {
-    height: 450vh;
+    height: 360vh;
     .project-container {
       flex-direction: column;
       height: 155vh;
+      align-items: center;
       .project-a,
       .project-b {
         width: 95vw;
