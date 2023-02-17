@@ -14,9 +14,9 @@ body {
 .scrolling-visual-element {
   position: absolute;
   // background-color: hotpink;
-  // border: 5px solid pink;
+  border: 5px solid pink;
   width: 100vw;
-  height: 800vh;
+  height: 742vh;
   top: 0;
   z-index: -9;
   display: flex;
@@ -44,33 +44,7 @@ body {
     }
   }
 }
-  .cogs-left {
-    // border: 15px solid brown;
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
-    // justify-content: space-between;
-    // width: 11.6vw;
-    // margin-left: -0px;
-    // padding: 0px 40px 0px 0px;
-    // box-sizing: border-box;
-    // border-radius: 100px;
-    // .cog{
-    //   background-color: blue;
-    // }
-  }
-  .cogs-right {
-    // border-radius: 100px;
-    // border: 15px solid brown;
-    // height: 100%;
-    // display: flex;
-    // flex-direction: column;
-    // align-items: flex-start;
-    // justify-content: space-between;
-    // width: 10vw;
-    // margin-right: -60px;
-  }
+
 .background {
   position: fixed;
   top: 0;

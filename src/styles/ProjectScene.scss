@@ -26,13 +26,13 @@
       display: flex;
       align-items: flex-start;
       filter: drop-shadow(0px 0px 10px black);
-      .project-content{
+      .project-content {
         .skills-column {
-            p {
-              padding: 0;
-              margin: 0 1vw;
-            }
+          p {
+            padding: 0;
+            margin: 0 1vw;
           }
+        }
       }
       p {
         font-size: 1.1vw;
@@ -90,7 +90,7 @@
     }
     .project-b {
       padding-right: 10px;
-      .project-links-container{
+      .project-links-container {
         margin-left: -5vw;
       }
     }

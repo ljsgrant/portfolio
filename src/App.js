@@ -27,7 +27,7 @@ export default function App() {
   const myFaceRef1 = useRef(null);
   const myFaceRef2 = useRef(null);
   const laptopRef = useRef(null);
-  const [cogNumber] = useState(22);
+  const [cogNumber] = useState(11);
   const [isSkillsTopInView, setIsSkillsTopInView] = useState(false);
 
   const handleMenuToggle = () => {
@@ -92,7 +92,11 @@ export default function App() {
         </button>
       </div>
       <div className='menumodal'></div>
-      <div className={`scrolling-visual-element ${windowSize.width < 600 && 'display-none'}`}>
+      <div
+        className={`scrolling-visual-element ${
+          windowSize.width < 600 && 'display-none'
+        }`}
+      >
         {/* <Cog /> */}
         {/* <Cog/> */}
         {/* <div className='cogs cogs-left'>
