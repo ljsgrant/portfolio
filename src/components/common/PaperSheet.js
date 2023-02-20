@@ -13,10 +13,14 @@ export default function PaperSheet({
       <div className='PaperSheet-content'>
         <hr />
         <h3>{titleText}</h3>
-        <hr />
-        <p className='date-location-text'>
-          {datesText} · {locationText}
-        </p>
+        {(locationText || datesText) && (
+          <>
+            <hr />
+            <p className='date-location-text'>
+              {datesText} · {locationText}
+            </p>
+          </>
+        )}
         {/* <p>{locationText}</p> */}
         <hr />
         <p>{bodyText}</p>

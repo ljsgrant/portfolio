@@ -12,6 +12,7 @@ import SkillsScene from './components/SkillsScene';
 import AboutScene from './components/AboutScene';
 // import Cog from './components/common/Cog';
 import CogResponsive from './components/common/CogResponsive';
+import InterestsScene from './components/InterestsScene';
 
 export default function App() {
   const windowSize = useWindowSize();
@@ -154,6 +155,7 @@ export default function App() {
           dataName={'first'}
           titleText='Projects'
         />
+        <InterestsScene titleText='Interests'/>
       </div>
       <div className='background-overlay'></div>
       <div className='background'></div>
