@@ -19,16 +19,17 @@ $pole-color: rgb(125, 56, 21);
     position: absolute;
     width: 100vw;
     top: 100vh;
-    .platform-top, .platform-bottom {
+    .platform-top,
+    .platform-bottom {
       height: 2vh;
       background-color: rgb(138, 143, 178);
-      border-top: .4vh solid lighten(rgb(138, 143, 178), 10%);
-      border-bottom: .4vh solid darken(rgb(138, 143, 178), 10%);
+      border-top: 0.4vh solid lighten(rgb(138, 143, 178), 10%);
+      border-bottom: 0.4vh solid darken(rgb(138, 143, 178), 10%);
       width: 100%;
       z-index: 900;
       filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.505));
     }
-    .platform-top{
+    .platform-top {
       position: absolute;
     }
     .platform-middle {
@@ -46,7 +47,12 @@ $pole-color: rgb(125, 56, 21);
           width: 1vh;
           height: 8vh;
           background-color: rgb(138, 143, 178);
-          background: linear-gradient(0.25turn, darken(rgb(138, 143, 178), 10%), rgb(138, 143, 178), darken(rgb(138, 143, 178), 10%));
+          background: linear-gradient(
+            0.25turn,
+            darken(rgb(138, 143, 178), 10%),
+            rgb(138, 143, 178),
+            darken(rgb(138, 143, 178), 10%)
+          );
         }
         .girder-strut-a {
           margin-right: 4vh;
@@ -180,8 +186,11 @@ $pole-color: rgb(125, 56, 21);
   }
   .cog-container {
     position: absolute;
-    margin-top: -50px;
+    height: 1px;
+    top: 42px;
+    margin-top: 0px;
     transform: scale(0.75);
+    z-index: -1;
     .cog {
       background-color: rgb(0, 111, 191);
       width: 150px;

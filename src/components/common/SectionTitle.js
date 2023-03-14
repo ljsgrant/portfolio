@@ -1,4 +1,5 @@
 import '../../styles/SectionTitle.scss';
+import Cog16Teeth from './Cog16Teeth';
 
 export default function SectionTitle({ titleText }) {
   return (
@@ -18,6 +19,19 @@ export default function SectionTitle({ titleText }) {
         <div className='streamers-right'>
           <div className='streamer streamer-top-right'></div>
           <div className='streamer streamer-bottom-right'></div>
+        </div>
+      </div>
+      <div className='cog-container'>
+        <div className='cog'>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='tooth'></div>
+          <div className='cog-center'></div>
         </div>
       </div>
       <div className='platform'>
@@ -116,20 +130,7 @@ export default function SectionTitle({ titleText }) {
             <div className='girder-strut girder-strut-b'></div>
           </div>
         </div>
-          <div className='platform-bottom'></div>
-      </div>
-      <div className='cog-container'>
-        <div className='cog'>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='tooth'></div>
-          <div className='cog-center'></div>
-        </div>
+        <div className='platform-bottom'></div>
       </div>
     </div>
   );
