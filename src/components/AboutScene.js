@@ -11,7 +11,8 @@ export default function AboutScene({
   myFaceRef,
   myFaceRef1,
   myFaceRef2,
-  setIsSkillsTopInView
+  setIsSkillsTopInView,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
@@ -100,9 +101,14 @@ export default function AboutScene({
     // eslint-disable-next-line
   }, [windowSize, scrollTop]);
 
+  const handleBubbleViewChange = (inView, entry) => {
+    if (entry.isIntersecting) {
+    }
+  };
+
   return (
     <div data-name={dataName} ref={titleRef} className='scene AboutScene'>
-      <article className='sticky-child'>
+      <article ref={scrollRef} className='sticky-child'>
         <InView
           as='div'
           className='in-view-trigger'
@@ -111,49 +117,57 @@ export default function AboutScene({
         <SectionTitle titleText={titleText} />
         <div className='content about-content'>
           <div className='speech-bubbles'>
-            <div className='about-bubble-container about-bubble-container_left'>
-              <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
-                <div className='about-text'>
-                  <p>
-                    <strong>The driving forces in my career</strong> have always
-                    been a love of working in collaborative teams, the thrill of
-                    finding solutions to unfamiliar briefs, and a thirst for
-                    personal development, new skills and knowledge.
-                  </p>
+            {windowSize.width > 600 && (
+              <>
+                <div className='about-bubble-container about-bubble-container_left'>
+                  <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
+                    <div className='about-text'>
+                      <p>
+                        <strong>Hi, I'm Louis!</strong> In my previous career in
+                        TV Production, I needed a van-load of equipment for
+                        every project; now I've fallen in love with coding, and
+                        I'm excited to be able to build things with just my
+                        brain, a few colleagues, and a laptop.{' '}
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='about-bubble-container about-bubble-container_right'>
-              <div className='speech-bubble speech-bubble_about speech-bubble_about-right'>
-                {' '}
-                <div className='about-text'>
-                  <p>
-                    <strong>My background</strong> is in TV production, from
-                    which I bring a dedicated work ethic and a host of
-                    transferable skills. I have managed fast-paced projects,
-                    been adaptable to varied briefs (including building an
-                    exploding suitcase), and honed my eye for design. I use the
-                    mix of disciplines in my career to inform my work when
-                    tackling new challenges, and I thrive in teams that combine
-                    unique experiences, skill sets and backgrounds to achieve a
-                    common goal.
-                  </p>
+                <div className='about-bubble-container about-bubble-container_right'>
+                  <div className='speech-bubble speech-bubble_about speech-bubble_about-right'>
+                    {' '}
+                    <div className='about-text'>
+                      <p>
+                        <strong>The driving forces in my career</strong> have
+                        always been a love of working in collaborative teams,
+                        the thrill of finding solutions to unfamiliar briefs,
+                        and a thirst for personal development, new skills and
+                        knowledge. Now <strong>I'm seeking a role</strong> where
+                        I can continue to grow my skills, build lasting working
+                        relationships, and make a difference as a junior member
+                        of the team.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
-            <div className='about-bubble-container about-bubble-container_left'>
-              <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
-                <div className='about-text'>
-                  <p>
-                    After <strong>starting my coding journey</strong> to make
-                    use of free time during the Covid lockdowns and discovering
-                    that I couldn’t get enough, I recently took the next step in
-                    consolidating my skills through the Software Engineering
-                    Immersive course with General Assembly.
-                  </p>
+                <div className='about-bubble-container about-bubble-container_left'>
+                  <div className='speech-bubble speech-bubble_about speech-bubble_about-left'>
+                    <div className='about-text'>
+                      <p>
+                        <strong>My background</strong> is in TV production, from
+                        which I bring a dedicated work ethic and a host of
+                        transferable skills. I have managed fast-paced projects,
+                        been adaptable to varied briefs (including building an
+                        exploding suitcase), and honed my eye for design. I use
+                        the mix of disciplines in my career to inform my work
+                        when tackling new challenges, and I thrive in teams that
+                        combine unique experiences, skill sets and backgrounds
+                        to achieve a common goal.
+                      </p>
+                    </div>
+                  </div>
                 </div>
-              </div>
-            </div>
+              </>
+            )}
             <div className='about-bubble-container about-bubble-container_right'>
               <div
                 ref={aboutBubbleRef}
@@ -161,22 +175,58 @@ export default function AboutScene({
               >
                 {' '}
                 {/* <h4>Front-End</h4> */}
-                <div className='about-text about-text_right'>
-                  <p>
-                    In my past career, I would need a van-load of equipment for
-                    every project; now I'm excited to build things with just my
-                    brain, a few colleagues, and a laptop.{' '}
-                    <strong>I'm seeking a role</strong> where I can continue to
-                    grow my skills, build lasting working relationships, and
-                    make a difference as a junior member of the team.
-                  </p>
-                  {/* <img
-                  src={reactIcon}
-                  draggable='false'
-                  className='tech-icon'
-                  alt='react'
-                /> */}
-                </div>
+                {windowSize.width > 600 ? (
+                  <div className='about-text about-text_right'>
+                    <p>
+                      After <strong>starting my coding journey</strong> to make
+                      use of free time during the Covid lockdowns and
+                      discovering that I couldn’t get enough, I recently took
+                      the next step in consolidating my skills through the
+                      Software Engineering Immersive course with General
+                      Assembly.
+                    </p>
+                  </div>
+                ) : (
+                  <div className='about-text about-text-mobile'>
+                    <p>
+                      <strong>Hi, I'm Louis!</strong> In my previous career in
+                      TV Production, I needed a van-load of equipment for every
+                      project; now I've fallen in love with coding, and I'm
+                      excited to be able to build things with just my brain, a
+                      few colleagues, and a laptop.
+                    </p>
+                    <p>
+                      <strong>I'm seeking a role</strong> where I can continue
+                      to grow my skills, build lasting working relationships,
+                      and make a difference as a junior member of the team.
+                    </p>
+                    <p>
+                      <strong>The driving forces in my career</strong> have
+                      always been a love of working in collaborative teams, the
+                      thrill of finding solutions to unfamiliar briefs, and a
+                      thirst for personal development, new skills and knowledge.
+                    </p>
+                    <p>
+                      From <strong>my past experience</strong>, I bring a
+                      dedicated work ethic and a host of transferable skills. I
+                      have managed fast-paced projects, been adaptable to varied
+                      briefs (including building an exploding suitcase), and
+                      honed my eye for design. I find that drawing on the mix of
+                      disciplines in my career helps me tackle new challenges,
+                      and I thrive in teams that combine unique experiences,
+                      skill sets and backgrounds to achieve a common goal.
+                    </p>
+                    <p>
+                      I started <strong>my coding journey</strong> to make use
+                      of free time during the Covid lockdowns, discovered I
+                      couldn't get enough, and recently{' '}
+                      <InView as='span' onChange={handleBubbleViewChange} />
+                      took the next step in consolidating my skills through the
+                      Software Engineering Immersive course with General
+                      Assembly.
+                    </p>
+                  </div>
+                )}
               </div>
             </div>
           </div>

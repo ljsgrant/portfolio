@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useWindowSize } from '../hooks/useWindowSize';
 import { InView } from 'react-intersection-observer';
 import '../styles/scene.scss';
 import '../styles/ProjectScene.scss';
@@ -27,14 +28,18 @@ import postgresIcon from '../assets/images/tech_icons/icons8-postgresql.svg';
 // import pipIcon from '../assets/images/tech_icons/icons8-pypi.svg';
 // import postmanIcon from '../assets/images/tech_icons/postman.svg';
 // import tablePlusIcon from '../assets/images/tech_icons/tableplus.png';
+import muiIcon from '../assets/images/tech_icons/material-ui-1.svg';
 
 export default function ProjectScene({
   text,
   dataName,
   projectImage,
   titleText,
-  infoText
+  infoText,
+  scrollRef
 }) {
+  const windowSize = useWindowSize();
+
   const [isTopInView, setIsTopInView] = useState(false);
   const [isBottomInView, setIsBottomInView] = useState(false);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
@@ -70,7 +75,11 @@ export default function ProjectScene({
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div data-name={dataName} className='scene ProjectScene'>
+    <div
+      ref={scrollRef}
+      data-name={dataName}
+      className='scene ProjectScene last-scene'
+    >
       <div className='project-container project-container-1'>
         <div className='project-a'>
           <div className='project-content'>
@@ -125,9 +134,24 @@ export default function ProjectScene({
               distribution through interactive maps.
             </p>
           </div>
+
           <div className='project-links-container'>
-            <div className='project-link'>Deployed Site</div>
-            <div className='project-link'>Project ReadMe</div>
+            <a
+              href='https://birdspotter.netlify.app/'
+              target='_blank'
+              rel='noreferrer'
+              className='project-link'
+            >
+              <p>Deployed Site</p>
+            </a>
+            <a
+              href='https://github.com/ljsgrant/ga-project-4-client/'
+              target='_blank'
+              rel='noreferrer'
+              className='project-link'
+            >
+              <p>Project ReadMe</p>
+            </a>
           </div>
         </div>
         <div className='project-b'>
@@ -188,16 +212,29 @@ export default function ProjectScene({
             <p>
               Social media forum app with CRUD functionality using our own REST
               API, and my first time working on a full-stack application. My
-              responsibilities included handling nested comment threads on the
-              front- and back-end; logic tohandle users editing, liking and
-              disliking posts; functionality to toggle between original and
-              edited versions of posts; and a back-end system to create and
-              store persistent account notifications.
+              responsilbities included writing code for: nested comment threads;
+              editing, liking and disliking posts; toggling between original and
+              edited versions of posts; persistent account notifications on the
+              back-end.
             </p>
           </div>
           <div className='project-links-container'>
-            <div className='project-link'>Deployed Site</div>
-            <div className='project-link'>Project ReadMe</div>
+            <a
+              href='https://louis-theforum.netlify.app/'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Deployed Site</p>
+            </a>
+            <a
+              href='https://github.com/ljsgrant/ga-project-03-client'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Project ReadMe</p>
+            </a>
           </div>
         </div>
       </div>
@@ -222,6 +259,15 @@ export default function ProjectScene({
                     alt='react'
                   />
                   <p>React</p>
+                </div>
+                <div className='skill-wrapper'>
+                  <img
+                    src={muiIcon}
+                    className='tech-icon filter-svg'
+                    draggable='false'
+                    alt=''
+                  />
+                  <p>Material UI</p>
                 </div>
                 <div className='skill-wrapper'>
                   <img
@@ -251,8 +297,22 @@ export default function ProjectScene({
             </p>
           </div>
           <div className='project-links-container'>
-            <div className='project-link'>Deployed Site</div>
-            <div className='project-link'>Project ReadMe</div>
+            <a
+              href='https://louis-recipefinder.netlify.app/'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Deployed Site</p>
+            </a>
+            <a
+              href='https://github.com/ljsgrant/ga_project_2'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Project ReadMe</p>
+            </a>
           </div>
         </div>
         <div className='project-b'>
@@ -304,8 +364,22 @@ export default function ProjectScene({
             </p>
           </div>
           <div className='project-links-container'>
-            <div className='project-link'>Deployed Site</div>
-            <div className='project-link'>Project ReadMe</div>
+            <a
+              href='https://ljsgrant.github.io/ga-project-1/'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Deployed Site</p>
+            </a>
+            <a
+              href='https://github.com/ljsgrant/ga-project-1'
+              className='project-link'
+              target='_blank'
+              rel='noreferrer'
+            >
+              <p>Project ReadMe</p>
+            </a>
           </div>
         </div>
       </div>

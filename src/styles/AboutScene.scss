@@ -2,9 +2,9 @@
 
 .AboutScene {
   .SectionTitle {
-    h2 {
-      margin: 0px 120px;
-    }
+    // h2 {
+    //   margin: 0px 120px;
+    // }
   }
   .about-content {
     // border: 5px solid blue;
@@ -66,10 +66,45 @@
       }
       .about-bubble-container_right {
         justify-content: flex-end;
+        .hide-above-600px {
+          display: none;
+        }
       }
     }
   }
   .svg-line {
     filter: drop-shadow(15px 15px 20px #000000af);
+  }
+}
+@media only screen and (max-width: 600px) {
+  .AboutScene {
+    .sticky-child {
+      .about-content {
+        .hide-below-600px {
+          display: none;
+        }
+        .speech-bubbles {
+          .about-bubble-container {
+            .speech-bubble {
+              max-height: 45vh;
+              width: 100%;
+              border-radius: 5vw;
+              padding: 2vw 4vw;
+              .about-text {
+                overflow-y: scroll;
+                p {
+                  font-size: 4vw;
+                  margin: 1.5vh 0;
+                  padding-right: 2vw;
+                }
+              }
+              .about-text-mobile {
+                overflow-y: scroll;
+              }
+            }
+          }
+        }
+      }
+    }
   }
 }

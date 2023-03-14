@@ -1,0 +1,165 @@
+.CogResponsive {
+  width: 20vw;
+  height:20vw;
+  position: relative;
+  // margin: 20px auto;
+  // border: solid 10px darkslategray;
+  overflow:visible;
+  z-index:10000;
+  display: flex;
+  align-items: center; 
+  justify-content: center;
+  box-sizing: border-box;
+  filter: brightness(.7);
+  margin-bottom: 25vh;
+}
+
+.cog-outer {
+  border: 10px solid grey;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  z-index: 10;
+  animation: spin 10s infinite linear;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+}
+
+.origin {
+  position: absolute;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  z-index: 11111111;
+}
+
+.cog-body-overlay{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+/*   box-shadow: inset 0 0 90px #23395d; */
+  box-sizing: border-box;
+  background-color: rgb(0, 111, 191);
+  border: 20px solid rgb(0, 111, 191);
+  z-index: 99;
+}
+.cog-hole-overlay{
+  position: absolute;
+  width: 85%; /* hole as percent of body */
+  height: 85%; /* hole as percent of body */
+  border-radius: 50%;
+  box-shadow: inset 0 0 90px #23395d;
+  box-sizing: border-box;
+  z-index: 100;
+}
+.cog-center-shaft-overlay{
+  position: absolute;
+  width: 25%; /* shaft as percent of body */
+  height: 25%; /* shaft as percent of body */
+  border-radius: 50%;
+  background-color: darkblue;
+/*   box-shadow: inset 0 0 20px #23395d; */ 
+  box-sizing: border-box;
+  z-index: 100;
+}
+.tooth {
+  background-color: rgb(0, 111, 191);
+  position: absolute;
+  height: 15%; /* how far the tooth extends from cog*/ 
+  width: 2.5vw; /* width of tooth. REMEMBER CHANGE MARGIN-LEFT*/
+  margin-left: -1.25vw; /* should be negative half of width */
+  margin-top: 115%; /* places tooth on outside of cog */
+  left: 50%;
+  right: 50%;
+  border-radius: 5%; 
+  z-index: -1;
+}
+
+
+.origin + .origin {
+      transform: rotateZ(22.5deg);
+    }
+ 
+    .origin + .origin + .origin {
+      transform: rotateZ(-22.5deg);
+    }
+
+    .origin + .origin + .origin + .origin {
+      transform: rotateZ(45deg);
+    }
+
+    .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(-45deg);
+    }
+
+    .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(67.5deg);
+    }
+
+    .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(-67.5deg);
+    }
+
+    .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(90deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(-90deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(112.5deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(-112.5deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin {
+      transform: rotateZ(135deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin  + .origin {
+      transform: rotateZ(-135deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin  + .origin  + .origin {
+      transform: rotateZ(157.5deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin  + .origin  + .origin + .origin {
+      transform: rotateZ(-157.5deg);
+    } 
+.origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin + .origin  + .origin  + .origin + .origin + .origin {
+      transform: rotateZ(180deg);
+    }
+
+/* .cog + .cog {
+  animation-delay:.19s;
+  animation: spin2 5s infinite linear;
+  margin-top: 160px;
+  margin-left:30px;
+}
+.cog + .cog + .cog {
+  animation: spin 5s infinite linear;
+  margin-top: 65px;
+  margin-left:165px;
+} */
+
+
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes spin2 {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(-360deg);
+  }
+}

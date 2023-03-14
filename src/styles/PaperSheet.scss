@@ -1,9 +1,8 @@
 .PaperSheet {
   z-index: 100;
-  width: 25vw;
-  margin-bottom: 22vh;
+  max-width: 25vw;
+  // margin-bottom: 22vh;
   filter: drop-shadow(15px 15px 7px #0000006a);
-
   .PaperSheet-content {
     // border: 5px solid blue;
     background-color: white;
@@ -11,30 +10,48 @@
     hr {
       margin: 3px 0px;
     }
+    h3{
+      font-size: 1.5vw;
+    }
+     p:first-of-type{
+      font-size: 1vw;
+    }
     p{
-      font-size: 90%;
+      font-size: 1.2vw;
     }
   }
-  .PaperSheet-torn {
-    // border: 5px solid green;
-    display: flex;
-    height: 100%;
-    margin-top: -1px;
-    overflow-x: hidden;
-    height: 50px;
-    .PaperSheet-rip {
-      border-top: 25px solid white;
-      border-left: 15px solid transparent;
-      border-right: 25px solid transparent;
-    }
+}
+.PaperSheet-torn {
+  // border: 5px solid green;
+  display: flex;
+  height: 100%;
+  margin-top: -1px;
+  overflow-x: hidden;
+  height: 5vh;
+  .PaperSheet-rip {
+    border-top: 3vh solid white;
+    border-left: 2vh solid transparent;
+    border-right: 3.5vh solid transparent;
   }
 }
 .rotation-1 {
   transform: rotate(5deg);
 }
 .rotation-2 {
-  transform: rotate(-5deg);
+  transform: rotate(0deg);
 }
 .rotation-3 {
-  transform: rotate(-2deg);
+  transform: rotate(-6deg);
+}
+@media only screen and (max-width: 600px) {
+  .PaperSheet {
+  .PaperSheet-content{
+    p:first-of-type{
+      font-size: 2vw;
+    }
+    p{
+      font-size: 3.6vw;
+    }
+  }
+  }
 }

@@ -2,11 +2,12 @@ import { useState, useEffect, useRef } from 'react';
 import { InView } from 'react-intersection-observer';
 import { useWindowSize } from '../hooks/useWindowSize';
 import '../styles/scene.scss';
-import '../styles/ExperienceScene.scss';
+// import '../styles/ExperienceScene.scss';
+import '../styles/InterestsScene.scss';
 import SectionTitle from './common/SectionTitle';
 import PaperSheet from './common/PaperSheet';
 
-export default function ExperienceScene({
+export default function EducationScene({
   text,
   dataName,
   projectImage,
@@ -109,7 +110,11 @@ export default function ExperienceScene({
   }, [atFront]);
 
   return (
-    <div ref={scrollRef} data-name={dataName} className='scene ExperienceScene'>
+    <div
+      ref={scrollRef}
+      data-name={dataName}
+      className='scene ExperienceScene InterestsScene'
+    >
       <article className='sticky-child'>
         <InView
           as='div'
@@ -126,7 +131,7 @@ export default function ExperienceScene({
                 onClick={handleNewerClick}
                 className='left-button'
               >
-                &#9664; Newer
+                &#9664; Previous
               </button>
               <button
                 ref={buttonOlder}
@@ -134,63 +139,35 @@ export default function ExperienceScene({
                 onClick={handleOlderClick}
                 className='right-button'
               >
-                Older &#9654;
+                Next &#9654;
               </button>
             </div>
           )}
           <div className='papersheets'>
             <PaperSheet
               myRef={paper1}
-              titleText={
-                'Software Engineering Immersive course – General Assembly'
-              }
-              datesText={'Oct 2022 – Jan 2023'}
-              locationText={'London (remote)'}
-              bodyText={
-                <>
-                  Working remotely over Zoom and Slack, during this full-time
-                  3-month course I built and deployed full-stack applications
-                  using <strong>React</strong>, <strong>MongoDB</strong>,{' '}
-                  <strong>Express</strong> and <strong>Node.js</strong>, plus{' '}
-                  <strong>Python</strong>/<strong>Django</strong> and{' '}
-                  <strong>PostgreSQL</strong>, and developed my skills in{' '}
-                  <strong>JavaScript</strong>, <strong>HTML</strong> and{' '}
-                  <strong>CSS</strong>. I delivered solo, pair and group
-                  projects on-brief and to deadlines, following agile
-                  development practices and taking part in daily stand-ups.
-                </>
-              }
+              titleText={'Software Engineering Immersive'}
+              datesText={'Oct 2022 – Jan 2023'}
+              locationText={'London (Remote)'}
+              bodyText={<></>}
               rotationStyleNumber={'1'}
             />
             <PaperSheet
               myRef={paper2}
-              titleText={'Art Director – Freelance'}
-              datesText={'Mar 2018 – Oct 2022'}
-              locationText={'London & South East'}
-              bodyText={
-                <>
-                  I worked on fast-paced short form content and commercials, for
-                  TV and digital, for clients including BBC Studios and M&C
-                  Saatchi. I managed projects to tight deadlines with rapid
-                  turnarounds, worked up technical and visual designs, and
-                  communicated clearly on technical specifics.
-                </>
-              }
+              titleText={'BA(Hons) Film Production'}
+              datesText={'Sept 2010 – June 2013'}
+              locationText={'University of the Creative Arts'}
+              bodyText={'1st Class Honours'}
               rotationStyleNumber={'2'}
             />
             <PaperSheet
               myRef={paper3}
-              titleText={'Creative Development – Contractor'}
-              datesText={'Jan 2014 – Sept 2017'}
-              locationText={'London & Los Angeles'}
+              titleText={'3D art & design...'}
               bodyText={
                 <>
-                  I worked to develop digital series for US-based companies
-                  including The Jim Henson Company, New Form Digital and
-                  Fullscreen Ltd., and pitched to networks including Disney and
-                  Netflix, in a small team of writer-producers. Our series
-                  “Oscar’s Hotel” broke single-day sales records for Vimeo On
-                  Demand.
+                  ...using Blender to model a scene, or design & 3D-print a
+                  product to solve some little problem around the house is great
+                  for unwinding whilst keeping creative juices flowing.
                 </>
               }
               rotationStyleNumber={'3'}

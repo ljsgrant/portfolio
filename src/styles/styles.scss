@@ -8,18 +8,45 @@ $wallpaper-color: rgb(2, 41, 73);
   box-sizing: border-box;
   font-family: 'Recursive', sans-serif;
 }
+body {
+  overflow-x: hidden;
+}
 .scrolling-visual-element {
   position: absolute;
   // background-color: hotpink;
-  width: 400px;
-  height: 800vh;
+  // border: 5px solid pink;
+  width: 100vw;
+  height: 742vh;
   top: 0;
   z-index: -9;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  .cogs-left,
+  .cogs-right {
+    // border: 2vw solid rgb(73, 4, 4);
+    width: 20vw;
+    height: 100%;
+    box-sizing: border-box;
+    border-radius: 10vw;
+  }
+  .cogs-left {
+    margin-left: -12vw;
+    .CogResponsive {
+      left: -4vw;
+      top: -1vh;
+    }
+  }
+  .cogs-right {
+    margin-right: -9vw;
+    .CogResponsive {
+      top: -1vh;
+      align-items: flex-start;
+    }
+  }
 }
+
 .background {
   position: fixed;
   top: 0;
@@ -42,28 +69,175 @@ $wallpaper-color: rgb(2, 41, 73);
   position: fixed;
   top: 0;
   left: -20px;
-  width: 110vw;
+  width: 100vw;
   height: 1px;
   z-index: -8;
   background-color: rgb(0, 0, 50);
-  box-shadow: 0px 10px 50vh 40vh rgba(0, 31, 63, 0.406);
+  box-shadow: 0px 10px 50vh 40vh rgba(0, 170, 255, 0.826);
   mix-blend-mode: multiply;
 }
 .App {
   font-family: sans-serif;
   text-align: center;
+  .menu-toggle-container {
+    position: fixed;
+    bottom: 3vw;
+    right: 3vw;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    filter: drop-shadow(0px 0px 10px black);
+    .triangle {
+      width: 0;
+      height: 0;
+      border-top: 2vw solid $button-red;
+      border-left: 2vw solid transparent;
+      border-right: 2vw solid transparent;
+      margin-bottom: 0.4vw;
+      transition: transform 0.1s;
+    }
+    .flipped {
+      transform: scale(0.25, 1);
+    }
+    .prompt {
+      max-width: 6vw;
+      background-color: white;
+      padding: 1vw;
+      border-radius: 1vw;
+      font-size: 1vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: visibility 0.1s;
+      transition: height 0.1s;
+      margin: 0.5vw 0;
+    }
+    .nav-links {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-end;
+      transition: visibility 0.1s;
+      .nav-link {
+        filter: drop-shadow(0px 0px 5px black);
+        min-width: 7vw;
+        font-size: 1.5vw;
+        padding: 1vw;
+        margin-top: 0.2vw;
+        border-radius: 1vw;
+        color: white;
+        background-color: $button-red;
+        border: none;
+        &:hover {
+          transform: translate(-0.5vw, 0);
+          cursor: pointer;
+        }
+        &:active {
+          transform: rotate(10deg);
+        }
+      }
+    }
+    .nav-hidden {
+      display: none;
+      max-height: 0;
+    }
+    .transparent {
+      visibility: hidden;
+    }
+    .menu-toggle {
+      width: 6vw;
+      height: 6vw;
+      border-radius: 1vw;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 4vw;
+      background-color: $button-red;
+      border-left: 0.5vw solid lighten($button-red, 7%);
+      border-top: 0.5vw solid lighten($button-red, 10%);
+      border-bottom: 0.5vw solid darken($button-red, 10%);
+      border-right: 0.5vw solid darken($button-red, 7%);
+      p {
+        color: white;
+        margin-top: -0.5vw;
+      }
+      &:hover {
+        cursor: pointer;
+      }
+    }
+    .menu-toggle-active {
+      background-color: darken($button-red, 10%);
+      border-right: 0.5vw solid lighten($button-red, 4%);
+      border-bottom: 0.5vw solid lighten($button-red, 7%);
+      border-top: 0.5vw solid darken($button-red, 16%);
+      border-left: 0.5vw solid darken($button-red, 13%);
+      p {
+        color: lightgrey;
+      }
+    }
+  }
+}
+@media only screen and (max-width: 600px) {
+  .App {
+    .menu-toggle-container {
+      bottom: 33px;
+      right: 5vw;
+      z-index: 999999;
+      filter: drop-shadow(0px 0px 10px black);
+      .triangle {
+        border-top: 5vw solid $button-red;
+        border-left: 5vw solid transparent;
+        border-right: 5vw solid transparent;
+        margin-bottom: 1vw;
+      }
+      .flipped {
+        transform: scale(0.25, 1);
+      }
+      .prompt {
+        max-width: 20vw;
+        padding: 1vw;
+        border-radius: 1vw;
+        font-size: 3.5vw;
+        margin: 1vw 0;
+      }
+      .nav-links {
+        .nav-link {
+          filter: drop-shadow(0px 0px 5px black);
+          min-width: 20vw;
+          font-size: 3vh;
+          padding: 1vw;
+          margin-top: 1vh;
+          border-radius: 1vw;
+        }
+      }
+      .menu-toggle {
+        width: 20vw;
+        height: 20vw;
+        border-radius: 5vw;
+        font-size: 12vw;
+        border-left: 1.5vw solid lighten($button-red, 7%);
+        border-top: 1.5vw solid lighten($button-red, 10%);
+        border-bottom: 1.5vw solid darken($button-red, 10%);
+        border-right: 1.5vw solid darken($button-red, 7%);
+        p {
+          margin-top: -2vw;
+        }
+        &:hover {
+        }
+      }
+      .menu-toggle-active {
+        p {
+        }
+      }
+    }
+  }
 }
 h1,
 h2,
 p {
   margin: 0;
   padding: 0;
-}
-h1 {
-  font-size: 50px;
-}
-h2 {
-  font-size: 30px;
 }
 .test-svg {
   position: fixed;
@@ -176,7 +350,7 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-y: visible;
+  // overflow-y: visible;
   z-index: 1;
 }
 .monitor-left {
@@ -291,11 +465,19 @@ h2 {
   border-right: 5px solid rgb(245, 216, 221);
   z-index: -99;
 }
-.visible{
+.visible {
   opacity: 100%;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
-.invisible{
+.invisible {
   opacity: 0%;
-  transition: opacity .2s;
+  transition: opacity 0.2s;
 }
+.display-none {
+  display: none;
+}
+
+// remove for production
+// .engineer-at-desk{
+//   opacity: 0%;
+// }

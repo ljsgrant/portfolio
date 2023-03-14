@@ -1,14 +1,69 @@
+@import './variables';
+
 $banner-offset: 10px;
 $offset-multiplier: 5;
 $banner-height: calc($banner-offset * $offset-multiplier);
-$banner-color: rgb(211, 69, 69);
 $pole-color: rgb(125, 56, 21);
 
 .SectionTitle {
+  margin-right: 0;
+  margin-left: 0;
   display: flex;
   justify-content: center;
   padding-top: 20px;
   filter: drop-shadow(15px 15px 20px #0000006a);
+  .banner {
+    display: flex;
+  }
+  .platform {
+    position: absolute;
+    width: 100vw;
+    top: 100vh;
+    .platform-top,
+    .platform-bottom {
+      height: 2vh;
+      background-color: rgb(138, 143, 178);
+      border-top: 0.4vh solid lighten(rgb(138, 143, 178), 10%);
+      border-bottom: 0.4vh solid darken(rgb(138, 143, 178), 10%);
+      width: 100%;
+      z-index: 900;
+      filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, 0.505));
+    }
+    .platform-top {
+      position: absolute;
+    }
+    .platform-middle {
+      margin-top: 1.5vh;
+      width: 100%;
+      height: 5vh;
+      display: flex;
+      justify-content: center;
+      overflow: hidden;
+      .girder-aframe {
+        display: flex;
+        margin-right: 4vh;
+        .girder-strut {
+          margin-top: -1.5vh;
+          width: 1vh;
+          height: 8vh;
+          background-color: rgb(138, 143, 178);
+          background: linear-gradient(
+            0.25turn,
+            darken(rgb(138, 143, 178), 10%),
+            rgb(138, 143, 178),
+            darken(rgb(138, 143, 178), 10%)
+          );
+        }
+        .girder-strut-a {
+          margin-right: 4vh;
+          transform: rotate(45deg);
+        }
+        .girder-strut-b {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
   .pole {
     position: absolute;
     width: 15px;
@@ -24,29 +79,38 @@ $pole-color: rgb(125, 56, 21);
   }
   .pole-left {
     left: 0;
-    right: 275px;
+    right: 40vw;
   }
   .pole-right {
-    left: 275px;
+    left: 40vw;
     right: 0;
   }
   .banner-center {
     background-color: $banner-color;
-    padding: 5px 10px;
+    padding: 0.9vh 2vw;
     height: $banner-height;
     border-radius: 5px 5px 5px 5px;
     color: white;
     display: flex;
+    max-width: 80vw;
+    padding: 0 20vw;
+    display: flex;
+    align-items: center;
     h2 {
+      margin: 0;
       filter: drop-shadow(5px 5px 5px rgba(0, 0, 0, 0.489));
     }
     z-index: 1;
   }
-  .banner-left {
-    width: 30px;
+  .banner-left,
+  .banner-right {
+    width: 2vw;
+    min-width: 25px;
     background-color: darken($banner-color, 5%);
-    height: $banner-height;
     margin-top: -6px;
+    height: $banner-height;
+  }
+  .banner-left {
     margin-right: -$banner-offset;
     border-right: $banner-offset solid darken($banner-color, 40%);
     border-bottom: $banner-offset solid transparent;
@@ -54,10 +118,6 @@ $pole-color: rgb(125, 56, 21);
     border-radius: 0px 5px 5px 0px;
   }
   .banner-right {
-    width: 30px;
-    background-color: darken($banner-color, 5%);
-    height: 50px;
-    margin-top: -6px;
     margin-left: -$banner-offset;
     border-left: $banner-offset solid darken($banner-color, 40%);
     border-bottom: $banner-offset solid transparent;
@@ -126,8 +186,11 @@ $pole-color: rgb(125, 56, 21);
   }
   .cog-container {
     position: absolute;
-    margin-top: -50px;
-    transform: scale(.75);
+    height: 1px;
+    top: 42px;
+    margin-top: 0px;
+    transform: scale(0.75);
+    z-index: -1;
     .cog {
       background-color: rgb(0, 111, 191);
       width: 150px;
@@ -176,6 +239,15 @@ $pole-color: rgb(125, 56, 21);
       100% {
         transform: rotate(360deg);
       }
+    }
+  }
+
+  @media only screen and (max-width: 600px) {
+    .pole-left {
+      right: 50vw;
+    }
+    .pole-right {
+      left: 50vw;
     }
   }
 }

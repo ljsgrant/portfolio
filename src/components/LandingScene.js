@@ -13,13 +13,15 @@ export default function LandingScene({
   myFaceRef1,
   myFaceRef2,
   laptopRef,
-  isSkillsTopInView
+  isSkillsTopInView,
+  scrollRef
 }) {
   const windowSize = useWindowSize();
   const [scrollTop, setScrollTop] = useState(null);
 
   const [isTopInView, setIsTopInView] = useState(true);
   const [isBottomInView, setIsBottomInView] = useState(true);
+  const [isNameRoleInView, setIsNameRoleInView] = useState(false);
   const [hasEntryAnimPlayed, setHasEntryAnimPlayed] = useState(false);
   const [hasExitAnimPlayed, setHasExitAnimPlayed] = useState(true);
 
@@ -51,31 +53,39 @@ export default function LandingScene({
     }
   };
 
-  useEffect(() => {
-    isSkillsTopInView ? hideElements() : showElements();
-  }, [isSkillsTopInView]);
+  const handleNameRoleViewChange = (inView, entry) => {
+    if (entry.isIntersecting) {
+      setIsNameRoleInView(true);
+    } else {
+      setIsNameRoleInView(false);
+    }
+  };
 
-  function showElements() {
-    if (contactBubbleContainerRef.current) {
-      contactBubbleContainerRef.current.classList.remove('invisible');
-      contactBubbleContainerRef.current.classList.add('visible');
-    }
-    if (nameArrowRef.current) {
-      nameArrowRef.current.classList.remove('invisible');
-      nameArrowRef.current.classList.add('visible');
-    }
-  }
+  // useEffect(() => {
+  //   isSkillsTopInView ? hideElements() : showElements();
+  // }, [isSkillsTopInView]);
 
-  function hideElements() {
-    if (contactBubbleContainerRef.current) {
-      contactBubbleContainerRef.current.classList.remove('visible');
-      contactBubbleContainerRef.current.classList.add('invisible');
-    }
-    if (nameArrowRef.current) {
-      nameArrowRef.current.classList.remove('visible');
-      nameArrowRef.current.classList.add('invisible');
-    }
-  }
+  // function showElements() {
+  //   if (contactBubbleContainerRef.current) {
+  //     contactBubbleContainerRef.current.classList.remove('invisible');
+  //     contactBubbleContainerRef.current.classList.add('visible');
+  //   }
+  //   if (nameArrowRef.current) {
+  //     nameArrowRef.current.classList.remove('invisible');
+  //     nameArrowRef.current.classList.add('visible');
+  //   }
+  // }
+
+  // function hideElements() {
+  //   if (contactBubbleContainerRef.current) {
+  //     contactBubbleContainerRef.current.classList.remove('visible');
+  //     contactBubbleContainerRef.current.classList.add('invisible');
+  //   }
+  //   if (nameArrowRef.current) {
+  //     nameArrowRef.current.classList.remove('visible');
+  //     nameArrowRef.current.classList.add('invisible');
+  //   }
+  // }
 
   useEffect(() => {
     if (isTopInView && isBottomInView && !hasEntryAnimPlayed) {
@@ -118,7 +128,7 @@ export default function LandingScene({
   }, [isSkillsTopInView]);
 
   return (
-    <div data-name={dataName} className='scene LandingScene'>
+    <div ref={scrollRef} data-name={dataName} className='scene LandingScene'>
       <article className='sticky-child'>
         <InView
           as='div'
@@ -130,9 +140,19 @@ export default function LandingScene({
             <div ref={myNameRef} className='my-name-container'>
               <h1>Louis Grant</h1>
               <h2>Junior Software Engineer</h2>
+              <InView
+                as='div'
+                className='in-view-trigger'
+                onChange={handleNameRoleViewChange}
+              />
             </div>
           </div>
-          <div ref={contactBubbleContainerRef} className='speech-bubbles'>
+          <div
+            ref={contactBubbleContainerRef}
+            className={`speech-bubbles ${
+              isNameRoleInView ? 'visible' : 'invisible'
+            }`}
+          >
             <div
               ref={contactBubbleRef}
               className='speech-bubble speech-bubble_contact'
@@ -189,7 +209,7 @@ export default function LandingScene({
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-1'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-1 thought-bubble-dot-desktop'></div>
                   </div>
                 </div>
                 <div className='thought-tail-dot-column'>
@@ -197,23 +217,32 @@ export default function LandingScene({
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-2'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-2 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                 </div>
                 <div className='thought-tail-dot-column'>
-                  <div className='thought-tail-dot-wrapper'></div>
-                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-5 thought-bubble-dot-mobile'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'>
+                    {' '}
+                    <div className='thought-bubble-dot thought-bubble-dot-4 thought-bubble-dot-mobile'></div>
+                  </div>
                   <div className='thought-tail-dot-wrapper'>
                     <div className='thought-bubble-dot thought-bubble-dot-3'></div>
                   </div>
-                  <div className='thought-tail-dot-wrapper'></div>
-                  <div className='thought-tail-dot-wrapper'></div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-2 thought-bubble-dot-mobile'></div>
+                  </div>
+                  <div className='thought-tail-dot-wrapper'>
+                    <div className='thought-bubble-dot thought-bubble-dot-1 thought-bubble-dot-mobile'></div>
+                  </div>
                 </div>
                 <div className='thought-tail-dot-column'>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-4'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-4 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
@@ -221,7 +250,7 @@ export default function LandingScene({
                 </div>
                 <div className='thought-tail-dot-column'>
                   <div className='thought-tail-dot-wrapper'>
-                    <div className='thought-bubble-dot thought-bubble-dot-5'></div>
+                    <div className='thought-bubble-dot thought-bubble-dot-5 thought-bubble-dot-desktop'></div>
                   </div>
                   <div className='thought-tail-dot-wrapper'></div>
                   <div className='thought-tail-dot-wrapper'></div>
@@ -276,7 +305,9 @@ export default function LandingScene({
               <path
                 ref={nameArrowRef}
                 id='name-arrow'
-                className='svg-line'
+                className={`svg-line hide-below-600px ${
+                  isNameRoleInView ? 'visible' : 'invisible'
+                }`}
                 fill='none'
                 stroke='white'
                 strokeWidth='1.5vw'
@@ -287,6 +318,29 @@ export default function LandingScene({
                   myNamePositionY - windowSize.height / 10
                 } 
                     L${myFacePosition1X},${myFacePosition1Y - 50} 
+                  `}
+              />
+              <path
+                ref={nameArrowRef}
+                id='name-arrow'
+                className={`svg-line show-below-600px hide-above-600px ${
+                  isNameRoleInView ? 'visible' : 'invisible'
+                }`}
+                fill='none'
+                stroke='white'
+                strokeWidth='5.5vw'
+                markerEnd='url(#arrow1)'
+                strokeDasharray='5,5,10'
+                d={`
+                    M${myNamePositionX - windowSize.width / 4},${
+                  myNamePositionY - windowSize.height / 10
+                } 
+                    L${myNamePositionX - windowSize.width / 4},${
+                  myNamePositionY + windowSize.height / 3.5
+                } 
+                    L${myFacePosition1X - windowSize.width / 8},${
+                  myFacePosition1Y - windowSize.height / 16
+                } 
                   `}
               />
               {/* <path

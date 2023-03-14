@@ -5,16 +5,23 @@ export default function PaperSheet({
   datesText,
   locationText,
   bodyText,
-  rotationStyleNumber
+  rotationStyleNumber,
+  myRef
 }) {
   return (
-    <div className={`PaperSheet rotation-${rotationStyleNumber}`}>
+    <div ref={myRef} className={`PaperSheet rotation-${rotationStyleNumber}`}>
       <div className='PaperSheet-content'>
-        <p>{datesText}</p>
         <hr />
         <h3>{titleText}</h3>
-        <hr />
-        <p>{locationText}</p>
+        {(locationText || datesText) && (
+          <>
+            <hr />
+            <p className='date-location-text'>
+              {datesText} · {locationText}
+            </p>
+          </>
+        )}
+        {/* <p>{locationText}</p> */}
         <hr />
         <p>{bodyText}</p>
       </div>
