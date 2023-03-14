@@ -28,6 +28,7 @@ import postgresIcon from '../assets/images/tech_icons/icons8-postgresql.svg';
 // import pipIcon from '../assets/images/tech_icons/icons8-pypi.svg';
 // import postmanIcon from '../assets/images/tech_icons/postman.svg';
 // import tablePlusIcon from '../assets/images/tech_icons/tableplus.png';
+import muiIcon from '../assets/images/tech_icons/material-ui-1.svg';
 
 export default function ProjectScene({
   text,
@@ -74,7 +75,11 @@ export default function ProjectScene({
   }, [isTopInView, isBottomInView]);
 
   return (
-    <div ref={scrollRef} data-name={dataName} className='scene ProjectScene last-scene'>
+    <div
+      ref={scrollRef}
+      data-name={dataName}
+      className='scene ProjectScene last-scene'
+    >
       <div className='project-container project-container-1'>
         <div className='project-a'>
           <div className='project-content'>
@@ -129,7 +134,7 @@ export default function ProjectScene({
               distribution through interactive maps.
             </p>
           </div>
-          
+
           <div className='project-links-container'>
             <a
               href='https://birdspotter.netlify.app/'
@@ -254,6 +259,15 @@ export default function ProjectScene({
                     alt='react'
                   />
                   <p>React</p>
+                </div>
+                <div className='skill-wrapper'>
+                  <img
+                    src={muiIcon}
+                    className='tech-icon filter-svg'
+                    draggable='false'
+                    alt=''
+                  />
+                  <p>Material UI</p>
                 </div>
                 <div className='skill-wrapper'>
                   <img
@@ -382,7 +396,6 @@ export default function ProjectScene({
           onChange={handleViewChangeBottom}
         />
       </article>
-      
     </div>
   );
 }

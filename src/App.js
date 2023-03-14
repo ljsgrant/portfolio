@@ -11,7 +11,7 @@ import ExperienceScene from './components/ExperienceScene';
 import SkillsScene from './components/SkillsScene';
 import AboutScene from './components/AboutScene';
 // import Cog from './components/common/Cog';
-import CogResponsive from './components/common/CogResponsive';
+import CogResponsive from './components/common/CogResponsiveV2';
 import InterestsScene from './components/InterestsScene';
 
 export default function App() {
@@ -23,6 +23,7 @@ export default function App() {
   const skillsScrollRef = useRef(null);
   const experienceScrollRef = useRef(null);
   const projectScrollRef = useRef(null);
+  const interestsScrollRef = useRef(null);
 
   const myFaceRef = useRef(null);
   const myFaceRef1 = useRef(null);
@@ -78,6 +79,12 @@ export default function App() {
           >
             Projects
           </button>
+          <button
+            className='nav-link nav-link-1'
+            onClick={() => scrollToElement(interestsScrollRef)}
+          >
+            Interests
+          </button>
         </div>
         {/* <button className="menutoggle-mobile"></button> */}
 
@@ -98,18 +105,6 @@ export default function App() {
           windowSize.width < 600 && 'display-none'
         }`}
       >
-        {/* <Cog /> */}
-        {/* <Cog/> */}
-        {/* <div className='cogs cogs-left'>
-          {[...Array(cogNumber)].map((entry, index) => (
-            <CogResponsive key={index}/>
-            ))}
-            </div>
-            <div className='cogs cogs-right'>
-          {[...Array(cogNumber)].map((entry, index) => (
-            <Cog key={index} />
-            ))}
-          </div> */}
         <div className='cogs-left'>
           {[...Array(cogNumber)].map((entry, index) => (
             <CogResponsive key={index} />
@@ -155,7 +150,7 @@ export default function App() {
           dataName={'first'}
           titleText='Projects'
         />
-        <InterestsScene titleText='Interests'/>
+        <InterestsScene titleText='Interests' scrollRef={interestsScrollRef} />
       </div>
       <div className='background-overlay'></div>
       <div className='background'></div>

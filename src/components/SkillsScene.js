@@ -27,6 +27,7 @@ import tablePlusIcon from '../assets/images/tech_icons/tableplus.png';
 import photoshopIcon from '../assets/images/tech_icons/photoshop.svg';
 import blenderIcon from '../assets/images/tech_icons/icons8-blender-3d.svg';
 import unityIcon from '../assets/images/tech_icons/icons8-unity.svg';
+import muiIcon from '../assets/images/tech_icons/material-ui-1.svg';
 
 export default function SkillsScene({
   titleText,
@@ -176,8 +177,8 @@ export default function SkillsScene({
                   </div>
                   <div className='skill-wrapper'>
                     <img
-                      src=''
-                      className='tech-icon'
+                      src={muiIcon}
+                      className='tech-icon filter-svg'
                       draggable='false'
                       alt=''
                     />

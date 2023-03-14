@@ -7,7 +7,7 @@ import '../styles/InterestsScene.scss';
 import SectionTitle from './common/SectionTitle';
 import PaperSheet from './common/PaperSheet';
 
-export default function InterestsScene({
+export default function EducationScene({
   text,
   dataName,
   projectImage,
@@ -110,7 +110,11 @@ export default function InterestsScene({
   }, [atFront]);
 
   return (
-    <div ref={scrollRef} data-name={dataName} className='scene ExperienceScene InterestsScene'>
+    <div
+      ref={scrollRef}
+      data-name={dataName}
+      className='scene ExperienceScene InterestsScene'
+    >
       <article className='sticky-child'>
         <InView
           as='div'
@@ -142,26 +146,18 @@ export default function InterestsScene({
           <div className='papersheets'>
             <PaperSheet
               myRef={paper1}
-              titleText={'Tinkering with weird and wonderful inventions...'}
-              bodyText={
-                <>
-                  ...with a like-minded group of friends, most recently
-                  designing a lightweight folding kayak with 3D-printed parts
-                  and PVC tubing. 
-                </>
-              }
+              titleText={'Software Engineering Immersive'}
+              datesText={'Oct 2022 – Jan 2023'}
+              locationText={'London (Remote)'}
+              bodyText={<></>}
               rotationStyleNumber={'1'}
             />
             <PaperSheet
               myRef={paper2}
-              titleText={'Gaming...'}
-              bodyText={
-                <>
-                  ...particularly exploring more obscure indie releases, and
-                  games with unusual mechanics. I often find myself checking the
-                  devs out on social media to get insights into their process.
-                </>
-              }
+              titleText={'BA(Hons) Film Production'}
+              datesText={'Sept 2010 – June 2013'}
+              locationText={'University of the Creative Arts'}
+              bodyText={'1st Class Honours'}
               rotationStyleNumber={'2'}
             />
             <PaperSheet
@@ -170,8 +166,8 @@ export default function InterestsScene({
               bodyText={
                 <>
                   ...using Blender to model a scene, or design & 3D-print a
-                  product to solve some little problem around the house is great for unwinding
-                  whilst keeping creative juices flowing.
+                  product to solve some little problem around the house is great
+                  for unwinding whilst keeping creative juices flowing.
                 </>
               }
               rotationStyleNumber={'3'}
